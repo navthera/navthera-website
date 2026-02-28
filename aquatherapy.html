@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aquatherapy — Rajasthan's First | Navthera Advanced Physio and Rehab Centre</title>
+    <meta name="description" content="Discover Rajasthan's first aquatherapy pool at Navthera, Jaipur. Learn how water-based rehabilitation benefits neurological, orthopaedic, sports, cardiac, and paediatric patients.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+        :root{--navy:#0D2844;--navy-deep:#081B30;--teal:#1A8A7D;--teal-dark:#14706A;--cyan:#3EC6C0;--cyan-light:#6EDCD8;--gold:#C9A96E;--gold-light:#E0C99A;--cream:#F8F6F2;--white:#FFFFFF;--text-dark:#1A1A2E;--text-muted:#5A6B7D;--shadow-soft:0 4px 30px rgba(13,40,68,0.08);--shadow-medium:0 8px 40px rgba(13,40,68,0.12);}
+        html{scroll-behavior:smooth;overflow-x:hidden;}
+        body{font-family:'Inter',-apple-system,sans-serif;color:var(--text-dark);background:var(--white);overflow-x:hidden;-webkit-font-smoothing:antialiased;}
+
+        .navbar{position:fixed;top:0;left:0;right:0;z-index:1000;padding:20px 60px;display:flex;align-items:center;justify-content:space-between;background:rgba(255,255,255,0.95);backdrop-filter:blur(20px);box-shadow:0 2px 30px rgba(13,40,68,0.08);}
+        .navbar-logo{display:flex;align-items:center;gap:12px;text-decoration:none;}
+        .navbar-logo img{width:44px;height:44px;object-fit:contain;}
+        .navbar-brand{font-family:'Playfair Display',serif;font-size:1.4rem;font-weight:700;color:var(--navy);}
+        .navbar-brand small{display:block;font-family:'Inter',sans-serif;font-size:0.5rem;font-weight:400;letter-spacing:3px;text-transform:uppercase;color:var(--teal);}
+        .nav-links{display:flex;align-items:center;gap:36px;list-style:none;}
+        .nav-links a{text-decoration:none;font-size:0.85rem;font-weight:500;color:var(--text-muted);position:relative;transition:color 0.3s;}
+        .nav-links a::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:1.5px;background:var(--gold);transition:width 0.3s;}
+        .nav-links a:hover{color:var(--navy);}
+        .nav-links a:hover::after{width:100%;}
+        .nav-links a.active{color:var(--navy);font-weight:600;}
+        .nav-links a.active::after{width:100%;}
+        .nav-cta{padding:10px 28px;border-radius:50px;font-size:0.82rem;font-weight:600;text-decoration:none;background:var(--gold);color:var(--navy-deep);transition:all 0.3s;}
+        .nav-cta:hover{background:var(--gold-light);transform:translateY(-1px);}
+        .menu-toggle{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:5px;}
+        .menu-toggle span{width:24px;height:2px;background:var(--navy);border-radius:2px;}
+
+        /* AQUA HERO — Special water-themed hero */
+        .aqua-hero{padding:180px 60px 100px;position:relative;overflow:hidden;text-align:center;background:linear-gradient(180deg,#081B30 0%,#0a3d5c 30%,#14706A 60%,#1A8A7D 100%);}
+        .aqua-hero::before{content:'';position:absolute;bottom:0;left:0;right:0;height:200px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 200'%3E%3Cpath fill='%23ffffff' d='M0,128L48,122.7C96,117,192,107,288,112C384,117,480,139,576,144C672,149,768,139,864,122.7C960,107,1056,85,1152,85.3C1248,85,1344,107,1392,117.3L1440,128L1440,200L0,200Z'/%3E%3C/svg%3E") no-repeat bottom/cover;z-index:2;}
+
+        /* Animated water ripples */
+        .water-ripple{position:absolute;border-radius:50%;border:1px solid rgba(62,198,192,0.15);animation:ripple 8s linear infinite;}
+        .water-ripple:nth-child(1){width:300px;height:300px;bottom:20%;left:10%;animation-delay:0s;}
+        .water-ripple:nth-child(2){width:500px;height:500px;bottom:10%;right:5%;animation-delay:-3s;}
+        .water-ripple:nth-child(3){width:200px;height:200px;bottom:30%;left:50%;animation-delay:-5s;}
+        @keyframes ripple{0%{transform:scale(0.8);opacity:0.6;}100%{transform:scale(2);opacity:0;}}
+
+        /* Floating bubbles */
+        .bubble{position:absolute;border-radius:50%;background:rgba(62,198,192,0.08);border:1px solid rgba(62,198,192,0.12);animation:bubbleFloat 10s ease-in-out infinite;}
+        .bubble:nth-child(4){width:60px;height:60px;bottom:20%;left:15%;animation-delay:0s;animation-duration:8s;}
+        .bubble:nth-child(5){width:40px;height:40px;bottom:30%;right:20%;animation-delay:-2s;animation-duration:12s;}
+        .bubble:nth-child(6){width:80px;height:80px;bottom:40%;left:60%;animation-delay:-4s;animation-duration:10s;}
+        .bubble:nth-child(7){width:30px;height:30px;bottom:25%;left:80%;animation-delay:-6s;animation-duration:9s;}
+        @keyframes bubbleFloat{0%,100%{transform:translateY(0);}50%{transform:translateY(-40px);}}
+
+        .aqua-hero-content{position:relative;z-index:3;max-width:750px;margin:0 auto;}
+        .aqua-hero .breadcrumb{font-size:0.75rem;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:20px;}
+        .aqua-hero .breadcrumb a{color:rgba(255,255,255,0.5);text-decoration:none;}
+        .aqua-hero-badge{display:inline-flex;align-items:center;gap:8px;padding:10px 24px;border-radius:50px;background:rgba(62,198,192,0.15);border:1px solid rgba(62,198,192,0.3);font-size:0.75rem;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--cyan-light);margin-bottom:24px;}
+        .aqua-hero-badge svg{width:16px;height:16px;}
+        .aqua-hero h1{font-family:'Playfair Display',serif;font-size:clamp(2.4rem,5.5vw,4rem);font-weight:700;color:var(--white);margin-bottom:18px;line-height:1.1;}
+        .aqua-hero h1 span{color:var(--cyan-light);}
+        .aqua-hero p{font-size:1.1rem;color:rgba(255,255,255,0.6);line-height:1.75;font-weight:300;max-width:600px;margin:0 auto;}
+
+        .section{padding:100px 60px;position:relative;}
+        .section-label{display:inline-block;font-size:0.7rem;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:16px;}
+        .section-title{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3.5vw,2.6rem);font-weight:600;line-height:1.2;color:var(--navy);margin-bottom:20px;}
+
+        /* What is aquatherapy */
+        .what-section{max-width:900px;margin:0 auto;}
+        .what-section p{font-size:1.05rem;color:var(--text-muted);line-height:2;margin-bottom:20px;}
+        .what-section p:first-of-type::first-letter{font-family:'Playfair Display',serif;font-size:3.5rem;float:left;line-height:1;margin-right:12px;color:var(--teal);font-weight:700;}
+
+        /* Properties of water */
+        .properties-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;max-width:1100px;margin:40px auto 0;}
+        .property-card{text-align:center;padding:36px 20px;border-radius:16px;background:var(--white);border:1px solid rgba(62,198,192,0.1);box-shadow:var(--shadow-soft);transition:all 0.4s;}
+        .property-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-medium);border-color:var(--cyan);}
+        .property-icon{width:56px;height:56px;border-radius:50%;margin:0 auto 16px;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,rgba(26,138,125,0.1),rgba(62,198,192,0.15));border:1px solid rgba(62,198,192,0.2);}
+        .property-icon svg{width:26px;height:26px;color:var(--teal);}
+        .property-card h3{font-size:1rem;font-weight:600;color:var(--navy);margin-bottom:8px;}
+        .property-card p{font-size:0.82rem;color:var(--text-muted);line-height:1.65;}
+
+        /* Conditions */
+        .conditions-section{background:var(--cream);}
+        .conditions-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:30px;max-width:1100px;margin:0 auto;}
+        .condition-card{display:flex;gap:24px;padding:36px;border-radius:20px;background:var(--white);border:1px solid rgba(13,40,68,0.05);transition:all 0.4s;}
+        .condition-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-medium);border-color:var(--cyan);}
+        .condition-icon{width:56px;height:56px;border-radius:14px;flex-shrink:0;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,var(--teal),var(--cyan));box-shadow:0 4px 15px rgba(26,138,125,0.25);}
+        .condition-icon svg{width:24px;height:24px;color:white;}
+        .condition-card h3{font-family:'Playfair Display',serif;font-size:1.15rem;color:var(--navy);margin-bottom:8px;}
+        .condition-card p{font-size:0.88rem;color:var(--text-muted);line-height:1.7;}
+        .condition-card .condition-list{margin-top:12px;padding-left:0;list-style:none;}
+        .condition-card .condition-list li{font-size:0.82rem;color:var(--text-muted);padding:4px 0;padding-left:18px;position:relative;}
+        .condition-card .condition-list li::before{content:'';position:absolute;left:0;top:10px;width:6px;height:6px;border-radius:50%;background:var(--cyan);}
+
+        /* How it works */
+        .process-section{background:linear-gradient(135deg,var(--navy-deep),var(--navy));}
+        .process-section .section-title{color:var(--white);text-align:center;}
+        .process-section .section-label{display:block;text-align:center;}
+        .process-section .section-desc{text-align:center;color:rgba(255,255,255,0.5);max-width:600px;margin:0 auto 50px;font-size:1rem;line-height:1.7;}
+        .process-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;max-width:1100px;margin:0 auto;}
+        .process-step{text-align:center;padding:36px 20px;border-radius:16px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.06);transition:all 0.4s;}
+        .process-step:hover{background:rgba(255,255,255,0.08);border-color:rgba(62,198,192,0.2);}
+        .process-num{font-family:'Playfair Display',serif;font-size:2.5rem;font-weight:700;background:linear-gradient(135deg,var(--cyan),var(--gold-light));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:14px;}
+        .process-step h3{font-size:1rem;font-weight:600;color:var(--white);margin-bottom:8px;}
+        .process-step p{font-size:0.82rem;color:rgba(255,255,255,0.5);line-height:1.65;}
+
+        /* Pool features */
+        .pool-section{background:var(--white);}
+        .pool-features{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;max-width:1100px;margin:40px auto 0;}
+        .pool-feature{padding:28px;border-radius:14px;border-left:3px solid var(--teal);background:var(--cream);transition:all 0.3s;}
+        .pool-feature:hover{transform:translateX(6px);box-shadow:var(--shadow-soft);}
+        .pool-feature h4{font-size:0.95rem;font-weight:600;color:var(--navy);margin-bottom:6px;}
+        .pool-feature p{font-size:0.82rem;color:var(--text-muted);line-height:1.6;}
+
+        /* FAQ */
+        .faq-section{background:var(--cream);}
+        .faq-list{max-width:800px;margin:0 auto;}
+        .faq-item{margin-bottom:12px;border-radius:12px;background:var(--white);border:1px solid rgba(13,40,68,0.05);overflow:hidden;transition:box-shadow 0.3s;}
+        .faq-item:hover{box-shadow:var(--shadow-soft);}
+        .faq-question{display:flex;align-items:center;justify-content:space-between;padding:20px 24px;cursor:pointer;font-size:0.95rem;font-weight:600;color:var(--navy);background:none;border:none;width:100%;text-align:left;font-family:inherit;}
+        .faq-question svg{width:20px;height:20px;color:var(--teal);flex-shrink:0;transition:transform 0.3s;}
+        .faq-item.open .faq-question svg{transform:rotate(180deg);}
+        .faq-answer{padding:0 24px;max-height:0;overflow:hidden;transition:all 0.3s;}
+        .faq-item.open .faq-answer{max-height:300px;padding:0 24px 20px;}
+        .faq-answer p{font-size:0.9rem;color:var(--text-muted);line-height:1.75;}
+
+        .cta-section{padding:80px 60px;text-align:center;background:var(--white);}
+        .cta-section h2{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3vw,2.5rem);color:var(--navy);margin-bottom:16px;}
+        .cta-section p{font-size:1rem;color:var(--text-muted);margin-bottom:30px;max-width:550px;margin-left:auto;margin-right:auto;line-height:1.7;}
+        .btn-primary{display:inline-flex;align-items:center;gap:10px;padding:16px 40px;border-radius:50px;background:linear-gradient(135deg,var(--gold),var(--gold-light));color:var(--navy-deep);font-size:0.9rem;font-weight:600;text-decoration:none;transition:all 0.4s;box-shadow:0 4px 20px rgba(201,169,110,0.3);}
+        .btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(201,169,110,0.5);}
+
+        .footer{background:var(--navy-deep);padding:60px 60px 30px;}
+        .footer-inner{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:20px;max-width:1200px;margin:0 auto;}
+        .footer-inner p{font-size:0.78rem;color:rgba(255,255,255,0.25);}
+        .footer-links{display:flex;gap:24px;}
+        .footer-links a{font-size:0.8rem;color:rgba(255,255,255,0.4);text-decoration:none;transition:color 0.3s;}
+        .footer-links a:hover{color:var(--cyan);}
+
+        @media(max-width:1024px){
+            .section,.aqua-hero,.cta-section,.faq-section{padding-left:30px;padding-right:30px;}
+            .navbar{padding:16px 30px;}
+            .properties-grid,.process-steps{grid-template-columns:repeat(2,1fr);}
+            .conditions-grid{grid-template-columns:1fr;}
+            .pool-features{grid-template-columns:1fr;}
+        }
+        @media(max-width:768px){
+            .navbar{padding:14px 20px;}
+            .nav-links{display:none;}
+            .menu-toggle{display:flex;}
+            .nav-links.open{display:flex;flex-direction:column;position:absolute;top:100%;left:0;right:0;background:var(--white);padding:30px;box-shadow:var(--shadow-medium);}
+            .section,.aqua-hero,.cta-section,.faq-section{padding-left:20px;padding-right:20px;}
+            .aqua-hero{padding-top:140px;}
+            .properties-grid,.process-steps{grid-template-columns:1fr;}
+        }
+    </style>
+</head>
+<body>
+
+<nav class="navbar">
+    <a href="index.html" class="navbar-logo">
+        <img src="assets/logo.svg" alt="Navthera Logo">
+        <div class="navbar-brand">Navthera<small>Advanced Physio & Rehab</small></div>
+    </a>
+    <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="aquatherapy.html" class="active">Aquatherapy</a></li>
+        <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <a href="contact.html" class="nav-cta">Book Appointment</a>
+    <button class="menu-toggle" id="menuToggle"><span></span><span></span><span></span></button>
+</nav>
+
+<!-- AQUA HERO with water effects -->
+<section class="aqua-hero">
+    <div class="water-ripple"></div>
+    <div class="water-ripple"></div>
+    <div class="water-ripple"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="aqua-hero-content">
+        <div class="breadcrumb"><a href="index.html">Home</a> &nbsp;/&nbsp; <a href="services.html">Services</a> &nbsp;/&nbsp; Aquatherapy</div>
+        <div class="aqua-hero-badge">
+            <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            Rajasthan's First
+        </div>
+        <h1>Aquatherapy — <span>Healing Through Water</span></h1>
+        <p>Experience the transformative power of water-based rehabilitation at Rajasthan's first purpose-built aquatherapy pool, designed exclusively for therapeutic recovery.</p>
+    </div>
+</section>
+
+<!-- WHAT IS AQUATHERAPY -->
+<section class="section">
+    <div class="what-section">
+        <span class="section-label" style="text-align:center;display:block;">Understanding Aquatherapy</span>
+        <h2 class="section-title" style="text-align:center;">What is Aquatherapy?</h2>
+        <p>Navthera's state-of-the-art aquatherapy facility provides rehabilitation in a temperature-controlled therapeutic pool designed for safe and comfortable movement. Water reduces body weight and pressure on joints, allowing patients to move more freely with less pain and strain. Our programs include guided exercises for mobility, strength, balance, walking training, post-surgery recovery, neurological rehabilitation, and weight management. Aquatherapy is especially beneficial for patients who cannot tolerate land-based exercises due to pain, weakness, instability, or fear of falling. Each session is supervised by trained therapists who tailor the program to the patient's condition and recovery goals.</p>
+        <p>Water creates a unique healing environment that cannot be replicated on land. Buoyancy supports the body and reduces joint stress, allowing earlier movement after injury or surgery. Warm water relaxes muscles, improves circulation, and reduces pain, enabling more effective therapy sessions. Natural water resistance strengthens muscles safely without overloading joints. The supportive environment also reduces fall risk, making it ideal for elderly and neurological patients. Because patients can move with less pain and greater confidence, aquatherapy often accelerates recovery, improves mobility and balance, enhances endurance, and helps individuals return to daily activities faster than conventional therapy alone.</p>
+        <p>At Navthera, our aquatherapy pool represents a significant investment in bringing this world-class treatment modality to Rajasthan for the first time, ensuring that patients in Jaipur and surrounding regions no longer need to travel to metro cities for water-based rehabilitation.</p>
+    </div>
+</section>
+
+<!-- PROPERTIES OF WATER -->
+<section class="section" style="background:var(--cream);padding-top:80px;padding-bottom:80px;">
+    <div style="text-align:center;margin-bottom:40px;">
+        <span class="section-label">The Science</span>
+        <h2 class="section-title">How Water Heals</h2>
+    </div>
+    <div class="properties-grid">
+        <div class="property-card">
+            <div class="property-icon"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22c5.52 0 10-4.48 10-10S17.52 2 12 2 2 6.48 2 12s4.48 10 10 10z"/><path d="M12 6v6l4 2"/></svg></div>
+            <h3>Buoyancy</h3>
+            <p>Water supports body weight, reducing joint load by up to 90%. Patients can move freely with significantly less pain and stress on healing tissues.</p>
+        </div>
+        <div class="property-card">
+            <div class="property-icon"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+            <h3>Hydrostatic Pressure</h3>
+            <p>Water pressure uniformly compresses the body, reducing swelling, improving circulation, and providing proprioceptive feedback for balance recovery.</p>
+        </div>
+        <div class="property-card">
+            <div class="property-icon"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4.5 16.5c.7-.7 1.5-1.3 2.4-1.6a5 5 0 016.2 0c.9.3 1.7.9 2.4 1.6"/><path d="M2 12a10 10 0 0120 0"/></svg></div>
+            <h3>Viscosity</h3>
+            <p>Water's natural resistance provides gentle, graded strengthening. Movement speed determines effort — patients control their own intensity naturally.</p>
+        </div>
+        <div class="property-card">
+            <div class="property-icon"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 2a10 10 0 00-6.88 17.23l.71.68A9.95 9.95 0 0012 22a9.95 9.95 0 006.17-2.09l.71-.68A10 10 0 0012 2z"/></svg></div>
+            <h3>Thermal Effects</h3>
+            <p>Warm water (33–36°C) relaxes muscles, reduces pain perception, increases blood flow, and creates an analgesic environment for comfortable exercise.</p>
+        </div>
+    </div>
+</section>
+
+<!-- CONDITIONS TREATED -->
+<section class="section conditions-section">
+    <div style="text-align:center;margin-bottom:50px;">
+        <span class="section-label">Who Benefits</span>
+        <h2 class="section-title">Conditions Treated with Aquatherapy</h2>
+    </div>
+    <div class="conditions-grid">
+        <div class="condition-card">
+            <div class="condition-icon"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M16 4h2a2 2 0 012 2v14a2 2 0 01-2 2H6a2 2 0 01-2-2V6a2 2 0 012-2h2"/><rect x="8" y="2" width="8" height="4" rx="1"/></svg></div>
+            <div>
+                <h3>Orthopaedic Conditions</h3>
+                <p>Water reduces body weight and joint stress, enabling pain-free movement and earlier rehabilitation for musculoskeletal conditions.</p>
+                <ul class="condition-list">
+                    <li>Slip disc / Herniated disc</li>
+                    <li>Sciatica</li>
+                    <li>Chronic back and neck pain</li>
+                    <li>Osteoarthritis</li>
+                    <li>Rheumatoid arthritis</li>
+                    <li>Ankylosing spondylitis</li>
+                    <li>Avascular necrosis (AVN)</li>
+                    <li>Fibromyalgia</li>
+                    <li>Joint stiffness and mobility loss</li>
+                    <li>Post-fracture stiffness</li>
+                    <li>Post joint-replacement rehabilitation</li>
+                </ul>
+            </div>
+        </div>
+        <div class="condition-card">
+            <div class="condition-icon"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
+            <div>
+                <h3>Neurological Conditions</h3>
+                <p>Water buoyancy allows neurological patients to attempt movements that are impossible on land, accelerating neuroplastic recovery.</p>
+                <ul class="condition-list">
+                    <li>Stroke and hemiparesis</li>
+                    <li>Spinal cord injury</li>
+                    <li>Cerebral palsy, Autism, ADHD</li>
+                    <li>Multiple sclerosis</li>
+                    <li>Traumatic brain injury</li>
+                    <li>Parkinson's disease</li>
+                    <li>Guillain-Barré syndrome (recovery phase)</li>
+                    <li>Peripheral neuropathy</li>
+                    <li>Gait ataxia and walking disorders</li>
+                    <li>Balance disorders</li>
+                </ul>
+            </div>
+        </div>
+        <div class="condition-card">
+            <div class="condition-icon"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z"/></svg></div>
+            <div>
+                <h3>Sports & Injury Rehabilitation</h3>
+                <p>Athletes use aquatic rehabilitation for early-stage recovery and return-to-sport conditioning with reduced reinjury risk.</p>
+                <ul class="condition-list">
+                    <li>ACL rehabilitation</li>
+                    <li>Knee ligament injuries</li>
+                    <li>Ankle instability</li>
+                    <li>Muscle injuries</li>
+                    <li>Stress injuries</li>
+                    <li>Post-surgical sports recovery</li>
+                </ul>
+            </div>
+        </div>
+        <div class="condition-card">
+            <div class="condition-icon"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2M9 11a4 4 0 100-8 4 4 0 000 8z"/></svg></div>
+            <div>
+                <h3>Geriatric & Mobility Issues</h3>
+                <p>The supportive aquatic environment reduces fall risk, making it ideal for elderly patients to exercise with confidence.</p>
+                <ul class="condition-list">
+                    <li>Age-related weakness</li>
+                    <li>Joint pain in elderly</li>
+                    <li>Difficulty walking</li>
+                    <li>Fear of falling</li>
+                    <li>Balance problems</li>
+                </ul>
+            </div>
+        </div>
+        <div class="condition-card">
+            <div class="condition-icon"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div>
+            <div>
+                <h3>Weight Loss & Fitness</h3>
+                <p>Water provides resistance and buoyancy for effective, low-impact exercise ideal for patients who cannot exercise on land.</p>
+                <ul class="condition-list">
+                    <li>Obesity-related joint pain</li>
+                    <li>Low-impact weight loss programs</li>
+                    <li>Fitness for individuals unable to exercise on land</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="section process-section">
+    <span class="section-label">Your Journey</span>
+    <h2 class="section-title">How Aquatherapy Works at Navthera</h2>
+    <p class="section-desc">From assessment to recovery, every step is personalised to your specific condition and recovery goals.</p>
+    <div class="process-steps">
+        <div class="process-step">
+            <div class="process-num">01</div>
+            <h3>Assessment</h3>
+            <p>Comprehensive evaluation of your condition, goals, and suitability for aquatherapy by our specialist team.</p>
+        </div>
+        <div class="process-step">
+            <div class="process-num">02</div>
+            <h3>Custom Program</h3>
+            <p>A tailored aquatic rehabilitation program is designed based on your specific needs, condition stage, and recovery targets.</p>
+        </div>
+        <div class="process-step">
+            <div class="process-num">03</div>
+            <h3>Guided Sessions</h3>
+            <p>Each session is supervised by a certified aquatic therapist who guides you through exercises and adapts in real-time.</p>
+        </div>
+        <div class="process-step">
+            <div class="process-num">04</div>
+            <h3>Progress Tracking</h3>
+            <p>Regular reassessments measure improvement and adjust your program to ensure continued progress toward your goals.</p>
+        </div>
+    </div>
+</section>
+
+<!-- POOL FEATURES -->
+<section class="section pool-section">
+    <div style="text-align:center;margin-bottom:20px;">
+        <span class="section-label">Our Facility</span>
+        <h2 class="section-title">Pool Features & Specifications</h2>
+    </div>
+    <div class="pool-features">
+        <div class="pool-feature">
+            <h4>Temperature Controlled</h4>
+            <p>Maintained between 33–36°C for optimal therapeutic benefit. Warm enough for muscle relaxation, comfortable for extended sessions.</p>
+        </div>
+        <div class="pool-feature">
+            <h4>Variable Depth</h4>
+            <p>Adjustable depth zones allow progressive weight-bearing from chest-deep (minimal load) to waist-deep (moderate load) exercises.</p>
+        </div>
+        <div class="pool-feature">
+            <h4>Underwater Treadmill</h4>
+            <p>Built-in aquatic treadmill for gait training with buoyancy support — ideal for neurological and post-surgical walking rehab.</p>
+        </div>
+        <div class="pool-feature">
+            <h4>Resistance Jets</h4>
+            <p>Directional water jets provide adjustable resistance for strengthening exercises and functional movement training.</p>
+        </div>
+        <div class="pool-feature">
+            <h4>Accessibility Ramp & Hoist</h4>
+            <p>Wheelchair-accessible ramp and patient hoist ensure safe entry for patients with severe mobility limitations.</p>
+        </div>
+        <div class="pool-feature">
+            <h4>Hygiene & Filtration</h4>
+            <p>Advanced UV and ozone filtration system maintains clinical hygiene standards, gentle on skin and suitable for all patients.</p>
+        </div>
+    </div>
+</section>
+
+<!-- FAQ -->
+<section class="section faq-section">
+    <div style="text-align:center;margin-bottom:50px;">
+        <span class="section-label">Questions</span>
+        <h2 class="section-title">Frequently Asked Questions</h2>
+    </div>
+    <div class="faq-list">
+        <div class="faq-item">
+            <button class="faq-question">Do I need to know how to swim? <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></button>
+            <div class="faq-answer"><p>No, swimming ability is not required at all. Aquatherapy takes place in a controlled, shallow pool with a therapist present at all times. Most exercises are performed standing, with support bars and flotation aids available as needed.</p></div>
+        </div>
+        <div class="faq-item">
+            <button class="faq-question">How warm is the water? <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></button>
+            <div class="faq-answer"><p>Our therapeutic pool is maintained between 33–36°C, which is significantly warmer than a standard swimming pool. This temperature is specifically chosen to relax muscles, reduce pain, and improve blood circulation during therapy.</p></div>
+        </div>
+        <div class="faq-item">
+            <button class="faq-question">How many sessions will I need? <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></button>
+            <div class="faq-answer"><p>This varies based on your condition and goals. Typically, patients begin with 2–3 sessions per week for 4–8 weeks. Your therapist will provide a clear treatment plan after your initial assessment and adjust it based on your progress.</p></div>
+        </div>
+        <div class="faq-item">
+            <button class="faq-question">Is aquatherapy safe after surgery? <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></button>
+            <div class="faq-answer"><p>Yes, aquatherapy is often recommended after surgery, typically once wounds have healed sufficiently (usually 2–4 weeks post-surgery). Our therapists coordinate with your surgeon to determine the optimal timing for beginning aquatic rehabilitation.</p></div>
+        </div>
+        <div class="faq-item">
+            <button class="faq-question">What should I bring to my session? <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></button>
+            <div class="faq-answer"><p>Please bring swimwear, a towel, and a change of clothes. We provide all therapeutic equipment, flotation aids, and changing facilities. Lockers are available for your belongings during sessions.</p></div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+    <h2>Ready to Experience Aquatherapy?</h2>
+    <p>Book a consultation with our aquatic therapy specialist to discuss how water-based rehabilitation can accelerate your recovery.</p>
+    <a href="contact.html" class="btn-primary">Book Aquatherapy Consultation <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h12M12 5l7 7-7 7"/></svg></a>
+</section>
+
+<footer class="footer">
+    <div class="footer-inner">
+        <p>&copy; 2026 Navthera Advanced Physio and Rehab Centre. All rights reserved.</p>
+        <div class="footer-links"><a href="index.html">Home</a><a href="about.html">About</a><a href="services.html">Services</a><a href="aquatherapy.html">Aquatherapy</a><a href="contact.html">Contact</a></div>
+    </div>
+</footer>
+
+<script>
+document.getElementById('menuToggle').addEventListener('click',()=>{document.getElementById('navLinks').classList.toggle('open');});
+// FAQ accordion
+document.querySelectorAll('.faq-question').forEach(btn=>{
+    btn.addEventListener('click',()=>{
+        const item=btn.parentElement;
+        const wasOpen=item.classList.contains('open');
+        document.querySelectorAll('.faq-item').forEach(i=>i.classList.remove('open'));
+        if(!wasOpen) item.classList.add('open');
+    });
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,12 @@
+{
+  "name": "navthera-website",
+  "version": "1.0.0",
+  "description": "Navthera Physiotherapy & Rehabilitation Centre - Official Website",
+  "scripts": {
+    "dev": "npx serve .",
+    "start": "npx serve ."
+  },
+  "keywords": ["physiotherapy", "rehabilitation", "navthera", "jaipur"],
+  "license": "UNLICENSED",
+  "private": true
+}

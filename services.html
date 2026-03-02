@@ -7,6 +7,7 @@
     <meta name="description" content="Explore all 10 rehabilitation departments at Navthera Jaipur — Neuro Rehab, Orthopaedic, Aquatherapy, Sports Rehab, Pelvic Health, Geriatric, Oncology, Vestibular, Cardio-Respiratory, and Women's Health.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="navbar.css">
     <style>
         *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
         :root {
@@ -24,23 +25,7 @@
         html { scroll-behavior: smooth; overflow-x: hidden; }
         body { font-family: 'Inter', -apple-system, sans-serif; color: var(--text-dark); background: var(--cream); overflow-x: hidden; -webkit-font-smoothing: antialiased; }
 
-        /* ---- NAVBAR ---- */
-        .navbar { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; padding: 16px 60px; display: flex; align-items: center; justify-content: space-between; background: rgba(255,255,255,0.97); backdrop-filter: blur(20px); box-shadow: 0 1px 20px rgba(13,40,68,0.06); transition: padding 0.3s; }
-        .navbar-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
-        .navbar-logo img { width: 44px; height: 44px; object-fit: contain; }
-        .navbar-brand { font-family: 'Playfair Display', serif; font-size: 1.35rem; font-weight: 700; color: var(--navy); }
-        .navbar-brand small { display: block; font-family: 'Inter', sans-serif; font-size: 0.5rem; font-weight: 400; letter-spacing: 3px; text-transform: uppercase; color: var(--teal); }
-        .nav-links { display: flex; align-items: center; gap: 32px; list-style: none; }
-        .nav-links a { text-decoration: none; font-size: 0.85rem; font-weight: 500; color: var(--text-muted); position: relative; transition: color 0.3s; }
-        .nav-links a::after { content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 1.5px; background: var(--gold); transition: width 0.3s; }
-        .nav-links a:hover { color: var(--navy); }
-        .nav-links a:hover::after { width: 100%; }
-        .nav-links a.active { color: var(--navy); font-weight: 600; }
-        .nav-links a.active::after { width: 100%; }
-        .nav-cta { padding: 10px 26px; border-radius: 50px; font-size: 0.82rem; font-weight: 600; text-decoration: none; background: var(--gold); color: var(--navy-deep); transition: all 0.3s; }
-        .nav-cta:hover { background: var(--gold-light); transform: translateY(-1px); box-shadow: 0 4px 15px rgba(201,169,110,0.4); }
-        .menu-toggle { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 5px; }
-        .menu-toggle span { width: 24px; height: 2px; background: var(--navy); border-radius: 2px; }
+        /* Navbar styles moved to navbar.css */
 
         /* ---- PAGE HERO ---- */
         .page-hero { padding: 140px 60px 60px; background: linear-gradient(135deg, var(--navy-deep) 0%, var(--navy) 50%, var(--teal-dark) 100%); position: relative; overflow: hidden; text-align: center; }
@@ -56,8 +41,8 @@
         .services-layout { max-width: 960px; margin: 0 auto; padding: 40px 40px 60px; display: grid; grid-template-columns: 1fr; gap: 30px; min-height: auto; }
 
         /* ---- SIDEBAR TABS ---- */
-        .dept-sidebar { position: relative; top: auto; align-self: auto; width: 100%; margin-bottom: 24px; }
-        .dept-tab-list { display: flex; flex-direction: row; flex-wrap: wrap; justify-content: center; gap: 8px; padding: 0; }
+        .dept-sidebar { position: relative; top: auto; align-self: auto; width: 100%; margin-bottom: 24px; overflow: hidden; }
+        .dept-tab-list { display: flex; flex-direction: row; flex-wrap: wrap; justify-content: center; gap: 8px; padding: 0; width: 100%; }
         .dept-tab {
             display: flex; align-items: center; justify-content: center; gap: 6px;
             padding: 10px 14px; border-radius: 8px;
@@ -83,7 +68,7 @@
         .dept-tab-subtitle { display: none; }
 
         /* ---- CONTENT AREA ---- */
-        .dept-content-area { background: var(--white); border-radius: var(--radius); box-shadow: var(--shadow-soft); overflow: hidden; }
+        .dept-content-area { background: var(--white); border-radius: var(--radius); box-shadow: var(--shadow-soft); overflow: visible; }
 
         /* Tab Panel */
         .dept-panel { display: none; animation: panelFadeIn 0.35s ease; }
@@ -105,8 +90,8 @@
         .section-label { font-size: 0.72rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--teal); margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
         .section-label::after { content: ''; flex: 1; height: 1px; background: rgba(26,138,125,0.15); }
 
-        .conditions-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 16px; }
-        .condition-card { background: var(--cream); border-radius: 12px; padding: 20px 22px; transition: all 0.25s; }
+        .conditions-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 16px; width: 100%; }
+        .condition-card { background: var(--cream); border-radius: 12px; padding: 20px 22px; transition: all 0.25s; min-width: 0; overflow: hidden; word-wrap: break-word; overflow-wrap: break-word; }
         .condition-card:hover { background: #F0EDEA; }
         .condition-card-title { font-size: 0.78rem; font-weight: 700; color: var(--navy); margin-bottom: 10px; padding-bottom: 8px; border-bottom: 1px solid rgba(13,40,68,0.06); }
         .condition-card ul { list-style: none; }
@@ -425,7 +410,7 @@
             .services-layout { padding: 30px 24px 50px; max-width: 100%; }
             .page-hero, .cta-section { padding-left: 24px; padding-right: 24px; }
             .panel-header, .panel-body { padding-left: 28px; padding-right: 28px; }
-            .navbar { padding: 14px 24px; }
+            .navbar { padding: 16px 30px; }
         }
         @media (max-width: 768px) {
             .navbar { padding: 14px 20px; }
@@ -434,20 +419,248 @@
             .nav-links.open { display: flex; flex-direction: column; position: absolute; top: 100%; left: 0; right: 0; background: var(--white); padding: 30px; box-shadow: var(--shadow-medium); }
             .page-hero { padding: 120px 20px 50px; }
             .services-layout { padding: 20px 16px 40px; }
-            .conditions-grid { grid-template-columns: 1fr; }
+            .conditions-grid { grid-template-columns: 1fr; gap: 12px; }
+            .condition-card { padding: 16px 18px; }
             .panel-header, .panel-body { padding-left: 20px; padding-right: 20px; }
-            .panel-cta-row { flex-direction: column; align-items: stretch; }
-            .btn-dept, .btn-aqua-detail { justify-content: center; }
+            .panel-cta-row { flex-direction: column; align-items: stretch; gap: 12px; }
+            .btn-dept, .btn-aqua-detail { justify-content: center; width: 100%; }
             .footer { padding: 40px 20px 20px; }
+        }
+
+        /* ============================================
+           RESPONSIVE DESIGN: MOBILE PHONE (< 480px)
+           ============================================ */
+        @media (max-width: 480px) {
+            /* Navbar */
+            .navbar {
+                padding: 12px 16px;
+                height: 65px;
+            }
+            .menu-toggle { width: 36px; height: 36px; gap: 4px; }
+            .menu-toggle span { width: 5px; height: 0.4px; }
+            .menu-toggle.active span:nth-child(1) {
+                transform: translateY(8px) rotate(45deg);
+            }
+            .menu-toggle.active span:nth-child(2) {
+                opacity: 0;
+            }
+            .menu-toggle.active span:nth-child(3) {
+                transform: translateY(-8px) rotate(-45deg);
+            }
+
+            /* Page Hero */
+            .page-hero {
+                padding: 100px 16px 40px;
+            }
+            .page-hero-content { padding: 0; }
+            .breadcrumb { font-size: 0.65rem; margin-bottom: 12px; }
+            .page-hero h1 {
+                font-size: clamp(1.4rem, 3.5vw, 2rem);
+                margin-bottom: 10px;
+            }
+            .page-hero p { font-size: 0.85rem; }
+
+            /* Services Layout */
+            .services-layout {
+                padding: 16px 12px 30px;
+                gap: 20px;
+            }
+
+            /* Department Tabs */
+            .dept-sidebar { margin-bottom: 16px; }
+            .dept-tab-list {
+                gap: 6px;
+                flex-wrap: nowrap;
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+                scroll-behavior: smooth;
+                padding: 0 0 8px 0;
+                margin: 0 -12px;
+                padding-left: 12px;
+                padding-right: 12px;
+            }
+            .dept-tab-list::-webkit-scrollbar {
+                height: 3px;
+            }
+            .dept-tab-list::-webkit-scrollbar-track {
+                background: rgba(13, 40, 68, 0.05);
+                border-radius: 10px;
+            }
+            .dept-tab-list::-webkit-scrollbar-thumb {
+                background: rgba(26, 138, 125, 0.3);
+                border-radius: 10px;
+            }
+            .dept-tab {
+                padding: 8px 12px;
+                font-size: 0.7rem;
+                flex-shrink: 0;
+                white-space: nowrap;
+                min-width: fit-content;
+            }
+            .dept-tab-icon {
+                width: 24px;
+                height: 24px;
+                flex-shrink: 0;
+            }
+            .dept-tab-icon svg { width: 12px; height: 12px; }
+            .dept-tab-name { font-size: 0.75rem; }
+
+            /* Content Area */
+            .dept-content-area {
+                border-radius: 12px;
+                overflow-x: hidden;
+            }
+
+            /* Panel Header */
+            .panel-header {
+                padding: 24px 16px 20px;
+                border-bottom: 1px solid rgba(13,40,68,0.06);
+            }
+            .panel-tag {
+                font-size: 0.65rem;
+                margin-bottom: 6px;
+            }
+            .panel-header h2 {
+                font-size: 1.4rem;
+                margin-bottom: 8px;
+            }
+            .panel-header-desc {
+                font-size: 0.8rem;
+                line-height: 1.5;
+            }
+
+            /* Panel Body */
+            .panel-body {
+                padding: 20px 16px 24px;
+            }
+
+            /* Conditions Section */
+            .conditions-section {
+                margin-bottom: 24px;
+            }
+            .section-label {
+                font-size: 0.65rem;
+                margin-bottom: 12px;
+                flex-wrap: wrap;
+            }
+
+            /* Conditions Grid - Full Width Single Column */
+            .conditions-grid {
+                display: grid;
+                grid-template-columns: 1fr;
+                gap: 10px;
+                width: 100%;
+                overflow-x: hidden;
+            }
+            .condition-card {
+                background: var(--cream);
+                border-radius: 10px;
+                padding: 14px 16px;
+                transition: all 0.25s;
+                width: 100%;
+                box-sizing: border-box;
+                overflow: hidden;
+            }
+            .condition-card:hover { background: #F0EDEA; }
+            .condition-card-title {
+                font-size: 0.75rem;
+                font-weight: 700;
+                color: var(--navy);
+                margin-bottom: 8px;
+                padding-bottom: 6px;
+                border-bottom: 1px solid rgba(13,40,68,0.06);
+            }
+            .condition-card ul { list-style: none; }
+            .condition-card li {
+                font-size: 0.75rem;
+                color: var(--text-muted);
+                padding: 3px 0 3px 14px;
+                position: relative;
+                line-height: 1.4;
+            }
+            .condition-card li::before {
+                width: 4px;
+                height: 4px;
+                top: 8px;
+            }
+
+            /* Spoke Diagram */
+            .spoke-hub {
+                gap: 6px;
+                flex-direction: column;
+                align-items: center;
+            }
+            .hub-icon {
+                width: 50px;
+                height: 50px;
+            }
+            .spoke-items {
+                grid-template-columns: 1fr;
+                gap: 12px;
+                width: 100%;
+                overflow-x: hidden;
+            }
+            .spoke-label {
+                font-size: 0.75rem;
+                max-width: none;
+                width: 100%;
+            }
+
+            /* CTA Row */
+            .panel-cta-row {
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+                padding-top: 12px;
+                width: 100%;
+            }
+            .btn-dept, .btn-aqua-detail {
+                justify-content: center;
+                width: 100%;
+                font-size: 0.78rem;
+                padding: 12px 16px;
+            }
+            .btn-dept {
+                padding: 12px 16px;
+            }
+            .btn-aqua-detail {
+                padding: 12px 16px;
+            }
+
+            /* CTA Section */
+            .cta-section {
+                padding: 40px 16px;
+                margin-top: 30px;
+            }
+            .cta-inner h2 {
+                font-size: clamp(1.2rem, 2.8vw, 1.6rem);
+                margin-bottom: 10px;
+            }
+            .cta-inner p {
+                font-size: 0.8rem;
+                margin-bottom: 20px;
+            }
+            .btn-primary {
+                padding: 12px 24px;
+                font-size: 0.75rem;
+                width: 100%;
+                justify-content: center;
+            }
+
+            /* Footer */
+            .footer { padding: 30px 16px 16px; }
+            .footer-inner { flex-direction: column; gap: 16px; }
+            .footer-nav a { font-size: 0.8rem; }
+            .footer-cta { width: 100%; }
         }
     </style>
 </head>
 <body>
 
 <!-- NAVBAR -->
-<nav class="navbar">
+<nav class="navbar" data-theme="light">
     <a href="index.html" class="navbar-logo">
-        <img src="assets/logo.svg" alt="Navthera Logo">
+        <img src="assets/Navthera_logo_symbol_jpg.png" alt="Navthera Logo">
         <div class="navbar-brand">Navthera<small>Advanced Physio & Rehab</small></div>
     </a>
     <ul class="nav-links" id="navLinks">
@@ -458,7 +671,7 @@
         <li><a href="contact.html">Contact</a></li>
     </ul>
     <a href="contact.html" class="nav-cta">Book Appointment</a>
-    <button class="menu-toggle" id="menuToggle"><span></span><span></span><span></span></button>
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
 </nav>
 
 <!-- PAGE HERO -->
@@ -1252,8 +1465,21 @@
 
 <script>
 // Mobile menu
-document.getElementById('menuToggle').addEventListener('click', () => {
-    document.getElementById('navLinks').classList.toggle('open');
+// Mobile menu toggle
+const menuToggle = document.getElementById('menuToggle');
+const navLinks = document.getElementById('navLinks');
+
+menuToggle.addEventListener('click', () => {
+    navLinks.classList.toggle('open');
+    menuToggle.classList.toggle('active');
+});
+
+// Close mobile menu when a link is clicked
+document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
+        navLinks.classList.remove('open');
+        menuToggle.classList.remove('active');
+    });
 });
 
 // Tab switching — NO scrolling, just show/hide panels
@@ -1287,5 +1513,6 @@ window.addEventListener('DOMContentLoaded', () => {
     }
 });
 </script>
+<script src="navbar.js" defer></script>
 </body>
 </html>

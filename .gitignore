@@ -18,3 +18,6 @@ npm-debug.log*
 
 # Original unprocessed images (keep clean versions only)
 assets/Aqua-equipment-pool.png
+website_building_context_and_dump
+CLAUDE.md
+serve.mjs

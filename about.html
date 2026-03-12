@@ -63,6 +63,29 @@
         .team-card h3{font-size:1.1rem;font-weight:600;color:var(--navy);margin-bottom:4px;}
         .team-card .role{font-size:0.8rem;color:var(--teal);font-weight:600;letter-spacing:1px;text-transform:uppercase;margin-bottom:12px;}
         .team-card p{font-size:0.85rem;color:var(--text-muted);line-height:1.65;}
+        /* Placeholders */
+        .ph-avatar{width:100px;height:100px;border-radius:50%;margin:0 auto 20px;background:rgba(13,40,68,0.04);border:2px dashed rgba(13,40,68,0.15);display:flex;align-items:center;justify-content:center;}
+        .ph-avatar svg{width:32px;height:32px;color:rgba(13,40,68,0.18);}
+        .ph-avatar-lg{width:72px;height:72px;border-radius:50%;background:rgba(13,40,68,0.04);border:2px dashed rgba(13,40,68,0.15);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+        .ph-avatar-lg svg{width:26px;height:26px;color:rgba(13,40,68,0.18);}
+        .ph-name{font-family:'Playfair Display',serif;font-size:1.1rem;color:rgba(13,40,68,0.22);margin-bottom:4px;font-style:italic;}
+        .ph-name-lg{font-family:'Playfair Display',serif;font-size:1.4rem;color:rgba(13,40,68,0.22);margin-bottom:6px;font-style:italic;}
+        .ph-role{display:inline-block;font-size:0.72rem;letter-spacing:1.5px;text-transform:uppercase;color:rgba(26,138,125,0.35);font-weight:600;border:1px dashed rgba(26,138,125,0.2);padding:4px 12px;border-radius:50px;margin-bottom:14px;}
+        .ph-bio{font-size:0.82rem;color:rgba(13,40,68,0.18);line-height:1.65;font-style:italic;}
+        /* Mission single */
+        .mission-single{max-width:780px;margin:0 auto;padding:56px 52px;border-radius:24px;background:var(--white);border:1px solid rgba(13,40,68,0.06);border-top:3px solid var(--teal);box-shadow:var(--shadow-soft);}
+        .mission-single h3{font-family:'Playfair Display',serif;font-size:1.6rem;color:var(--navy);margin-bottom:20px;}
+        .mission-single p{font-size:1rem;color:var(--text-muted);line-height:1.9;}
+
+        /* Mission quote block */
+        .mission-quote{max-width:720px;margin:0 auto 60px;text-align:center;position:relative;padding:48px 52px;background:var(--white);border-radius:20px;border:1px solid rgba(13,40,68,0.06);border-top:3px solid var(--teal);box-shadow:var(--shadow-soft);}
+        .mission-quote p{font-size:1.08rem;color:var(--text-muted);line-height:1.95;position:relative;z-index:1;}
+        /* Values divider */
+        .values-sub-label{text-align:center;margin-bottom:40px;display:flex;align-items:center;justify-content:center;gap:0;}
+        .values-sub-label::before,.values-sub-label::after{content:'';flex:1;height:1px;background:rgba(13,40,68,0.1);max-width:120px;}
+        .values-sub-label::before{margin-right:20px;}
+        .values-sub-label::after{margin-left:20px;}
+        .values-sub-label span{font-size:0.68rem;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:rgba(13,40,68,0.35);}
 
         /* Timeline */
         .timeline-section{background:linear-gradient(135deg,var(--navy-deep),var(--navy));padding:100px 60px;}
@@ -133,10 +156,10 @@
     </a>
     <ul class="nav-links" id="navLinks">
         <li><a href="index.html">Home</a></li>
-        <li><a href="about.html" class="active">About</a></li>
         <li><a href="services.html">Services</a></li>
         <li><a href="aquatherapy.html">Aquatherapy</a></li>
-        <li><a href="contact.html">Contact</a></li>
+        <li><a href="about.html" class="active">About Us</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
     </ul>
     <a href="contact.html" class="nav-cta">Book Appointment</a>
     <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
@@ -147,41 +170,66 @@
     <div class="page-hero-content">
         <div class="breadcrumb"><a href="index.html">Home</a> &nbsp;/&nbsp; About Us</div>
         <h1>The Vision Behind Navthera</h1>
-        <p>We set out to build something Rajasthan had never seen — a rehabilitation centre that brings world-class technology and compassionate care under one roof.</p>
+        <p>We set out to build a rehabilitation centre that brings world-class technology and compassionate care under one roof.</p>
     </div>
 </section>
 
-<!-- MISSION & VISION -->
-<section class="section">
-    <div class="mission-grid">
-        <div class="mission-card teal-accent">
-            <h3>Our Mission</h3>
-            <p>To make advanced rehabilitation accessible to every patient in Rajasthan. We believe that geography should never limit the quality of care someone receives. By bringing cutting-edge technology and evidence-based protocols to Jaipur, we're closing the gap between what's available in metro super-specialty hospitals and what patients in our region deserve.</p>
-        </div>
-        <div class="mission-card gold-accent">
-            <h3>Our Vision</h3>
-            <p>To establish Navthera as North India's most trusted physiotherapy and rehabilitation destination — where patients don't just recover, but return to life stronger. We envision a future where every individual, regardless of their condition, has access to the technology and expertise that can transform their recovery journey.</p>
-        </div>
-    </div>
-</section>
-
-<!-- OUR STORY -->
-<section class="section story-section">
-    <div class="story-content">
-        <span class="section-label">Our Story</span>
-        <h2 class="section-title">Built on a Personal Promise</h2>
-        <p>Navthera was born from a simple but powerful observation — patients in Rajasthan were traveling hundreds of kilometres to access rehabilitation technology that should be available locally. Families were uprooted, recovery was delayed, and costs spiralled unnecessarily.</p>
-        <p>We decided to change that. With a team of passionate physiotherapists and rehabilitation specialists, we designed Navthera from the ground up — not as just another clinic, but as a comprehensive rehabilitation ecosystem. Every room, every piece of equipment, every protocol was chosen with a single question in mind: does this give our patients the best possible chance of recovery?</p>
-        <p>The result is Jaipur's most advanced physiotherapy centre, complete with Rajasthan's first aquatherapy pool, neuro rehabilitation robotics, cryotherapy suites, and much more.</p>
-    </div>
-</section>
-
-<!-- VALUES -->
-<section class="section">
+<!-- TEAM -->
+<section class="section team-section" style="background:var(--cream);">
     <div style="text-align:center;margin-bottom:50px;">
-        <span class="section-label">Our Values</span>
-        <h2 class="section-title">What Guides Every Decision</h2>
+        <span class="section-label">Our Team</span>
+        <h2 class="section-title">Expert Clinicians, Compassionate Healers</h2>
     </div>
+    <div class="team-grid">
+        <div class="team-card">
+            <div class="ph-avatar"><svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z"/></svg></div>
+            <p class="ph-name">Team Member Name</p>
+            <span class="ph-role">Role / Designation</span>
+            <p class="ph-bio">Photo and details coming soon.</p>
+        </div>
+        <div class="team-card">
+            <div class="ph-avatar"><svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z"/></svg></div>
+            <p class="ph-name">Team Member Name</p>
+            <span class="ph-role">Role / Designation</span>
+            <p class="ph-bio">Photo and details coming soon.</p>
+        </div>
+        <div class="team-card">
+            <div class="ph-avatar"><svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z"/></svg></div>
+            <p class="ph-name">Team Member Name</p>
+            <span class="ph-role">Role / Designation</span>
+            <p class="ph-bio">Photo and details coming soon.</p>
+        </div>
+    </div>
+</section>
+
+<!-- OUR DIRECTOR -->
+<section class="section" style="background:var(--white);">
+    <div style="text-align:center;margin-bottom:50px;">
+        <span class="section-label">Leadership</span>
+        <h2 class="section-title">Our Director</h2>
+    </div>
+    <div style="max-width:620px;margin:0 auto;">
+        <div class="team-card" style="display:flex;gap:32px;align-items:flex-start;text-align:left;padding:44px;">
+            <div class="ph-avatar-lg"><svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z"/></svg></div>
+            <div>
+                <p class="ph-name-lg">Director's Name</p>
+                <span class="ph-role">Founder & Director</span>
+                <p class="ph-bio" style="font-size:0.92rem;">Photo and biography coming soon.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- PURPOSE & VALUES -->
+<section class="section" style="background:var(--cream);">
+    <div style="text-align:center;margin-bottom:52px;">
+        <span class="section-label">Purpose & Values</span>
+        <h2 class="section-title">What We Stand For</h2>
+    </div>
+    <div class="mission-quote">
+        <p>To deliver the highest standard of rehabilitation care through evidence-based treatment, cutting-edge technology, and a patient-first approach. We believe that every individual deserves access to world-class therapy — and we've built Navthera to make that a reality.</p>
+    </div>
+    <div class="values-sub-label"><span>How We Live It</span></div>
     <div class="values-grid">
         <div class="value-card">
             <div class="value-icon"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></div>
@@ -197,62 +245,6 @@
             <div class="value-icon"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z"/></svg></div>
             <h3>Innovation Always</h3>
             <p>We continuously invest in the latest rehabilitation technology and training to stay at the forefront of recovery science.</p>
-        </div>
-    </div>
-</section>
-
-<!-- TEAM -->
-<section class="section team-section" style="background:var(--cream);">
-    <div style="text-align:center;margin-bottom:50px;">
-        <span class="section-label">Our Team</span>
-        <h2 class="section-title">Expert Clinicians, Compassionate Healers</h2>
-    </div>
-    <div class="team-grid">
-        <div class="team-card">
-            <div class="team-avatar">N</div>
-            <h3>Lead Physiotherapist</h3>
-            <div class="role">Founder & Clinical Director</div>
-            <p>With extensive experience in neurological and musculoskeletal rehabilitation, our founder built Navthera to fill a critical gap in Rajasthan's healthcare landscape.</p>
-        </div>
-        <div class="team-card">
-            <div class="team-avatar">A</div>
-            <h3>Head of Neuro Rehab</h3>
-            <div class="role">Senior Neurophysiotherapist</div>
-            <p>Specialised in stroke recovery, spinal cord injury rehabilitation, and robotic-assisted therapy with advanced certifications in neuro-rehabilitation.</p>
-        </div>
-        <div class="team-card">
-            <div class="team-avatar">S</div>
-            <h3>Aquatherapy Specialist</h3>
-            <div class="role">Certified Aquatic Therapist</div>
-            <p>Internationally certified in aquatic therapy techniques, our specialist designs tailored water-based programs for orthopaedic, neurological, and paediatric patients.</p>
-        </div>
-    </div>
-</section>
-
-<!-- TIMELINE -->
-<section class="timeline-section">
-    <span class="section-label">Our Journey</span>
-    <h2 class="section-title">Building Navthera</h2>
-    <div class="timeline">
-        <div class="timeline-item">
-            <div class="year">The Beginning</div>
-            <h4>A Vision Takes Shape</h4>
-            <p>The idea for Navthera was conceived — a centre that would bring world-class rehabilitation infrastructure to Rajasthan for the first time.</p>
-        </div>
-        <div class="timeline-item">
-            <div class="year">Research & Design</div>
-            <h4>Designed for Excellence</h4>
-            <p>Extensive research into global rehabilitation best practices shaped every aspect of the centre's design, from the aquatherapy pool specifications to the neuro rehab equipment selection.</p>
-        </div>
-        <div class="timeline-item">
-            <div class="year">Equipment & Training</div>
-            <h4>World-Class Technology Arrives</h4>
-            <p>Advanced equipment was sourced from leading medical technology manufacturers worldwide, and our team underwent specialized training programs.</p>
-        </div>
-        <div class="timeline-item">
-            <div class="year">Launch</div>
-            <h4>Navthera Opens Its Doors</h4>
-            <p>Jaipur's most advanced physiotherapy and rehabilitation centre welcomes its first patients, bringing Rajasthan's first aquatherapy pool and comprehensive rehab services.</p>
         </div>
     </div>
 </section>

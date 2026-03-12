@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AquaFit — Train in Water | Navthera Advanced Physio and Rehab Centre</title>
+    <meta name="description" content="AquaFit at Navthera, Jaipur — underwater treadmill, aqua bike, water resistance training. A completely new way to work out with zero joint impact.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="navbar.css">
+    <style>
+        *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+        :root{
+            --navy:#0D2844;--navy-deep:#081B30;
+            --teal:#1A8A7D;--teal-dark:#14706A;--teal-mid:#0d6b63;
+            --cyan:#3EC6C0;--cyan-light:#6EDCD8;
+            --gold:#C9A96E;--gold-light:#E0C99A;
+            --cream:#F8F6F2;--white:#FFFFFF;
+            --text-dark:#1A1A2E;--text-muted:#5A6B7D;
+            --shadow-soft:0 4px 30px rgba(13,40,68,0.08);
+            --shadow-medium:0 8px 40px rgba(13,40,68,0.12);
+        }
+        html{scroll-behavior:smooth;overflow-x:hidden;}
+        body{font-family:'Inter',-apple-system,sans-serif;color:var(--text-dark);background:var(--white);overflow-x:hidden;-webkit-font-smoothing:antialiased;}
+
+        /* ============================================================
+           HERO — Full-height energetic
+        ============================================================ */
+        .fit-hero{
+            min-height:100vh;padding:160px 60px 100px;
+            display:flex;align-items:center;
+            position:relative;overflow:hidden;
+            background:linear-gradient(145deg,#081B30 0%,#0a3d5c 40%,var(--teal-mid) 75%,#2BC0B4 100%);
+        }
+        /* Animated mesh */
+        .fit-hero::before{
+            content:'';position:absolute;inset:0;
+            background-image:linear-gradient(rgba(62,198,192,0.04) 1px,transparent 1px),linear-gradient(90deg,rgba(62,198,192,0.04) 1px,transparent 1px);
+            background-size:60px 60px;
+            animation:meshDrift 30s linear infinite;
+            z-index:1;
+        }
+        @keyframes meshDrift{from{background-position:0 0;}to{background-position:60px 60px;}}
+        /* Glow orbs */
+        .fit-orb{position:absolute;border-radius:50%;filter:blur(70px);pointer-events:none;z-index:0;}
+        .fit-orb-1{width:500px;height:500px;background:var(--cyan);opacity:0.12;top:-100px;right:-100px;animation:orbDrift 18s ease-in-out infinite;}
+        .fit-orb-2{width:350px;height:350px;background:var(--teal);opacity:0.15;bottom:-80px;left:-80px;animation:orbDrift 14s ease-in-out infinite reverse;}
+        .fit-orb-3{width:200px;height:200px;background:var(--gold);opacity:0.07;top:40%;left:30%;animation:orbDrift 22s ease-in-out infinite;}
+        @keyframes orbDrift{0%,100%{transform:translate(0,0);}33%{transform:translate(40px,-40px);}66%{transform:translate(-30px,30px);}}
+        /* Floating energy particles */
+        .fit-particle{position:absolute;border-radius:50%;pointer-events:none;z-index:1;}
+        .fit-particle:nth-child(1){width:4px;height:4px;background:var(--cyan);top:25%;left:15%;animation:particleFloat 8s ease-in-out infinite;}
+        .fit-particle:nth-child(2){width:3px;height:3px;background:white;opacity:0.4;top:60%;left:75%;animation:particleFloat 6s ease-in-out infinite 2s;}
+        .fit-particle:nth-child(3){width:5px;height:5px;background:var(--gold);opacity:0.6;top:35%;right:20%;animation:particleFloat 10s ease-in-out infinite 4s;}
+        .fit-particle:nth-child(4){width:3px;height:3px;background:var(--cyan-light);top:70%;left:40%;animation:particleFloat 7s ease-in-out infinite 1s;}
+        @keyframes particleFloat{0%,100%{transform:translateY(0) scale(1);}50%{transform:translateY(-50px) scale(1.5);}}
+
+        .fit-hero-inner{position:relative;z-index:2;max-width:1100px;margin:0 auto;width:100%;display:flex;align-items:center;gap:80px;}
+        .fit-hero-text{flex:1;}
+        .fit-hero-visual{flex:0 0 380px;display:flex;flex-direction:column;gap:16px;}
+
+        .fit-back{display:inline-flex;align-items:center;gap:8px;font-size:0.72rem;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,0.4);text-decoration:none;margin-bottom:28px;transition:color 0.3s;}
+        .fit-back:hover{color:var(--cyan-light);}
+        .fit-back svg{width:14px;height:14px;}
+
+        .fit-tag{display:inline-flex;align-items:center;gap:8px;font-size:0.65rem;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;padding:8px 18px;border-radius:50px;background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.22);color:white;margin-bottom:24px;}
+        .fit-tag svg{width:13px;height:13px;}
+
+        .fit-hero h1{font-family:'Playfair Display',serif;font-size:clamp(2.6rem,5vw,4.2rem);font-weight:700;color:var(--white);line-height:1.05;margin-bottom:24px;}
+        .fit-hero h1 em{font-style:normal;background:linear-gradient(135deg,var(--cyan-light),var(--gold-light));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+
+        .fit-hero-desc{font-size:1.05rem;color:rgba(255,255,255,0.6);line-height:1.8;max-width:520px;margin-bottom:40px;}
+
+        .fit-hero-actions{display:flex;align-items:center;gap:16px;flex-wrap:wrap;}
+        .btn-fit-primary{display:inline-flex;align-items:center;gap:10px;padding:16px 40px;border-radius:50px;background:white;color:var(--teal-dark);font-size:0.9rem;font-weight:700;text-decoration:none;transition:all 0.35s;box-shadow:0 4px 20px rgba(0,0,0,0.2);}
+        .btn-fit-primary:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(0,0,0,0.3);}
+        .btn-fit-outline{display:inline-flex;align-items:center;gap:10px;padding:15px 32px;border-radius:50px;border:1.5px solid rgba(255,255,255,0.35);color:white;font-size:0.88rem;font-weight:600;text-decoration:none;transition:all 0.35s;}
+        .btn-fit-outline:hover{background:rgba(255,255,255,0.1);border-color:rgba(255,255,255,0.6);}
+        .btn-fit-primary svg,.btn-fit-outline svg{width:16px;height:16px;}
+
+        /* Hero stat pills */
+        .fit-stat-row{display:flex;gap:16px;margin-top:36px;flex-wrap:wrap;}
+        .fit-stat{display:flex;align-items:center;gap:10px;padding:12px 20px;border-radius:50px;background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.1);}
+        .fit-stat-dot{width:8px;height:8px;border-radius:50%;background:var(--cyan);flex-shrink:0;animation:pulse 2s infinite;}
+        @keyframes pulse{0%,100%{opacity:1;}50%{opacity:0.35;}}
+        .fit-stat span{font-size:0.78rem;font-weight:500;color:rgba(255,255,255,0.7);}
+
+        /* Hero visual cards */
+        .fit-visual-card{background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.1);border-radius:20px;padding:24px;backdrop-filter:blur(10px);}
+        .fit-visual-card h4{font-size:0.82rem;font-weight:600;color:var(--white);margin-bottom:6px;display:flex;align-items:center;gap:8px;}
+        .fit-visual-card h4 svg{width:15px;height:15px;color:var(--cyan);}
+        .fit-visual-card p{font-size:0.76rem;color:rgba(255,255,255,0.45);line-height:1.6;}
+
+        /* Wave separator */
+        .wave-sep{display:block;width:100%;overflow:hidden;line-height:0;background:var(--white);}
+        .wave-sep svg{display:block;width:100%;}
+
+        /* ============================================================
+           SECTIONS
+        ============================================================ */
+        .section{padding:100px 60px;position:relative;}
+        .section-label{display:inline-block;font-size:0.7rem;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:16px;}
+        .section-title{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3.5vw,2.6rem);font-weight:600;line-height:1.2;color:var(--navy);margin-bottom:20px;}
+        .section-sub{font-size:1rem;color:var(--text-muted);line-height:1.75;max-width:680px;}
+
+        /* ============================================================
+           WHAT IS AQUAFIT
+        ============================================================ */
+        .what-aquafit{background:var(--white);}
+        .what-aquafit-inner{display:grid;grid-template-columns:1fr 1fr;gap:80px;max-width:1100px;margin:0 auto;align-items:center;}
+        .what-aquafit-text p{font-size:0.98rem;color:var(--text-muted);line-height:1.85;margin-bottom:20px;}
+        .what-aquafit-visual{display:flex;flex-direction:column;gap:16px;}
+        .what-card{padding:28px 30px;border-radius:18px;border:1px solid rgba(26,138,125,0.12);background:linear-gradient(135deg,rgba(26,138,125,0.03),rgba(62,198,192,0.02));transition:all 0.3s;}
+        .what-card:hover{border-color:rgba(62,198,192,0.3);transform:translateX(6px);}
+        .what-card-icon{width:40px;height:40px;border-radius:10px;background:linear-gradient(135deg,var(--teal),var(--cyan));display:flex;align-items:center;justify-content:center;margin-bottom:12px;}
+        .what-card-icon svg{width:20px;height:20px;color:white;}
+        .what-card h4{font-size:0.9rem;font-weight:600;color:var(--navy);margin-bottom:5px;}
+        .what-card p{font-size:0.8rem;color:var(--text-muted);line-height:1.65;}
+
+        /* ============================================================
+           EQUIPMENT
+        ============================================================ */
+        .equip-section{background:var(--cream);}
+        .equip-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;max-width:1100px;margin:50px auto 0;}
+        .equip-card{background:var(--white);border-radius:22px;overflow:hidden;border:1px solid rgba(13,40,68,0.06);transition:all 0.4s;}
+        .equip-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-medium);border-color:var(--cyan);}
+        .equip-card-top{padding:32px 28px 24px;border-bottom:1px solid rgba(13,40,68,0.05);}
+        .equip-icon{width:56px;height:56px;border-radius:16px;background:linear-gradient(135deg,var(--teal),var(--cyan));display:flex;align-items:center;justify-content:center;margin-bottom:18px;box-shadow:0 6px 20px rgba(26,138,125,0.25);}
+        .equip-icon svg{width:26px;height:26px;color:white;}
+        .equip-card h3{font-family:'Playfair Display',serif;font-size:1.15rem;color:var(--navy);margin-bottom:8px;}
+        .equip-card-top p{font-size:0.85rem;color:var(--text-muted);line-height:1.65;}
+        .equip-card-bottom{padding:20px 28px;background:rgba(26,138,125,0.03);}
+        .equip-detail{display:flex;align-items:center;gap:10px;font-size:0.78rem;color:var(--teal-dark);font-weight:500;padding:5px 0;}
+        .equip-detail svg{width:14px;height:14px;color:var(--teal);flex-shrink:0;}
+
+        /* ============================================================
+           BENEFITS
+        ============================================================ */
+        .benefits-section{background:linear-gradient(145deg,var(--navy-deep),#0a3d5c 50%,var(--teal-mid) 100%);}
+        .benefits-section .section-title{color:var(--white);}
+        .benefits-section .section-sub{color:rgba(255,255,255,0.5);}
+        .benefits-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;max-width:1100px;margin:50px auto 0;}
+        .benefit-item{padding:32px 24px;border-radius:18px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.07);text-align:center;transition:all 0.35s;}
+        .benefit-item:hover{background:rgba(255,255,255,0.09);border-color:rgba(62,198,192,0.25);transform:translateY(-4px);}
+        .benefit-num{font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:700;background:linear-gradient(135deg,var(--cyan),var(--gold-light));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:10px;}
+        .benefit-item h4{font-size:0.9rem;font-weight:600;color:var(--white);margin-bottom:8px;line-height:1.3;}
+        .benefit-item p{font-size:0.78rem;color:rgba(255,255,255,0.42);line-height:1.65;}
+
+        /* ============================================================
+           WHO IS THIS FOR
+        ============================================================ */
+        .who-section{background:var(--white);}
+        .who-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;max-width:900px;margin:40px auto 0;}
+        .who-item{display:flex;gap:18px;padding:24px;border-radius:16px;border:1px solid rgba(26,138,125,0.1);transition:all 0.3s;}
+        .who-item:hover{border-color:var(--cyan);background:rgba(62,198,192,0.03);transform:translateY(-3px);}
+        .who-dot{width:10px;height:10px;border-radius:50%;background:linear-gradient(135deg,var(--teal),var(--cyan));flex-shrink:0;margin-top:5px;}
+        .who-item h4{font-size:0.92rem;font-weight:600;color:var(--navy);margin-bottom:4px;}
+        .who-item p{font-size:0.8rem;color:var(--text-muted);line-height:1.6;}
+
+        /* ============================================================
+           PRICING
+        ============================================================ */
+        .pricing-section{background:var(--cream);}
+        .pricing-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px;max-width:900px;margin:50px auto 0;}
+        .pricing-card{border-radius:28px;overflow:hidden;position:relative;transition:transform 0.35s,box-shadow 0.35s;}
+        .pricing-card:hover{transform:translateY(-6px);}
+        .pricing-card-single{background:var(--white);border:1px solid rgba(13,40,68,0.08);box-shadow:var(--shadow-soft);}
+        .pricing-card-pack{background:linear-gradient(145deg,var(--navy-deep),#0a3d5c 55%,var(--teal-mid) 100%);border:1px solid rgba(62,198,192,0.2);box-shadow:0 12px 50px rgba(8,27,48,0.3);}
+        .pricing-card-pack:hover{box-shadow:0 20px 60px rgba(8,27,48,0.45);}
+        .pricing-popular{position:absolute;top:22px;right:22px;font-size:0.62rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:6px 14px;border-radius:50px;background:linear-gradient(135deg,var(--gold),var(--gold-light));color:var(--navy-deep);}
+        .pricing-glow{position:absolute;border-radius:50%;filter:blur(60px);pointer-events:none;width:200px;height:200px;background:var(--cyan);opacity:0.07;top:-40px;right:-40px;}
+        .pricing-body{padding:42px 40px;}
+        .pricing-card-single .pricing-body{padding:42px 40px;}
+        .pricing-tag{font-size:0.65rem;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;margin-bottom:20px;display:block;}
+        .pricing-card-single .pricing-tag{color:var(--teal);}
+        .pricing-card-pack .pricing-tag{color:var(--cyan-light);}
+        .pricing-card h3{font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:700;margin-bottom:10px;}
+        .pricing-card-single h3{color:var(--navy);}
+        .pricing-card-pack h3{color:var(--white);}
+        .pricing-card > .pricing-body > p{font-size:0.88rem;line-height:1.7;margin-bottom:28px;}
+        .pricing-card-single .pricing-body > p{color:var(--text-muted);}
+        .pricing-card-pack .pricing-body > p{color:rgba(255,255,255,0.5);}
+        .pricing-includes{list-style:none;margin-bottom:32px;display:flex;flex-direction:column;gap:10px;}
+        .pricing-includes li{font-size:0.84rem;display:flex;align-items:flex-start;gap:12px;}
+        .pricing-card-single .pricing-includes li{color:var(--text-muted);}
+        .pricing-card-pack .pricing-includes li{color:rgba(255,255,255,0.65);}
+        .pricing-check{width:18px;height:18px;border-radius:50%;flex-shrink:0;display:flex;align-items:center;justify-content:center;margin-top:1px;}
+        .pricing-card-single .pricing-check{background:rgba(26,138,125,0.12);}
+        .pricing-card-pack .pricing-check{background:rgba(62,198,192,0.2);}
+        .pricing-check svg{width:10px;height:10px;}
+        .pricing-card-single .pricing-check svg{color:var(--teal);}
+        .pricing-card-pack .pricing-check svg{color:var(--cyan);}
+        .btn-price-single{display:inline-flex;align-items:center;gap:10px;width:100%;justify-content:center;padding:16px 24px;border-radius:50px;background:linear-gradient(135deg,var(--teal),var(--cyan));color:white;font-size:0.9rem;font-weight:600;text-decoration:none;transition:all 0.35s;box-shadow:0 4px 20px rgba(26,138,125,0.25);}
+        .btn-price-single:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(26,138,125,0.45);}
+        .btn-price-pack{display:inline-flex;align-items:center;gap:10px;width:100%;justify-content:center;padding:16px 24px;border-radius:50px;background:white;color:var(--teal-dark);font-size:0.9rem;font-weight:700;text-decoration:none;transition:all 0.35s;box-shadow:0 4px 20px rgba(0,0,0,0.15);}
+        .btn-price-pack:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(0,0,0,0.25);}
+        .btn-price-single svg,.btn-price-pack svg{width:16px;height:16px;}
+        .pricing-note{text-align:center;margin-top:24px;font-size:0.8rem;color:var(--text-muted);}
+
+        /* ============================================================
+           FAQ
+        ============================================================ */
+        .faq-section{background:var(--white);}
+        .faq-list{max-width:800px;margin:0 auto;}
+        .faq-item{margin-bottom:10px;border-radius:12px;background:var(--cream);border:1px solid rgba(13,40,68,0.05);overflow:hidden;transition:box-shadow 0.3s;}
+        .faq-item:hover{box-shadow:var(--shadow-soft);}
+        .faq-question{display:flex;align-items:center;justify-content:space-between;padding:20px 24px;cursor:pointer;font-size:0.95rem;font-weight:600;color:var(--navy);background:none;border:none;width:100%;text-align:left;font-family:inherit;}
+        .faq-question svg{width:20px;height:20px;color:var(--teal);flex-shrink:0;transition:transform 0.3s;}
+        .faq-item.open .faq-question svg{transform:rotate(180deg);}
+        .faq-answer{padding:0 24px;max-height:0;overflow:hidden;transition:all 0.3s;}
+        .faq-item.open .faq-answer{max-height:300px;padding:0 24px 20px;}
+        .faq-answer p{font-size:0.9rem;color:var(--text-muted);line-height:1.75;}
+
+        /* ============================================================
+           CTA
+        ============================================================ */
+        .cta-section{padding:100px 60px;text-align:center;background:linear-gradient(145deg,var(--navy-deep),#0a3d5c 55%,var(--teal-mid) 100%);position:relative;overflow:hidden;}
+        .cta-section::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(62,198,192,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(62,198,192,0.03) 1px,transparent 1px);background-size:60px 60px;z-index:0;}
+        .cta-inner{position:relative;z-index:1;}
+        .cta-section h2{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3.5vw,2.8rem);color:var(--white);margin-bottom:16px;line-height:1.2;}
+        .cta-section p{font-size:1rem;color:rgba(255,255,255,0.55);margin-bottom:36px;max-width:550px;margin-left:auto;margin-right:auto;line-height:1.75;}
+        .cta-btns{display:flex;align-items:center;justify-content:center;gap:16px;flex-wrap:wrap;}
+
+        /* ============================================================
+           FOOTER
+        ============================================================ */
+        .footer{background:var(--navy-deep);padding:60px 60px 30px;}
+        .footer-inner{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:20px;max-width:1200px;margin:0 auto;}
+        .footer-inner p{font-size:0.78rem;color:rgba(255,255,255,0.25);}
+        .footer-links{display:flex;gap:24px;}
+        .footer-links a{font-size:0.8rem;color:rgba(255,255,255,0.4);text-decoration:none;transition:color 0.3s;}
+        .footer-links a:hover{color:var(--cyan);}
+
+        /* ============================================================
+           RESPONSIVE
+        ============================================================ */
+        @media(max-width:1024px){
+            .section,.fit-hero,.cta-section{padding-left:30px;padding-right:30px;}
+            .navbar{padding:16px 30px;}
+            .what-aquafit-inner{grid-template-columns:1fr;gap:40px;}
+            .equip-grid{grid-template-columns:repeat(2,1fr);}
+            .benefits-grid{grid-template-columns:repeat(2,1fr);}
+        }
+        @media(max-width:900px){
+            .fit-hero-inner{flex-direction:column;gap:50px;}
+            .fit-hero-visual{flex:none;width:100%;}
+            .pricing-grid{grid-template-columns:1fr;}
+            .who-grid{grid-template-columns:1fr;}
+        }
+        @media(max-width:768px){
+            .navbar{padding:14px 20px;}
+            .nav-links{display:none;}
+            .menu-toggle{display:flex;}
+            .nav-links.open{display:flex;flex-direction:column;position:absolute;top:100%;left:0;right:0;background:var(--white);padding:30px;box-shadow:var(--shadow-medium);}
+            .section,.fit-hero,.cta-section{padding-left:20px;padding-right:20px;}
+            .fit-hero{padding-top:130px;}
+            .equip-grid{grid-template-columns:1fr;}
+            .benefits-grid{grid-template-columns:1fr 1fr;}
+        }
+        @media(max-width:480px){
+            .section,.fit-hero,.cta-section{padding-left:16px;padding-right:16px;}
+            .fit-hero{padding-top:110px;padding-bottom:60px;}
+            .fit-hero h1{font-size:clamp(2rem,7vw,2.6rem);}
+            .benefits-grid{grid-template-columns:1fr;}
+            .pricing-body{padding:32px 28px;}
+            .footer{padding:30px 16px;}
+            .footer-links{flex-direction:column;gap:12px;}
+        }
+    </style>
+</head>
+<body>
+
+<nav class="navbar" data-theme="light">
+    <a href="index.html" class="navbar-logo">
+        <img src="assets/Navthera_logo_symbol_jpg.png" alt="Navthera Logo">
+        <div class="navbar-brand">Navthera<small>Advanced Physio & Rehab</small></div>
+    </a>
+    <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="aquatherapy.html" class="active">Aquatherapy</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+    </ul>
+    <a href="contact.html" class="nav-cta">Book a Session</a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+</nav>
+
+<!-- ============================================================
+     HERO
+============================================================ -->
+<section class="fit-hero">
+    <div class="fit-orb fit-orb-1"></div>
+    <div class="fit-orb fit-orb-2"></div>
+    <div class="fit-orb fit-orb-3"></div>
+    <div class="fit-particle"></div>
+    <div class="fit-particle"></div>
+    <div class="fit-particle"></div>
+    <div class="fit-particle"></div>
+
+    <div class="fit-hero-inner">
+        <div class="fit-hero-text">
+            <a href="aquatherapy.html" class="fit-back">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+                Back to Aquatherapy
+            </a>
+            <span class="fit-tag">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+                AquaFit at Navthera
+            </span>
+            <h1>Train in Water.<br><em>Feel the Difference.</em></h1>
+            <p class="fit-hero-desc">You don't have to be injured to experience the pool. Underwater treadmill, aqua bike, full-body resistance training — a workout that challenges your body in ways that land-based exercise simply can't.</p>
+            <div class="fit-hero-actions">
+                <a href="#pricing" class="btn-fit-primary">
+                    View Packages
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h12M12 5l7 7-7 7"/></svg>
+                </a>
+                <a href="contact.html" class="btn-fit-outline">Book a Session</a>
+            </div>
+            <div class="fit-stat-row">
+                <div class="fit-stat"><div class="fit-stat-dot"></div><span>Zero joint impact</span></div>
+                <div class="fit-stat"><div class="fit-stat-dot"></div><span>Up to 30× water resistance</span></div>
+                <div class="fit-stat"><div class="fit-stat-dot"></div><span>Any fitness level</span></div>
+            </div>
+        </div>
+        <div class="fit-hero-visual">
+            <div class="fit-visual-card">
+                <h4><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M8 12h8M12 8v8"/></svg>Underwater Treadmill</h4>
+                <p>Walk or run with the resistance and buoyancy of water. Same cardio, fraction of the impact.</p>
+            </div>
+            <div class="fit-visual-card">
+                <h4><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg>Aqua Bike</h4>
+                <p>Pedal underwater for a powerful low-impact cycling session. Great for cardio and leg strength.</p>
+            </div>
+            <div class="fit-visual-card">
+                <h4><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 20V10M12 20V4M6 20v-6"/></svg>Water Resistance Training</h4>
+                <p>Aqua dumbbells, resistance bands, jets — every movement recruits more muscle than land equivalents.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Wave separator -->
+<div class="wave-sep">
+    <svg viewBox="0 0 1440 60" preserveAspectRatio="none" height="60" xmlns="http://www.w3.org/2000/svg">
+        <path fill="#2BC0B4" opacity="0.25" d="M0,40L60,34C120,28,240,16,360,18.7C480,21,600,37,720,42.7C840,48,960,42,1080,34.7C1200,28,1320,20,1380,16L1440,12V0H0Z"/>
+        <path fill="#ffffff" d="M0,32L48,28C96,24,192,16,288,20C384,24,480,40,576,44C672,48,768,40,864,32C960,24,1056,16,1152,18.7C1248,21,1344,33,1392,38.7L1440,44V60H0Z"/>
+    </svg>
+</div>
+
+<!-- ============================================================
+     WHAT IS AQUAFIT
+============================================================ -->
+<section class="section what-aquafit">
+    <div class="what-aquafit-inner">
+        <div class="what-aquafit-text">
+            <span class="section-label">Something New</span>
+            <h2 class="section-title">Exercise Reimagined in Water</h2>
+            <p>AquaFit is not swimming. It's high-performance fitness training that uses the unique properties of water — buoyancy, resistance and pressure — to deliver a workout that works harder than the gym, without the wear and tear.</p>
+            <p>Whether you're a weekend runner who wants a smarter cross-training day, someone who finds the gym too hard on your joints, or just curious about something different — AquaFit is open to everyone. No medical condition required. Just the will to try something new.</p>
+            <p>Our pool is equipped with an underwater treadmill, aqua bike, resistance jets and a full set of aquatic exercise equipment. Every session is guided by our trained staff.</p>
+        </div>
+        <div class="what-aquafit-visual">
+            <div class="what-card">
+                <div class="what-card-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+                </div>
+                <h4>Higher calorie burn</h4>
+                <p>Water is 800× denser than air — movement demands significantly more energy, even at lower perceived effort.</p>
+            </div>
+            <div class="what-card">
+                <div class="what-card-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22c5.52 0 10-4.48 10-10S17.52 2 12 2 2 6.48 2 12s4.48 10 10 10z"/><path d="M8 12l2.5 2.5L16 9"/></svg>
+                </div>
+                <h4>No impact, all intensity</h4>
+                <p>Buoyancy reduces body weight on joints by up to 90% — so you can train intensely without soreness or injury risk.</p>
+            </div>
+            <div class="what-card">
+                <div class="what-card-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 20V10M12 20V4M6 20v-6"/></svg>
+                </div>
+                <h4>Full-body engagement</h4>
+                <p>Water's multidirectional resistance means stabiliser muscles work constantly — every rep is a full-body effort.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================================
+     EQUIPMENT
+============================================================ -->
+<section class="section equip-section">
+    <div style="text-align:center;max-width:600px;margin:0 auto 10px;">
+        <span class="section-label">The Kit</span>
+        <h2 class="section-title">What's in the Pool</h2>
+        <p class="section-sub" style="margin:0 auto;">State-of-the-art aquatic equipment for a workout that genuinely challenges you at every level.</p>
+    </div>
+    <div class="equip-grid">
+        <div class="equip-card">
+            <div class="equip-card-top">
+                <div class="equip-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="10" rx="2"/><path d="M7 12h10M7 9v6M17 9v6"/></svg>
+                </div>
+                <h3>Underwater Treadmill</h3>
+                <p>Walk, jog or run — in water. The treadmill belt operates submerged, delivering buoyancy-assisted gait training and cardiovascular conditioning at the same time.</p>
+            </div>
+            <div class="equip-card-bottom">
+                <div class="equip-detail"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>Adjustable speed settings</div>
+                <div class="equip-detail"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22c5.52 0 10-4.48 10-10S17.52 2 12 2 2 6.48 2 12s4.48 10 10 10z"/><path d="M8 12l2.5 2.5L16 9"/></svg>90% less joint load vs. land treadmill</div>
+            </div>
+        </div>
+        <div class="equip-card">
+            <div class="equip-card-top">
+                <div class="equip-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
+                </div>
+                <h3>Aqua Bike</h3>
+                <p>An underwater cycling experience. Pedalling resistance comes from the water itself — making every push harder and more effective without any knee or hip stress.</p>
+            </div>
+            <div class="equip-card-bottom">
+                <div class="equip-detail"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>Adjustable seat and resistance</div>
+                <div class="equip-detail"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22c5.52 0 10-4.48 10-10S17.52 2 12 2 2 6.48 2 12s4.48 10 10 10z"/><path d="M8 12l2.5 2.5L16 9"/></svg>Ideal for leg strength and cardio</div>
+            </div>
+        </div>
+        <div class="equip-card">
+            <div class="equip-card-top">
+                <div class="equip-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 20V10M12 20V4M6 20v-6"/></svg>
+                </div>
+                <h3>Aqua Dumbbells & Resistance Equipment</h3>
+                <p>Foam aqua dumbbells, resistance bands, flotation belts and kickboards — targeted upper body, core and lower body work, all in the pool.</p>
+            </div>
+            <div class="equip-card-bottom">
+                <div class="equip-detail"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>Multiple resistance levels</div>
+                <div class="equip-detail"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22c5.52 0 10-4.48 10-10S17.52 2 12 2 2 6.48 2 12s4.48 10 10 10z"/><path d="M8 12l2.5 2.5L16 9"/></svg>Full-body strength training</div>
+            </div>
+        </div>
+        <div class="equip-card">
+            <div class="equip-card-top">
+                <div class="equip-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                </div>
+                <h3>Resistance Jets</h3>
+                <p>Directional jets create a current to train against — for functional cardio and sport-specific resistance work that you simply cannot replicate on land.</p>
+            </div>
+            <div class="equip-card-bottom">
+                <div class="equip-detail"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>Variable current intensity</div>
+                <div class="equip-detail"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22c5.52 0 10-4.48 10-10S17.52 2 12 2 2 6.48 2 12s4.48 10 10 10z"/><path d="M8 12l2.5 2.5L16 9"/></svg>Functional & sport conditioning</div>
+            </div>
+        </div>
+        <div class="equip-card">
+            <div class="equip-card-top">
+                <div class="equip-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M9 9h6M9 12h6M9 15h4"/></svg>
+                </div>
+                <h3>Temperature-Controlled Pool</h3>
+                <p>The pool is heated to a therapeutic temperature — warm enough to relax muscles and improve circulation, making every session feel better from the moment you step in.</p>
+            </div>
+            <div class="equip-card-bottom">
+                <div class="equip-detail"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>Muscle relaxation & recovery</div>
+                <div class="equip-detail"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22c5.52 0 10-4.48 10-10S17.52 2 12 2 2 6.48 2 12s4.48 10 10 10z"/><path d="M8 12l2.5 2.5L16 9"/></svg>UV + 5-micron clinical filtration</div>
+            </div>
+        </div>
+        <div class="equip-card">
+            <div class="equip-card-top">
+                <div class="equip-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+                </div>
+                <h3>Expert-Guided Sessions</h3>
+                <p>Every AquaFit session is led by trained staff who design your workout to your goals — whether that's weight management, cardio fitness, strength or cross-training.</p>
+            </div>
+            <div class="equip-card-bottom">
+                <div class="equip-detail"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>Goal-based programming</div>
+                <div class="equip-detail"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22c5.52 0 10-4.48 10-10S17.52 2 12 2 2 6.48 2 12s4.48 10 10 10z"/><path d="M8 12l2.5 2.5L16 9"/></svg>Continuously adapted to you</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================================
+     BENEFITS
+============================================================ -->
+<section class="section benefits-section">
+    <div style="text-align:center;max-width:600px;margin:0 auto;">
+        <span class="section-label">Why Water</span>
+        <h2 class="section-title" style="color:var(--white);">Numbers That Speak</h2>
+        <p class="section-sub" style="color:rgba(255,255,255,0.5);margin:0 auto;">The physics of water make it one of the most effective training environments in the world.</p>
+    </div>
+    <div class="benefits-grid">
+        <div class="benefit-item">
+            <div class="benefit-num">800×</div>
+            <h4>More resistance than air</h4>
+            <p>Water is 800 times denser than air. Every movement is a genuine resistance exercise — in every direction.</p>
+        </div>
+        <div class="benefit-item">
+            <div class="benefit-num">90%</div>
+            <h4>Less joint load</h4>
+            <p>Buoyancy removes the majority of gravitational stress — letting you train intensely even with joint sensitivity.</p>
+        </div>
+        <div class="benefit-item">
+            <div class="benefit-num">↑ 12%</div>
+            <h4>More muscles per rep</h4>
+            <p>Water's multidirectional resistance activates stabiliser muscles that conventional exercise completely ignores.</p>
+        </div>
+        <div class="benefit-item">
+            <div class="benefit-num">0</div>
+            <h4>Post-workout soreness</h4>
+            <p>Hydrostatic pressure flushes lactic acid as you train — you feel worked, not wrecked, the day after.</p>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================================
+     WHO IS THIS FOR
+============================================================ -->
+<section class="section who-section">
+    <div style="text-align:center;max-width:600px;margin:0 auto 10px;">
+        <span class="section-label">Open to Everyone</span>
+        <h2 class="section-title">Who Can Try AquaFit?</h2>
+        <p class="section-sub" style="margin:0 auto;">You don't need a medical condition or special fitness level. If you want to exercise, the pool is for you.</p>
+    </div>
+    <div class="who-grid">
+        <div class="who-item">
+            <div class="who-dot"></div>
+            <div><h4>Fitness enthusiasts</h4><p>Add a smarter cross-training day to your week — push harder with less wear on your body.</p></div>
+        </div>
+        <div class="who-item">
+            <div class="who-dot"></div>
+            <div><h4>Runners & cyclists</h4><p>Train on off-days without the pounding. Build fitness while your joints recover.</p></div>
+        </div>
+        <div class="who-item">
+            <div class="who-dot"></div>
+            <div><h4>Weight management</h4><p>High calorie burn in a low-impact environment — ideal if land exercise is uncomfortable or painful.</p></div>
+        </div>
+        <div class="who-item">
+            <div class="who-dot"></div>
+            <div><h4>People who find the gym boring</h4><p>This is genuinely different. If you've been looking for something new, this is it.</p></div>
+        </div>
+        <div class="who-item">
+            <div class="who-dot"></div>
+            <div><h4>Older adults</h4><p>Stay active and strong without joint pain. The pool is supportive, comfortable and effective.</p></div>
+        </div>
+        <div class="who-item">
+            <div class="who-dot"></div>
+            <div><h4>Anyone curious</h4><p>No experience needed. Come once, see how it feels. We'll take care of the rest.</p></div>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================================
+     PRICING
+============================================================ -->
+<section class="section pricing-section" id="pricing">
+    <div style="text-align:center;max-width:600px;margin:0 auto 10px;">
+        <span class="section-label">Flexible Options</span>
+        <h2 class="section-title">Choose How You Train</h2>
+        <p class="section-sub" style="margin:0 auto;">Whether you want to try it once or commit to a journey — we have an option for you.</p>
+    </div>
+    <div class="pricing-grid">
+        <!-- SINGLE SESSION -->
+        <div class="pricing-card pricing-card-single">
+            <div class="pricing-body">
+                <span class="pricing-tag">Drop-In</span>
+                <h3>Individual Session</h3>
+                <p>Perfect for first-timers or those who prefer a flexible schedule. Book a session, turn up, train.</p>
+                <ul class="pricing-includes">
+                    <li>
+                        <div class="pricing-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l4 4L19 7"/></svg></div>
+                        One full AquaFit session
+                    </li>
+                    <li>
+                        <div class="pricing-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l4 4L19 7"/></svg></div>
+                        Access to all pool equipment
+                    </li>
+                    <li>
+                        <div class="pricing-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l4 4L19 7"/></svg></div>
+                        Trained staff guidance throughout
+                    </li>
+                    <li>
+                        <div class="pricing-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l4 4L19 7"/></svg></div>
+                        No commitment required
+                    </li>
+                </ul>
+                <a href="contact.html" class="btn-price-single">
+                    Book a Session
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h12M12 5l7 7-7 7"/></svg>
+                </a>
+            </div>
+        </div>
+        <!-- 30-SESSION PACK -->
+        <div class="pricing-card pricing-card-pack">
+            <div class="pricing-glow"></div>
+            <span class="pricing-popular">Best Value</span>
+            <div class="pricing-body">
+                <span class="pricing-tag">Pack</span>
+                <h3>30-Session Package</h3>
+                <p>Commit to your training. 30 sessions valid anytime within 6 months — train at your own pace, on your own schedule.</p>
+                <ul class="pricing-includes">
+                    <li>
+                        <div class="pricing-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l4 4L19 7"/></svg></div>
+                        30 full AquaFit sessions
+                    </li>
+                    <li>
+                        <div class="pricing-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l4 4L19 7"/></svg></div>
+                        Valid for 6 months from purchase
+                    </li>
+                    <li>
+                        <div class="pricing-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l4 4L19 7"/></svg></div>
+                        Flexible scheduling — book as you go
+                    </li>
+                    <li>
+                        <div class="pricing-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l4 4L19 7"/></svg></div>
+                        Access to all pool equipment
+                    </li>
+                    <li>
+                        <div class="pricing-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l4 4L19 7"/></svg></div>
+                        Progress tracking included
+                    </li>
+                </ul>
+                <a href="contact.html" class="btn-price-pack">
+                    Enquire About Pack
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h12M12 5l7 7-7 7"/></svg>
+                </a>
+            </div>
+        </div>
+    </div>
+    <p class="pricing-note">Pricing available on enquiry. Contact us to discuss sessions, availability and your goals.</p>
+</section>
+
+<!-- ============================================================
+     FAQ
+============================================================ -->
+<section class="section faq-section">
+    <div style="text-align:center;margin-bottom:50px;">
+        <span class="section-label">Questions</span>
+        <h2 class="section-title">Frequently Asked Questions</h2>
+    </div>
+    <div class="faq-list">
+        <div class="faq-item">
+            <button class="faq-question">Do I need to know how to swim? <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></button>
+            <div class="faq-answer"><p>Not at all. AquaFit sessions are conducted in a controlled pool with staff present at all times. Most exercises are done standing or with support bars and flotation aids. Swimming ability is not needed.</p></div>
+        </div>
+        <div class="faq-item">
+            <button class="faq-question">Is this different from a gym? <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></button>
+            <div class="faq-answer"><p>Completely different. You're training in water, not on land. The resistance, the buoyancy, the temperature, the muscle activation — it's a different kind of effort. Many people who find the gym repetitive or uncomfortable discover they love working out in water.</p></div>
+        </div>
+        <div class="faq-item">
+            <button class="faq-question">What should I wear? <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></button>
+            <div class="faq-answer"><p>Wear jersey-material or pool-appropriate clothing. Cotton clothing is strictly not permitted in the pool. Bring a towel and a change of clothes — these are also available to purchase at the centre if needed.</p></div>
+        </div>
+        <div class="faq-item">
+            <button class="faq-question">How many sessions do I need to see results? <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></button>
+            <div class="faq-answer"><p>Most people notice a difference after just 4–6 sessions. The 30-session pack is designed for meaningful, lasting fitness change — used regularly over weeks, you'll build cardiovascular fitness, strength and endurance in a way that's sustainable and low-risk.</p></div>
+        </div>
+        <div class="faq-item">
+            <button class="faq-question">Can I do AquaFit if I have a mild joint problem? <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></button>
+            <div class="faq-answer"><p>AquaFit is particularly suitable for people with mild joint discomfort — water removes most of the load that makes land exercise painful. If you have a more significant injury or recent surgery, our physiotherapy team can assess whether aquatherapy rehabilitation would be a better starting point for you.</p></div>
+        </div>
+        <div class="faq-item">
+            <button class="faq-question">How is the 30-session pack different from individual sessions? <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></button>
+            <div class="faq-answer"><p>The pack gives you 30 sessions to use at any point within 6 months from purchase — no fixed schedule, just flexibility. Book sessions as and when suits you. It's the best option if you're committed to making aquatic training part of your routine.</p></div>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================================
+     CTA
+============================================================ -->
+<section class="cta-section">
+    <div class="cta-inner">
+        <span class="section-label" style="color:var(--gold);">Ready?</span>
+        <h2>Try Something You've<br>Never Tried Before.</h2>
+        <p>Book a single session — no commitment. Come and feel what training in water actually feels like.</p>
+        <div class="cta-btns">
+            <a href="contact.html" class="btn-fit-primary">
+                Book Your First Session
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h12M12 5l7 7-7 7"/></svg>
+            </a>
+            <a href="aquatherapy.html" class="btn-fit-outline">Back to Aquatherapy</a>
+        </div>
+    </div>
+</section>
+
+<footer class="footer">
+    <div class="footer-inner">
+        <p>&copy; 2026 Navthera Advanced Physio and Rehab Centre. All rights reserved.</p>
+        <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="services.html">Services</a>
+            <a href="aquatherapy.html">Aquatherapy</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </div>
+</footer>
+
+<script>
+document.getElementById('menuToggle').addEventListener('click',()=>{document.getElementById('navLinks').classList.toggle('open');});
+// FAQ accordion
+document.querySelectorAll('.faq-question').forEach(btn=>{
+    btn.addEventListener('click',()=>{
+        const item=btn.parentElement;
+        const wasOpen=item.classList.contains('open');
+        document.querySelectorAll('.faq-item').forEach(i=>i.classList.remove('open'));
+        if(!wasOpen) item.classList.add('open');
+    });
+});
+</script>
+<script src="navbar.js" defer></script>
+</body>
+</html>

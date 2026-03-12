@@ -65,10 +65,11 @@
 
 /* ---- HERO SECTION ---- */
         .hero {
-            position: relative; min-height: 100vh;
+            position: relative; min-height: 100vh; min-height: 100svh;
             display: flex; align-items: center; justify-content: center;
             background: var(--navy-deep);
             overflow: hidden;
+            padding-top: 70px;
         }
         .hero-bg-layers {
             position: absolute; inset: 0;
@@ -832,14 +833,17 @@
             /* Stats */
             .stats-inner {
                 gap: 20px;
-                flex-direction: column;
+                display: grid;
+                grid-template-columns: 1fr 1fr;
                 align-items: center;
+                max-width: 500px;
+                margin: 0 auto;
             }
             .stat-item { width: 100%; }
             .stat-number { font-size: 2rem; }
 
             /* Services */
-            .services-track { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+            .services-track { grid-template-columns: 1fr; gap: 12px; }
             .service-card { padding: 20px 16px; }
             .service-icon { width: 40px; height: 40px; margin: 0 auto 12px; }
             .service-card h3 { font-size: 0.95rem; }
@@ -849,12 +853,19 @@
             .aqua-dual { grid-template-columns: 1fr; gap: 20px; }
             .aqua-card { padding: 36px 30px; }
             .walk-parallax { padding: 50px 20px 60px; }
-            .walk-photos { grid-template-columns: 1fr; gap: 16px; }
+            .walk-photos { grid-template-columns: repeat(2, 1fr); gap: 16px; }
 
-            /* Footer */
-            .footer-grid { grid-template-columns: 1fr; gap: 30px; }
-            .footer-col h4 { font-size: 0.95rem; }
-            .footer-col ul li a { font-size: 0.85rem; }
+            /* Why */
+            .why-grid { grid-template-columns: 1fr 1fr; gap: 16px; }
+
+            /* Footer — compact 2-column layout on tablet */
+            .footer { padding: 36px 0 16px; }
+            .footer-grid { grid-template-columns: 1fr 1fr; gap: 20px 32px; padding: 0 24px 24px; }
+            .footer-brand { grid-column: 1 / -1; display: flex; flex-direction: row; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; padding-bottom: 16px; border-bottom: 1px solid rgba(255,255,255,0.08); }
+            .footer-brand .navbar-logo { margin-bottom: 0 !important; }
+            .footer-col h4 { font-size: 0.88rem; margin-bottom: 12px; }
+            .footer-col li { margin-bottom: 8px; }
+            .footer-col ul li a { font-size: 0.8rem; }
 
             /* CTA */
             .cta-section { padding: 50px 20px; }
@@ -878,13 +889,14 @@
             .navbar-logo img { width: 38px; height: 38px; }
             .navbar-brand { font-size: 0.88rem; }
             .navbar-brand small { font-size: 0.46rem; }
-            .menu-toggle { width: 36px; height: 36px; gap: 4px; }
-            .menu-toggle span { width: 5px; height: 0.4px; }
+            .menu-toggle { width: 36px; height: 36px; gap: 5px; }
+            .menu-toggle span { width: 22px; height: 2px; }
 
             /* Hero */
             .hero {
-                min-height: 70vh;
-                padding-top: 20px;
+                min-height: 100vh;
+                min-height: 100svh;
+                padding-top: 65px;
             }
             .hero-content { padding: 20px 16px; }
             .hero h1 {
@@ -907,7 +919,7 @@
                 gap: 10px;
                 width: 100%;
             }
-            .btn-primary, .btn-secondary {
+            .btn-primary, .btn-secondary, .btn-outline {
                 padding: 12px 24px;
                 font-size: 0.8rem;
                 width: 100%;
@@ -958,8 +970,9 @@
             /* Stats */
             .stats-bar { padding: 20px 0; }
             .stats-inner {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
                 gap: 16px;
-                flex-direction: column;
                 padding: 0 16px;
                 align-items: stretch;
             }
@@ -975,13 +988,13 @@
 
             /* Services */
             .services-track {
-                grid-template-columns: 2fr;
+                grid-template-columns: 1fr 1fr;
                 gap: 10px;
                 max-width: 100%;
                 padding: 0;
             }
             .service-card {
-                padding: 16px 12px;
+                padding: 14px 10px;
                 border-radius: 12px;
             }
             .service-icon {
@@ -1000,19 +1013,23 @@
             }
 
             /* Aqua */
-            .aqua-dual { grid-template-columns: 1fr; gap: 18px; }
-            .aqua-card { padding: 30px 24px; }
-            .aqua-header { margin-bottom: 36px; }
+            .aqua-dual { grid-template-columns: 1fr; gap: 14px; }
+            .aqua-card { padding: 24px 18px; }
+            .aqua-header { margin-bottom: 24px; }
             .aqua-item h3 { font-size: 0.95rem; }
             .aqua-item p { font-size: 0.8rem; }
+            .btn-aqua-rehab, .btn-aqua-fit {
+                width: 100%;
+                justify-content: center;
+            }
 
             /* Why */
             .why-grid {
-                grid-template-columns: 1fr;
-                gap: 16px;
+                grid-template-columns: 1fr 1fr;
+                gap: 12px;
             }
             .why-card {
-                padding: 20px 16px;
+                padding: 16px 12px;
                 border-radius: 12px;
             }
 
@@ -1025,31 +1042,42 @@
             .equip-item h4 { font-size: 0.85rem; }
             .equip-item p { font-size: 0.75rem; }
 
-            /* Footer */
+            /* Footer — ultra-compact on phone */
+            .footer { padding: 28px 0 12px; }
             .footer-grid {
-                grid-template-columns: 1fr;
-                gap: 24px;
-                padding: 30px 16px;
+                grid-template-columns: 1fr 1fr;
+                gap: 14px 18px;
+                padding: 0 16px 16px;
             }
-            .footer-brand { padding-bottom: 20px; border-bottom: 1px solid rgba(255,255,255,0.1); }
+            .footer-brand {
+                grid-column: 1 / -1;
+                display: flex; flex-direction: row; align-items: center; justify-content: space-between; flex-wrap: wrap;
+                gap: 10px; padding-bottom: 12px; border-bottom: 1px solid rgba(255,255,255,0.1); margin-bottom: 0;
+            }
+            .footer-brand .navbar-logo { margin-bottom: 0 !important; }
+            .footer-brand .navbar-logo img { width: 32px !important; height: 32px !important; }
+            .footer-brand .navbar-brand { font-size: 0.9rem; }
+            .footer-brand .navbar-brand small { font-size: 0.42rem; }
             .footer-col h4 {
-                font-size: 0.9rem;
-                margin-bottom: 12px;
+                font-size: 0.78rem;
+                margin-bottom: 8px;
             }
-            .footer-col ul { gap: 8px; }
+            .footer-col li { margin-bottom: 5px; }
+            .footer-col ul { gap: 5px; grid-template-columns: 1fr !important; }
             .footer-col ul li a {
-                font-size: 0.8rem;
+                font-size: 0.72rem;
             }
             .footer-bottom {
-                padding: 16px;
+                padding: 10px 16px;
                 flex-direction: column;
-                gap: 16px;
+                gap: 10px;
                 text-align: center;
             }
-            .footer-bottom p { font-size: 0.75rem; }
-            .footer-socials { gap: 8px; flex-wrap: wrap; justify-content: center; }
-            .social-icon { width: 34px; height: 34px; }
-            .whatsapp-pill { font-size: 0.72rem; padding: 7px 13px; }
+            .footer-bottom p { font-size: 0.7rem; }
+            .footer-socials { gap: 6px; flex-wrap: wrap; justify-content: flex-start; }
+            .social-icon { width: 30px; height: 30px; }
+            .social-icon svg { width: 13px; height: 13px; }
+            .whatsapp-pill { font-size: 0.7rem; padding: 6px 10px; }
 
             /* CTA */
             .cta-section {
@@ -1072,7 +1100,7 @@
             }
 
             /* Parallax dividers */
-            .parallax-divider { height: 35vh; }
+            .parallax-divider { min-height: auto; }
             .parallax-divider-content h2 { font-size: clamp(1.3rem, 3vw, 2rem); }
             .parallax-divider-content p { font-size: 0.9rem; }
 
@@ -1305,59 +1333,6 @@
     </div>
 </section>
 
-<!-- PARALLAX DIVIDER 2 -->
-<div class="parallax-divider" data-parallax>
-    <div class="parallax-divider-bg" style="background: linear-gradient(135deg, #081B30 0%, #14706A 50%, #C9A96E 100%);"></div>
-    <div class="parallax-divider-overlay"></div>
-    <div class="parallax-divider-content">
-        <div class="divider-text-wrapper">
-            <h2>Advanced Technology, Compassionate Care</h2>
-            <p>Every treatment protocol backed by evidence and delivered with empathy</p>
-        </div>
-
-        <!-- Floating Showcase Card -->
-        <div class="divider-card-wrapper">
-            <div class="showcase-card-main" id="mainCard">
-                <div class="card-top-bar"></div>
-                <div class="card-visual-area">
-                    <div class="water-rings">
-                        <div class="ring"></div>
-                        <div class="ring"></div>
-                        <div class="ring"></div>
-                    </div>
-                    <div class="card-center-icon">
-                        <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
-                            <path d="M4.5 16.5c.7-.7 1.5-1.3 2.4-1.6a5 5 0 016.2 0c.9.3 1.7.9 2.4 1.6M12 2a10 10 0 100 20A10 10 0 0012 2z"/>
-                            <path d="M12 8v4l3 3"/>
-                        </svg>
-                    </div>
-                    <div class="float-tag float-tag-1">Aquatherapy ✦</div>
-                    <div class="float-tag float-tag-2">Now in Rajasthan</div>
-                    <div class="float-tag float-tag-3">Neuro Rehab</div>
-                </div>
-                <div class="card-body">
-                    <div class="card-title">Treatment Progress</div>
-                    <div class="card-subtitle">Real outcomes, evidence-based protocols</div>
-                    <div class="treatment-bars">
-                        <div class="treatment-bar-item">
-                            <div class="tbar-header"><span class="tbar-label">Neuro Recovery</span><span class="tbar-pct">92%</span></div>
-                            <div class="tbar-track"><div class="tbar-fill f1"></div></div>
-                        </div>
-                        <div class="treatment-bar-item">
-                            <div class="tbar-header"><span class="tbar-label">Ortho Rehab</span><span class="tbar-pct">88%</span></div>
-                            <div class="tbar-track"><div class="tbar-fill f2"></div></div>
-                        </div>
-                        <div class="treatment-bar-item">
-                            <div class="tbar-header"><span class="tbar-label">Sports Performance</span><span class="tbar-pct">95%</span></div>
-                            <div class="tbar-track"><div class="tbar-fill f3"></div></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
 <!-- EQUIPMENT SHOWCASE -->
 <section class="section equip-section">
     <div class="section-header" data-animate>
@@ -1479,25 +1454,6 @@
     const navbar = document.getElementById('navbar');
     window.addEventListener('scroll', () => {
         navbar.classList.toggle('scrolled', window.scrollY > 60);
-    });
-
-    // Mobile menu
-    // Mobile menu toggle
-    const menuToggle = document.getElementById('menuToggle');
-    const navLinks = document.getElementById('navLinks');
-
-    menuToggle.addEventListener('click', () => {
-        navLinks.classList.toggle('open');
-        // Animate hamburger menu
-        menuToggle.classList.toggle('active');
-    });
-
-    // Close mobile menu when a link is clicked
-    document.querySelectorAll('.nav-links a').forEach(link => {
-        link.addEventListener('click', () => {
-            navLinks.classList.remove('open');
-            menuToggle.classList.remove('active');
-        });
     });
 
     // Hero particle canvas

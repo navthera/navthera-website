@@ -62,9 +62,9 @@
         .split-panel-rehab .split-glow{width:350px;height:350px;background:var(--cyan);opacity:0.06;top:-80px;right:-80px;}
         .split-panel-fit .split-glow{width:350px;height:350px;background:white;opacity:0.06;bottom:-80px;right:-80px;}
         @media(max-width:768px){
-            .split-hero{flex-direction:column;min-height:auto;padding-top:66px;}
+            .split-hero{flex-direction:column;min-height:auto;padding-top:66px;pointer-events:none;}
             .split-hero:hover .split-panel,.split-hero .split-panel:hover{flex:1;}
-            .split-panel{padding:60px 30px 50px;}
+            .split-panel{padding:60px 30px 50px;pointer-events:auto;}
             .split-breadcrumb{left:30px;top:16px;}
             .split-hint{display:none;}
             .split-hero::after{left:0;top:50%;bottom:auto;width:100%;height:1px;}
@@ -72,6 +72,8 @@
         @media(max-width:480px){
             .split-panel{padding:48px 20px 44px;}
             .split-content h1{font-size:clamp(1.6rem,5vw,2rem);}
+            .split-content p{font-size:0.9rem;margin-bottom:24px;}
+            .split-cta-rehab,.split-cta-fit{width:100%;justify-content:center;padding:14px 24px;}
         }
 
         .section{padding:100px 60px;position:relative;}
@@ -184,8 +186,8 @@
             .properties-grid,.process-steps{grid-template-columns:1fr;}
         }
         @media(max-width:480px){
-            .menu-toggle{width:36px;height:36px;gap:4px;}
-            .menu-toggle span{width:5px;height:0.4px;}
+            .menu-toggle{width:36px;height:36px;gap:5px;}
+            .menu-toggle span{width:22px;height:2px;}
             .menu-toggle.active span:nth-child(1){transform:translateY(8px) rotate(45deg);}
             .menu-toggle.active span:nth-child(2){opacity:0;}
             .menu-toggle.active span:nth-child(3){transform:translateY(-8px) rotate(-45deg);}
@@ -569,7 +571,6 @@
 </footer>
 
 <script>
-document.getElementById('menuToggle').addEventListener('click',()=>{document.getElementById('navLinks').classList.toggle('open');});
 // FAQ accordion
 document.querySelectorAll('.faq-question').forEach(btn=>{
     btn.addEventListener('click',()=>{

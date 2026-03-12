@@ -27,7 +27,7 @@
            HERO — Full-height energetic
         ============================================================ */
         .fit-hero{
-            min-height:100vh;padding:160px 60px 100px;
+            min-height:100vh;min-height:100svh;padding:160px 60px 100px;
             display:flex;align-items:center;
             position:relative;overflow:hidden;
             background:linear-gradient(145deg,#081B30 0%,#0a3d5c 40%,var(--teal-mid) 75%,#2BC0B4 100%);
@@ -253,16 +253,27 @@
             .menu-toggle{display:flex;}
             .nav-links.open{display:flex;flex-direction:column;position:absolute;top:100%;left:0;right:0;background:var(--white);padding:30px;box-shadow:var(--shadow-medium);}
             .section,.fit-hero,.cta-section{padding-left:20px;padding-right:20px;}
-            .fit-hero{padding-top:130px;}
+            .fit-hero{padding-top:130px;padding-bottom:70px;}
             .equip-grid{grid-template-columns:1fr;}
             .benefits-grid{grid-template-columns:1fr 1fr;}
+            .fit-hero-actions{flex-wrap:wrap;}
+            .btn-fit-primary,.btn-fit-outline{flex:1;min-width:160px;justify-content:center;}
+            .what-card:hover{transform:none;}
         }
         @media(max-width:480px){
             .section,.fit-hero,.cta-section{padding-left:16px;padding-right:16px;}
-            .fit-hero{padding-top:110px;padding-bottom:60px;}
-            .fit-hero h1{font-size:clamp(2rem,7vw,2.6rem);}
+            .fit-hero{padding-top:110px;padding-bottom:60px;min-height:auto;}
+            .fit-hero h1{font-size:clamp(1.8rem,7vw,2.4rem);}
+            .fit-hero-desc{font-size:0.9rem;margin-bottom:28px;}
+            .fit-hero-actions{flex-direction:column;width:100%;gap:12px;}
+            .btn-fit-primary,.btn-fit-outline{width:100%;justify-content:center;padding:14px 24px;}
+            .fit-stat-row{gap:10px;margin-top:24px;}
+            .fit-stat{padding:9px 14px;}
+            .fit-stat span{font-size:0.72rem;}
+            .fit-visual-card{padding:16px 18px;}
             .benefits-grid{grid-template-columns:1fr;}
-            .pricing-body{padding:32px 28px;}
+            .pricing-body{padding:28px 20px;}
+            .faq-question{font-size:0.88rem;padding:18px 16px;}
             .footer{padding:30px 16px;}
             .footer-links{flex-direction:column;gap:12px;}
         }
@@ -695,7 +706,6 @@
 </footer>
 
 <script>
-document.getElementById('menuToggle').addEventListener('click',()=>{document.getElementById('navLinks').classList.toggle('open');});
 // FAQ accordion
 document.querySelectorAll('.faq-question').forEach(btn=>{
     btn.addEventListener('click',()=>{

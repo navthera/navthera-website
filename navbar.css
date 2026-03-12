@@ -374,7 +374,6 @@
     }
 
     .nav-cta {
-        padding: 6px 12px;
-        font-size: 0.65rem;
+        display: none;
     }
 }

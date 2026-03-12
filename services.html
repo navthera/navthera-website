@@ -436,8 +436,8 @@
                 padding: 12px 16px;
                 height: 65px;
             }
-            .menu-toggle { width: 36px; height: 36px; gap: 4px; }
-            .menu-toggle span { width: 5px; height: 0.4px; }
+            .menu-toggle { width: 36px; height: 36px; gap: 5px; }
+            .menu-toggle span { width: 22px; height: 2px; }
             .menu-toggle.active span:nth-child(1) {
                 transform: translateY(8px) rotate(45deg);
             }
@@ -1468,24 +1468,6 @@
 </footer>
 
 <script>
-// Mobile menu
-// Mobile menu toggle
-const menuToggle = document.getElementById('menuToggle');
-const navLinks = document.getElementById('navLinks');
-
-menuToggle.addEventListener('click', () => {
-    navLinks.classList.toggle('open');
-    menuToggle.classList.toggle('active');
-});
-
-// Close mobile menu when a link is clicked
-document.querySelectorAll('.nav-links a').forEach(link => {
-    link.addEventListener('click', () => {
-        navLinks.classList.remove('open');
-        menuToggle.classList.remove('active');
-    });
-});
-
 // Tab switching — NO scrolling, just show/hide panels
 const tabs = document.querySelectorAll('.dept-tab');
 const panels = document.querySelectorAll('.dept-panel');

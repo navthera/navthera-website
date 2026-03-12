@@ -107,8 +107,8 @@
             .contact-form-card{padding:28px;}
         }
         @media(max-width:480px){
-            .menu-toggle{width:36px;height:36px;gap:4px;}
-            .menu-toggle span{width:5px;height:0.4px;}
+            .menu-toggle{width:36px;height:36px;gap:5px;}
+            .menu-toggle span{width:22px;height:2px;}
             .menu-toggle.active span:nth-child(1){transform:translateY(8px) rotate(45deg);}
             .menu-toggle.active span:nth-child(2){opacity:0;}
             .menu-toggle.active span:nth-child(3){transform:translateY(-8px) rotate(-45deg);}
@@ -289,8 +289,6 @@
 </footer>
 
 <script>
-document.getElementById('menuToggle').addEventListener('click',()=>{document.getElementById('navLinks').classList.toggle('open');});
-
 function handleSubmit(e){
     e.preventDefault();
     const btn=e.target.querySelector('.form-submit');

@@ -2,9 +2,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Navthera — Advanced Physio and Rehab Centre | Jaipur</title>
     <meta name="description" content="Navthera is Jaipur's most advanced physiotherapy and rehabilitation centre featuring Rajasthan's first Aquatherapy pool, neuro rehab, cryotherapy, shockwave therapy and more.">
+    <link rel="icon" type="image/png" href="assets/Navthera_logo_symbol.png">
+    <link rel="apple-touch-icon" href="assets/Navthera_logo_symbol.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=Cormorant+Garamond:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="navbar.css">
@@ -65,11 +68,10 @@
 
 /* ---- HERO SECTION ---- */
         .hero {
-            position: relative; min-height: 100vh; min-height: 100svh;
+            position: relative; min-height: 100vh;
             display: flex; align-items: center; justify-content: center;
             background: var(--navy-deep);
             overflow: hidden;
-            padding-top: 70px;
         }
         .hero-bg-layers {
             position: absolute; inset: 0;
@@ -221,7 +223,11 @@
             background-size: 30px 30px;
         }
         .about-visual-icon {
-            position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+            position: absolute; top: 41%; left: 50%; transform: translate(-50%, -50%);
+        }
+        .about-visual-icon img {
+            width: 360px; height: auto; max-width: 80vw; display: block;
+            object-fit: contain; opacity: 0.9;
         }
         .about-visual-icon svg { width: 180px; height: 180px; opacity: 0.6; }
         .about-visual-label {
@@ -304,11 +310,12 @@
         .walk-header h2 { font-family: 'Playfair Display', serif; font-size: clamp(1.8rem, 4vw, 3rem); color: var(--white); font-weight: 600; margin-bottom: 12px; }
         .walk-header p { font-size: 1.05rem; color: rgba(255,255,255,0.55); font-weight: 300; }
         .walk-photos { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
-        .walk-photo { aspect-ratio: 4/3; border-radius: 18px; border: 2px dashed rgba(255,255,255,0.18); background: rgba(255,255,255,0.04); backdrop-filter: blur(6px); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px; overflow: hidden; position: relative; transition: border-color 0.3s, background 0.3s; }
-        .walk-photo:hover { border-color: rgba(255,255,255,0.35); background: rgba(255,255,255,0.08); }
-        .walk-photo svg { width: 36px; height: 36px; color: rgba(255,255,255,0.22); }
-        .walk-photo span { font-size: 0.72rem; color: rgba(255,255,255,0.3); letter-spacing: 2px; text-transform: uppercase; font-weight: 500; }
-        .walk-photo-num { position: absolute; top: 16px; left: 18px; font-size: 0.6rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,0.22); }
+        .walk-photo { aspect-ratio: 4/3; border-radius: 18px; border: 1px solid rgba(255,255,255,0.16); background: rgba(255,255,255,0.04); overflow: hidden; position: relative; transition: transform 0.3s ease, border-color 0.3s ease; }
+        .walk-photo:hover { transform: translateY(-5px); border-color: rgba(255,255,255,0.4); }
+        .walk-photo img { width: 100%; height: 100%; display: block; object-fit: cover; transition: transform 0.5s ease; }
+        .walk-photo--portrait img { object-fit: contain; }
+        .walk-photo:hover img { transform: scale(1.04); }
+        .walk-photo-num { position: absolute; z-index: 1; top: 14px; left: 14px; padding: 6px 9px; border-radius: 999px; background: rgba(8,27,48,0.6); backdrop-filter: blur(8px); font-size: 0.6rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: rgba(255,255,255,0.88); }
 
         /* ---- FLOATING SHOWCASE CARD ---- */
         .showcase-card-main {
@@ -775,6 +782,7 @@
             .navbar { padding: 16px 30px; }
             .about-grid { grid-template-columns: 1fr; gap: 40px; }
             .about-visual { height: 350px; }
+            .about-visual-icon img { width: 280px; }
             .aqua-dual { grid-template-columns: 1fr; gap: 24px; }
             .walk-parallax { padding: 60px 30px 70px; }
             .services-track { grid-template-columns: repeat(3, 1fr); }
@@ -827,23 +835,21 @@
             /* About */
             .about-grid { grid-template-columns: 1fr; gap: 30px; }
             .about-visual { height: 300px; }
+            .about-visual-icon img { width: 225px; }
             .about-feature { padding: 12px 16px; gap: 10px; }
             .about-feature-icon { width: 36px; height: 36px; }
 
             /* Stats */
             .stats-inner {
                 gap: 20px;
-                display: grid;
-                grid-template-columns: 1fr 1fr;
+                flex-direction: column;
                 align-items: center;
-                max-width: 500px;
-                margin: 0 auto;
             }
             .stat-item { width: 100%; }
             .stat-number { font-size: 2rem; }
 
             /* Services */
-            .services-track { grid-template-columns: 1fr; gap: 12px; }
+            .services-track { grid-template-columns: repeat(2, 1fr); gap: 12px; }
             .service-card { padding: 20px 16px; }
             .service-icon { width: 40px; height: 40px; margin: 0 auto 12px; }
             .service-card h3 { font-size: 0.95rem; }
@@ -853,19 +859,12 @@
             .aqua-dual { grid-template-columns: 1fr; gap: 20px; }
             .aqua-card { padding: 36px 30px; }
             .walk-parallax { padding: 50px 20px 60px; }
-            .walk-photos { grid-template-columns: repeat(2, 1fr); gap: 16px; }
+            .walk-photos { grid-template-columns: 1fr; gap: 16px; }
 
-            /* Why */
-            .why-grid { grid-template-columns: 1fr 1fr; gap: 16px; }
-
-            /* Footer — compact 2-column layout on tablet */
-            .footer { padding: 36px 0 16px; }
-            .footer-grid { grid-template-columns: 1fr 1fr; gap: 20px 32px; padding: 0 24px 24px; }
-            .footer-brand { grid-column: 1 / -1; display: flex; flex-direction: row; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; padding-bottom: 16px; border-bottom: 1px solid rgba(255,255,255,0.08); }
-            .footer-brand .navbar-logo { margin-bottom: 0 !important; }
-            .footer-col h4 { font-size: 0.88rem; margin-bottom: 12px; }
-            .footer-col li { margin-bottom: 8px; }
-            .footer-col ul li a { font-size: 0.8rem; }
+            /* Footer */
+            .footer-grid { grid-template-columns: 1fr; gap: 30px; }
+            .footer-col h4 { font-size: 0.95rem; }
+            .footer-col ul li a { font-size: 0.85rem; }
 
             /* CTA */
             .cta-section { padding: 50px 20px; }
@@ -889,14 +888,13 @@
             .navbar-logo img { width: 38px; height: 38px; }
             .navbar-brand { font-size: 0.88rem; }
             .navbar-brand small { font-size: 0.46rem; }
-            .menu-toggle { width: 36px; height: 36px; gap: 5px; }
-            .menu-toggle span { width: 22px; height: 2px; }
+            .menu-toggle { width: 36px; height: 36px; gap: 4px; }
+            .menu-toggle span { width: 5px; height: 0.4px; }
 
             /* Hero */
             .hero {
-                min-height: 100vh;
-                min-height: 100svh;
-                padding-top: 65px;
+                min-height: 70vh;
+                padding-top: 20px;
             }
             .hero-content { padding: 20px 16px; }
             .hero h1 {
@@ -919,7 +917,7 @@
                 gap: 10px;
                 width: 100%;
             }
-            .btn-primary, .btn-secondary, .btn-outline {
+            .btn-primary, .btn-secondary {
                 padding: 12px 24px;
                 font-size: 0.8rem;
                 width: 100%;
@@ -954,6 +952,7 @@
                 height: 250px;
                 border-radius: 12px;
             }
+            .about-visual-icon img { width: 180px; }
             .about-features { gap: 12px; margin-top: 20px; }
             .about-feature {
                 padding: 12px 14px;
@@ -970,9 +969,8 @@
             /* Stats */
             .stats-bar { padding: 20px 0; }
             .stats-inner {
-                display: grid;
-                grid-template-columns: 1fr 1fr;
                 gap: 16px;
+                flex-direction: column;
                 padding: 0 16px;
                 align-items: stretch;
             }
@@ -988,13 +986,13 @@
 
             /* Services */
             .services-track {
-                grid-template-columns: 1fr 1fr;
+                grid-template-columns: 2fr;
                 gap: 10px;
                 max-width: 100%;
                 padding: 0;
             }
             .service-card {
-                padding: 14px 10px;
+                padding: 16px 12px;
                 border-radius: 12px;
             }
             .service-icon {
@@ -1013,23 +1011,19 @@
             }
 
             /* Aqua */
-            .aqua-dual { grid-template-columns: 1fr; gap: 14px; }
-            .aqua-card { padding: 24px 18px; }
-            .aqua-header { margin-bottom: 24px; }
+            .aqua-dual { grid-template-columns: 1fr; gap: 18px; }
+            .aqua-card { padding: 30px 24px; }
+            .aqua-header { margin-bottom: 36px; }
             .aqua-item h3 { font-size: 0.95rem; }
             .aqua-item p { font-size: 0.8rem; }
-            .btn-aqua-rehab, .btn-aqua-fit {
-                width: 100%;
-                justify-content: center;
-            }
 
             /* Why */
             .why-grid {
-                grid-template-columns: 1fr 1fr;
-                gap: 12px;
+                grid-template-columns: 1fr;
+                gap: 16px;
             }
             .why-card {
-                padding: 16px 12px;
+                padding: 20px 16px;
                 border-radius: 12px;
             }
 
@@ -1042,42 +1036,31 @@
             .equip-item h4 { font-size: 0.85rem; }
             .equip-item p { font-size: 0.75rem; }
 
-            /* Footer — ultra-compact on phone */
-            .footer { padding: 28px 0 12px; }
+            /* Footer */
             .footer-grid {
-                grid-template-columns: 1fr 1fr;
-                gap: 14px 18px;
-                padding: 0 16px 16px;
+                grid-template-columns: 1fr;
+                gap: 24px;
+                padding: 30px 16px;
             }
-            .footer-brand {
-                grid-column: 1 / -1;
-                display: flex; flex-direction: row; align-items: center; justify-content: space-between; flex-wrap: wrap;
-                gap: 10px; padding-bottom: 12px; border-bottom: 1px solid rgba(255,255,255,0.1); margin-bottom: 0;
-            }
-            .footer-brand .navbar-logo { margin-bottom: 0 !important; }
-            .footer-brand .navbar-logo img { width: 32px !important; height: 32px !important; }
-            .footer-brand .navbar-brand { font-size: 0.9rem; }
-            .footer-brand .navbar-brand small { font-size: 0.42rem; }
+            .footer-brand { padding-bottom: 20px; border-bottom: 1px solid rgba(255,255,255,0.1); }
             .footer-col h4 {
-                font-size: 0.78rem;
-                margin-bottom: 8px;
+                font-size: 0.9rem;
+                margin-bottom: 12px;
             }
-            .footer-col li { margin-bottom: 5px; }
-            .footer-col ul { gap: 5px; grid-template-columns: 1fr !important; }
+            .footer-col ul { gap: 8px; }
             .footer-col ul li a {
-                font-size: 0.72rem;
+                font-size: 0.8rem;
             }
             .footer-bottom {
-                padding: 10px 16px;
+                padding: 16px;
                 flex-direction: column;
-                gap: 10px;
+                gap: 16px;
                 text-align: center;
             }
-            .footer-bottom p { font-size: 0.7rem; }
-            .footer-socials { gap: 6px; flex-wrap: wrap; justify-content: flex-start; }
-            .social-icon { width: 30px; height: 30px; }
-            .social-icon svg { width: 13px; height: 13px; }
-            .whatsapp-pill { font-size: 0.7rem; padding: 6px 10px; }
+            .footer-bottom p { font-size: 0.75rem; }
+            .footer-socials { gap: 8px; flex-wrap: wrap; justify-content: center; }
+            .social-icon { width: 34px; height: 34px; }
+            .whatsapp-pill { font-size: 0.72rem; padding: 7px 13px; }
 
             /* CTA */
             .cta-section {
@@ -1100,7 +1083,7 @@
             }
 
             /* Parallax dividers */
-            .parallax-divider { min-height: auto; }
+            .parallax-divider { height: 35vh; }
             .parallax-divider-content h2 { font-size: clamp(1.3rem, 3vw, 2rem); }
             .parallax-divider-content p { font-size: 0.9rem; }
 
@@ -1121,7 +1104,7 @@
 <nav class="navbar" id="navbar">
     <a href="index.html" class="navbar-logo">
         <img src="assets/Navthera_logo_symbol_jpg.png" alt="Navthera Logo" style="object-fit:contain;flex-shrink:0;">
-        <div class="navbar-brand">Navthera<small>Advanced Physio & Rehab</small></div>
+        <div class="navbar-brand">Navthera<small>Advanced Physio & Rehab Centre</small></div>
     </a>
     <ul class="nav-links" id="navLinks">
         <li><a href="index.html" class="active">Home</a></li>
@@ -1175,7 +1158,7 @@
             <div class="about-visual-bg"></div>
             <div class="about-visual-pattern"></div>
             <div class="about-visual-icon">
-                <img src="assets/Navthera_logo_symbol_jpg.png" alt="Navthera Logo" style="width:80px;height:80px;object-fit:contain;opacity:0.9;">
+                <img src="assets/Navthera_building.png" alt="Navthera building">
             </div>
             <div class="about-visual-label">
                 <h3>Navthera</h3>
@@ -1201,20 +1184,17 @@
             <p>A look inside Navthera — purpose-built for recovery</p>
         </div>
         <div class="walk-photos">
-            <div class="walk-photo">
-                <span class="walk-photo-num">Photo 1</span>
-                <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
-                <span>Add your photo here</span>
+            <div class="walk-photo walk-photo--portrait">
+                <span class="walk-photo-num"></span>
+                <img src="assets/treadmill.jpg" alt="Upright treadmill at Navthera">
             </div>
             <div class="walk-photo">
-                <span class="walk-photo-num">Photo 2</span>
-                <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
-                <span>Add your photo here</span>
+                <span class="walk-photo-num"></span>
+                <img src="assets/website-photo-1.jpg" alt="Navthera rehabilitation centre">
             </div>
             <div class="walk-photo">
-                <span class="walk-photo-num">Photo 3</span>
-                <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
-                <span>Add your photo here</span>
+                <span class="walk-photo-num"></span>
+                <img src="assets/website-photo-3.jpg" alt="Navthera therapy facility interior">
             </div>
         </div>
     </div>
@@ -1333,6 +1313,59 @@
     </div>
 </section>
 
+<!-- PARALLAX DIVIDER 2 -->
+<div class="parallax-divider" data-parallax>
+    <div class="parallax-divider-bg" style="background: linear-gradient(135deg, #081B30 0%, #14706A 50%, #C9A96E 100%);"></div>
+    <div class="parallax-divider-overlay"></div>
+    <div class="parallax-divider-content">
+        <div class="divider-text-wrapper">
+            <h2>Advanced Technology, Compassionate Care</h2>
+            <p>Every treatment protocol backed by evidence and delivered with empathy</p>
+        </div>
+
+        <!-- Floating Showcase Card -->
+        <div class="divider-card-wrapper">
+            <div class="showcase-card-main" id="mainCard">
+                <div class="card-top-bar"></div>
+                <div class="card-visual-area">
+                    <div class="water-rings">
+                        <div class="ring"></div>
+                        <div class="ring"></div>
+                        <div class="ring"></div>
+                    </div>
+                    <div class="card-center-icon">
+                        <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                            <path d="M4.5 16.5c.7-.7 1.5-1.3 2.4-1.6a5 5 0 016.2 0c.9.3 1.7.9 2.4 1.6M12 2a10 10 0 100 20A10 10 0 0012 2z"/>
+                            <path d="M12 8v4l3 3"/>
+                        </svg>
+                    </div>
+                    <div class="float-tag float-tag-1">Aquatherapy ✦</div>
+                    <div class="float-tag float-tag-2">Now in Rajasthan</div>
+                    <div class="float-tag float-tag-3">Neuro Rehab</div>
+                </div>
+                <div class="card-body">
+                    <div class="card-title">Treatment Progress</div>
+                    <div class="card-subtitle">Real outcomes, evidence-based protocols</div>
+                    <div class="treatment-bars">
+                        <div class="treatment-bar-item">
+                            <div class="tbar-header"><span class="tbar-label">Neuro Recovery</span><span class="tbar-pct">92%</span></div>
+                            <div class="tbar-track"><div class="tbar-fill f1"></div></div>
+                        </div>
+                        <div class="treatment-bar-item">
+                            <div class="tbar-header"><span class="tbar-label">Ortho Rehab</span><span class="tbar-pct">88%</span></div>
+                            <div class="tbar-track"><div class="tbar-fill f2"></div></div>
+                        </div>
+                        <div class="treatment-bar-item">
+                            <div class="tbar-header"><span class="tbar-label">Sports Performance</span><span class="tbar-pct">95%</span></div>
+                            <div class="tbar-track"><div class="tbar-fill f3"></div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 <!-- EQUIPMENT SHOWCASE -->
 <section class="section equip-section">
     <div class="section-header" data-animate>
@@ -1380,7 +1413,7 @@
                 Book Your Appointment
                 <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h12M12 5l7 7-7 7"/></svg>
             </a>
-            <a href="tel:+919784532400" class="btn-navy">
+            <a href="tel:+911234567890" class="btn-navy">
                 <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
                 Call Us
             </a>
@@ -1396,13 +1429,13 @@
                 <img src="assets/Navthera_logo_symbol_jpg.png" alt="Navthera Logo" style="width:42px;height:42px;object-fit:contain;border-radius:8px;flex-shrink:0;">
                 <div style="font-family:'Playfair Display',serif;font-size:1.15rem;font-weight:700;color:white;line-height:1.2;">
                     Navthera
-                    <small style="display:block;font-family:'Inter',sans-serif;font-size:0.52rem;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;color:var(--cyan);margin-top:2px;">Advanced Physio & Rehab</small>
+                    <small style="display:block;font-family:'Inter',sans-serif;font-size:0.52rem;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;color:var(--cyan);margin-top:2px;">Advanced Physio & Rehab Centre</small>
                 </div>
             </a>
             <div class="footer-socials" style="margin-top:4px;">
                 <a href="https://www.instagram.com/navthera" target="_blank" rel="noopener" aria-label="Instagram" class="social-icon social-insta"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg></a>
                 <a href="https://www.facebook.com/navthera" target="_blank" rel="noopener" aria-label="Facebook" class="social-icon social-fb"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
-                <a href="https://wa.me/919784532400?text=Hello%2C%20I%27d%20like%20to%20know%20more%20about%20Navthera." target="_blank" rel="noopener" aria-label="Chat on WhatsApp" class="whatsapp-pill"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>Chat with us</a>
+                <a href="https://wa.me/91XXXXXXXXXX?text=Hello%2C%20I%27d%20like%20to%20know%20more%20about%20Navthera." target="_blank" rel="noopener" aria-label="Chat on WhatsApp" class="whatsapp-pill"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>Chat with us</a>
             </div>
         </div>
         <div class="footer-col">
@@ -1433,7 +1466,7 @@
         <div class="footer-col">
             <h4>Contact Us</h4>
             <ul>
-                <li><a href="tel:+919784532400">+91 97845 32400</a></li>
+                <li><a href="tel:+911234567890">+91 123 456 7890</a></li>
                 <li><a href="mailto:contact@navthera.in">contact@navthera.in</a></li>
                 <li><a href="https://maps.app.goo.gl/icwewDzpBcDJYhY98" target="_blank">68, Shri Gopal Nagar, Gopalpura Byepass, Jaipur 302019</a></li>
             </ul>
@@ -1454,6 +1487,25 @@
     const navbar = document.getElementById('navbar');
     window.addEventListener('scroll', () => {
         navbar.classList.toggle('scrolled', window.scrollY > 60);
+    });
+
+    // Mobile menu
+    // Mobile menu toggle
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks = document.getElementById('navLinks');
+
+    menuToggle.addEventListener('click', () => {
+        navLinks.classList.toggle('open');
+        // Animate hamburger menu
+        menuToggle.classList.toggle('active');
+    });
+
+    // Close mobile menu when a link is clicked
+    document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', () => {
+            navLinks.classList.remove('open');
+            menuToggle.classList.remove('active');
+        });
     });
 
     // Hero particle canvas

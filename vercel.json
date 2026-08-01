@@ -1,4 +1,9 @@
 {
+  "redirects": [
+    { "source": "/index.php", "destination": "/", "permanent": true },
+    { "source": "/home.php", "destination": "/", "permanent": true },
+    { "source": "/home.html", "destination": "/", "permanent": true }
+  ],
   "rewrites": [
     { "source": "/(.*)", "destination": "/$1" }
   ],

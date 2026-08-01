@@ -21,3 +21,5 @@ assets/Aqua-equipment-pool.png
 website_building_context_and_dump
 CLAUDE.md
 serve.mjs
+.env
+.env.local

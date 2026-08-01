@@ -1,6 +1,7 @@
 {
   "name": "navthera-website",
   "version": "1.0.0",
+  "type": "module",
   "description": "Navthera Physiotherapy & Rehabilitation Centre - Official Website",
   "scripts": {
     "dev": "npx serve .",

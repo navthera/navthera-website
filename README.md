@@ -384,6 +384,20 @@ Create `schema.json` embedded in each page:
 
 ## Contact & Support
 
+## WhatsApp chatbot setup
+
+The floating WhatsApp button works immediately and opens the clinic's WhatsApp number. Automated replies require a Meta WhatsApp Cloud API app and a Groq API key.
+
+1. Deploy the project to Vercel.
+2. In Vercel, add every variable from `.env.example` under **Project Settings → Environment Variables**. Do not commit real values.
+3. In your Meta app's WhatsApp configuration, set the webhook URL to `https://your-domain.com/api/whatsapp-webhook` and use the same `WHATSAPP_VERIFY_TOKEN` value for verification.
+4. Subscribe the webhook to the `messages` field and use the Meta app secret as `WHATSAPP_APP_SECRET`.
+5. Send a test message to the connected business number. The function verifies Meta's request signature, answers text messages through Groq's Llama model, and sends the reply through WhatsApp.
+
+The assistant is deliberately limited to approved centre information and booking details. Review `KNOWLEDGE` and `SYSTEM_PROMPT` in `api/whatsapp-webhook.js` before launch whenever services, hours, or safety rules change.
+
+---
+
 For questions or updates:
 - **Website:** https://navthera.com
 - **GitHub:** https://github.com/Kabir1618/navthera-website

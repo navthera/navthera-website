@@ -213,26 +213,26 @@
                 <div class="form-row">
                     <div class="form-group">
                         <label>First Name *</label>
-                        <input type="text" placeholder="Your first name" required>
+                        <input type="text" name="firstName" placeholder="Your first name" required>
                     </div>
                     <div class="form-group">
                         <label>Last Name *</label>
-                        <input type="text" placeholder="Your last name" required>
+                        <input type="text" name="lastName" placeholder="Your last name" required>
                     </div>
                 </div>
                 <div class="form-row">
                     <div class="form-group">
                         <label>Phone Number *</label>
-                        <input type="tel" placeholder="+91 98765 43210" required>
+                        <input type="tel" name="phone" placeholder="+91 98765 43210" required>
                     </div>
                     <div class="form-group">
                         <label>Email</label>
-                        <input type="email" placeholder="your@email.com">
+                        <input type="email" name="email" placeholder="your@email.com">
                     </div>
                 </div>
                 <div class="form-group">
                     <label>Service of Interest *</label>
-                    <select required>
+                    <select name="service" required>
                         <option value="" disabled selected>Select a department</option>
                         <option>General Physiotherapy Assessment</option>
                         <option>Neuro Rehabilitation</option>
@@ -251,11 +251,11 @@
                 <div class="form-row">
                     <div class="form-group">
                         <label>Preferred Date</label>
-                        <input type="date">
+                        <input type="date" name="preferredDate">
                     </div>
                     <div class="form-group">
                         <label>Preferred Time</label>
-                        <select>
+                        <select name="preferredTime">
                             <option value="" disabled selected>Select time</option>
                             <option>Morning (8AM – 12PM)</option>
                             <option>Afternoon (12PM – 4PM)</option>
@@ -265,10 +265,10 @@
                 </div>
                 <div class="form-group">
                     <label>Tell Us About Your Condition</label>
-                    <textarea placeholder="Briefly describe your condition, symptoms, or what you're looking for help with..."></textarea>
+                    <textarea name="condition" placeholder="Briefly describe your condition, symptoms, or what you're looking for help with..."></textarea>
                 </div>
                 <button type="submit" class="form-submit">Request Appointment</button>
-                <p class="form-note">We'll confirm your appointment within 24 hours via phone or email.</p>
+                <p class="form-note">Your request will open in WhatsApp for sending to our team. We'll confirm your appointment within 24 hours via phone or email.</p>
             </form>
         </div>
     </div>
@@ -299,18 +299,21 @@
 <script>
 function handleSubmit(e){
     e.preventDefault();
-    const btn=e.target.querySelector('.form-submit');
-    btn.textContent='Appointment Requested!';
-    btn.style.background='linear-gradient(135deg,#1A8A7D,#3EC6C0)';
-    btn.style.color='white';
-    btn.disabled=true;
-    setTimeout(()=>{
-        btn.textContent='Request Appointment';
-        btn.style.background='';
-        btn.style.color='';
-        btn.disabled=false;
-        e.target.reset();
-    },3000);
+    const form=e.target;
+    const formData=new FormData(form);
+    const appointmentDetails=[
+        'New appointment request',
+        '',
+        `Name: ${formData.get('firstName')} ${formData.get('lastName')}`,
+        `Phone: ${formData.get('phone')}`,
+        `Email: ${formData.get('email') || 'Not provided'}`,
+        `Service: ${formData.get('service')}`,
+        `Preferred date: ${formData.get('preferredDate') || 'Not specified'}`,
+        `Preferred time: ${formData.get('preferredTime') || 'Not specified'}`,
+        `Condition / notes: ${formData.get('condition') || 'Not provided'}`
+    ].join('\n');
+    const whatsappUrl=`https://wa.me/919116032400?text=${encodeURIComponent(appointmentDetails)}`;
+    window.open(whatsappUrl,'_blank','noopener');
 }
 </script>
 <script src="assets/whatsapp-chat.js" defer></script>

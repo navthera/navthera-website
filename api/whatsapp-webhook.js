@@ -6,7 +6,7 @@ export const config = { api: { bodyParser: false } };
 
 const KNOWLEDGE = `
 Navthera Advanced Physio and Rehab Centre is at 68, Shri Gopal Nagar, Gopalpura Byepass, Jaipur, Rajasthan 302019.
-Phone: +91 9116032400. Email: contact@navthera.in.
+Phone: +91 9784532400. Email: contact@navthera.in.
 Hours: Monday-Saturday 8:00 AM-8:00 PM; Sunday 9:00 AM-2:00 PM.
 Services include general physiotherapy assessment, neuro, orthopaedic, sports, pelvic health and incontinence, geriatric, oncology, balance and vestibular, cardio-respiratory, gynaec and women's health rehabilitation, and aquatherapy.
 For booking, collect only the patient's name, service of interest, preferred date/time, and callback number. Tell them the team will confirm availability.
@@ -58,7 +58,7 @@ async function getAssistantReply(message) {
   });
   if (!response.ok) throw new Error(`LLM API error: ${await response.text()}`);
   const result = await response.json();
-  return result.choices?.[0]?.message?.content?.trim() || 'I am sorry, I could not answer that. Please call us at +91 9116032400.';
+  return result.choices?.[0]?.message?.content?.trim() || 'I am sorry, I could not answer that. Please call us at +91 9784532400.';
 }
 
 export default async function handler(req, res) {

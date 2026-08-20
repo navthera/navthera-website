@@ -5,6 +5,7 @@
 
 /* CSS Variables for Theming */
 :root {
+    --gold-light: #E2C98F;
     --navbar-bg: transparent;
     --navbar-text: #FFFFFF;
     --navbar-text-muted: rgba(255, 255, 255, 0.6);
@@ -164,6 +165,74 @@
 
 .nav-links a.active::after {
     width: 100%;
+}
+
+/* ---- SERVICES DROPDOWN ---- */
+.service-menu { position: relative; }
+.service-menu::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: -20px;
+    right: -20px;
+    height: 14px;
+}
+.service-submenu {
+    position: absolute;
+    top: calc(100% + 10px);
+    left: 50%;
+    transform: translateX(-50%);
+    display: block;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    min-width: 270px;
+    padding: 10px;
+    list-style: none;
+    background: rgba(255,255,255,0.98);
+    border: 1px solid rgba(13,40,68,0.08);
+    box-shadow: 0 14px 35px rgba(13,40,68,0.14);
+    border-radius: 10px;
+    transform: translate(-50%, -6px);
+    transition: opacity .2s ease, transform .2s ease, visibility .2s ease;
+    will-change: opacity, transform;
+}
+.service-menu:hover .service-submenu,
+.service-menu:focus-within .service-submenu,
+.service-menu.open .service-submenu { opacity: 1; visibility: visible; pointer-events: auto; transform: translate(-50%, 0); }
+.service-submenu li { padding: 0; }
+.service-submenu a { display: block; padding: 8px 10px; color: var(--navy, #0D2844); font-size: 0.76rem; white-space: normal; }
+.service-submenu a::after { display: none; }
+.service-submenu a:hover { background: rgba(62,198,192,0.1); border-radius: 6px; }
+.service-submenu a:focus-visible, .nav-links a:focus-visible, .nav-cta:focus-visible, .menu-toggle:focus-visible { outline: 2px solid var(--cyan); outline-offset: 4px; }
+
+/* ---- SHARED FOOTER ---- */
+.navthera-site-footer { background: #081B30; padding: 54px 60px 22px; color: rgba(255,255,255,0.72); font-size: 0.82rem; }
+.navthera-site-footer .footer-grid { max-width: 1180px; margin: 0 auto; display: grid; grid-template-columns: 1.5fr 0.8fr 1.3fr 1.1fr; gap: 42px; }
+.footer-logo { display: inline-flex; align-items: center; gap: 12px; color: white; text-decoration: none; }
+.footer-logo img { width: 44px; height: 44px; object-fit: contain; border-radius: 8px; background: white; padding: 4px; }
+.footer-logo span { font-family: 'Playfair Display', serif; font-size: 1.2rem; font-weight: 700; }
+.footer-logo small { display: block; font-family: 'Inter', sans-serif; color: #3EC6C0; font-size: 0.52rem; letter-spacing: 1.8px; text-transform: uppercase; }
+.footer-brand p { max-width: 280px; margin: 18px 0; line-height: 1.7; }
+.footer-col { display: flex; flex-direction: column; gap: 9px; }
+.footer-col h3 { color: #C9A96E; font-size: 0.72rem; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 6px; }
+.navthera-site-footer a { color: rgba(255,255,255,0.7); text-decoration: none; transition: color .2s ease; }
+.navthera-site-footer a:hover, .navthera-site-footer a:focus-visible { color: #3EC6C0; }
+.footer-socials { display: flex; gap: 10px; }
+.footer-socials a { display: inline-flex; align-items: center; justify-content: center; width: 34px; height: 34px; border: 1px solid rgba(255,255,255,0.2); border-radius: 50%; }
+.footer-socials svg { width: 17px; height: 17px; fill: currentColor; }
+.footer-socials a:nth-child(2) svg { fill: none; }
+.footer-appointment { display: inline-flex; width: fit-content; margin-top: 7px; padding: 10px 14px; border-radius: 999px; background: #C9A96E; color: #081B30 !important; font-weight: 700; }
+.footer-bottom { max-width: 1180px; margin: 42px auto 0; padding-top: 18px; border-top: 1px solid rgba(255,255,255,0.12); display: flex; justify-content: space-between; gap: 16px; color: rgba(255,255,255,0.42); font-size: 0.72rem; }
+
+/* ---- RESTRAINED PAGE POLISH ---- */
+.hero, .page-hero, .journal-hero { animation: navtheraPageIn .45s ease both; }
+.hero-card, .card, .article-card { transition: transform .25s ease, box-shadow .25s ease; }
+.hero-card:hover, .card:hover, .article-card:hover { transform: translateY(-3px); box-shadow: 0 14px 38px rgba(13,40,68,0.13); }
+@keyframes navtheraPageIn { from { opacity: 0; } to { opacity: 1; } }
+
+@media (prefers-reduced-motion: reduce) {
+    .service-submenu, .hero, .page-hero, .journal-hero, .hero-card, .card, .article-card { animation: none; transition: none; }
 }
 
 /* ---- NAV CTA ---- */
@@ -334,12 +403,23 @@
         border-bottom: none;
     }
 
+    .service-menu { width: 100%; }
+    .service-menu::after { display: none; }
+    .service-submenu { position: static; transform: none; min-width: 0; margin-top: 8px; padding: 4px 10px; box-shadow: none; border: none; background: rgba(13,40,68,0.04); display: block; opacity: 0; visibility: hidden; pointer-events: none; transition: opacity .2s ease, visibility .2s ease; }
+    .service-menu:hover .service-submenu,
+    .service-menu:focus-within .service-submenu { display: none; }
+    .service-menu.open .service-submenu { display: block; opacity: 1; visibility: visible; pointer-events: auto; transform: none; }
+
     .nav-cta {
         order: 2;
         margin-left: auto;
         padding: 8px 16px;
         font-size: 0.7rem;
     }
+
+    .navthera-site-footer { padding: 38px 24px 18px; }
+    .navthera-site-footer .footer-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 30px 22px; }
+    .footer-bottom { margin-top: 30px; flex-direction: column; }
 }
 
 @media (max-width: 480px) {
@@ -376,4 +456,7 @@
     .nav-cta {
         display: none;
     }
+
+    .navthera-site-footer .footer-grid { grid-template-columns: 1fr; }
+    .footer-brand p { max-width: none; }
 }

@@ -71,6 +71,16 @@ navthera-website/
 
 ## Getting Started (Local Development)
 
+The production site root is this `navthera-website` directory. Do not deploy the sibling `navthera_deploy` directory; it is an older, incomplete copy without the rehabilitation service pages.
+
+Run the local clean-route server with:
+
+```bash
+npm run dev
+```
+
+It serves only this project directory and supports `/`, all clean rehabilitation URLs, and `/blog/`.
+
 ### Prerequisites
 - Node.js (v16+) installed on your system
 - Git (to clone/manage the repository)

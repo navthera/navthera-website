@@ -2,10 +2,42 @@
   "redirects": [
     { "source": "/index.php", "destination": "/", "permanent": true },
     { "source": "/home.php", "destination": "/", "permanent": true },
-    { "source": "/home.html", "destination": "/", "permanent": true }
+    { "source": "/home.html", "destination": "/", "permanent": true },
+    { "source": "/index.html", "destination": "/", "permanent": true },
+    { "source": "/about.html", "destination": "/about", "permanent": true },
+    { "source": "/services.html", "destination": "/services", "permanent": true },
+    { "source": "/contact.html", "destination": "/contact", "permanent": true },
+    { "source": "/aquatherapy.html", "destination": "/aquatherapy", "permanent": true },
+    { "source": "/aquafit.html", "destination": "/aquafit", "permanent": true },
+    { "source": "/neuro-rehab.html", "destination": "/neuro-rehabilitation", "permanent": true },
+    { "source": "/orthopaedic.html", "destination": "/orthopaedic-rehabilitation", "permanent": true },
+    { "source": "/sports-rehab.html", "destination": "/sports-rehabilitation", "permanent": true },
+    { "source": "/pelvic-health.html", "destination": "/pelvic-health-physiotherapy", "permanent": true },
+    { "source": "/geriatric.html", "destination": "/geriatric-physiotherapy", "permanent": true },
+    { "source": "/oncology.html", "destination": "/oncology-rehabilitation", "permanent": true },
+    { "source": "/balance-vestibular.html", "destination": "/balance-and-vestibular-rehabilitation", "permanent": true },
+    { "source": "/cardio-respiratory.html", "destination": "/cardiopulmonary-rehabilitation", "permanent": true },
+    { "source": "/womens-health.html", "destination": "/womens-health-physiotherapy", "permanent": true },
+    { "source": "/blog", "destination": "/blog/", "permanent": true }
   ],
   "rewrites": [
-    { "source": "/(.*)", "destination": "/$1" }
+    { "source": "/", "destination": "/index.html" },
+    { "source": "/about", "destination": "/about.html" },
+    { "source": "/services", "destination": "/services.html" },
+    { "source": "/contact", "destination": "/contact.html" },
+    { "source": "/aquatherapy", "destination": "/aquatherapy.html" },
+    { "source": "/aquafit", "destination": "/aquafit.html" },
+    { "source": "/neuro-rehabilitation", "destination": "/neuro-rehab.html" },
+    { "source": "/orthopaedic-rehabilitation", "destination": "/orthopaedic.html" },
+    { "source": "/sports-rehabilitation", "destination": "/sports-rehab.html" },
+    { "source": "/pelvic-health-physiotherapy", "destination": "/pelvic-health.html" },
+    { "source": "/geriatric-physiotherapy", "destination": "/geriatric.html" },
+    { "source": "/oncology-rehabilitation", "destination": "/oncology.html" },
+    { "source": "/balance-and-vestibular-rehabilitation", "destination": "/balance-vestibular.html" },
+    { "source": "/cardiopulmonary-rehabilitation", "destination": "/cardio-respiratory.html" },
+    { "source": "/womens-health-physiotherapy", "destination": "/womens-health.html" },
+    { "source": "/blog/", "destination": "/blog/index.html" },
+    { "source": "/blog/:slug", "destination": "/blog/:slug.html" }
   ],
   "headers": [
     {

@@ -2,7 +2,7 @@
 (function () {
     'use strict';
 
-    var phoneNumber = '919784532400';
+    var phoneNumber = '919116032400';
     var message = 'Hello, I would like help with Navthera services or booking an appointment.';
     var href = 'https://wa.me/' + phoneNumber + '?text=' + encodeURIComponent(message);
 

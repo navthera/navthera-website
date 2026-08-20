@@ -132,7 +132,7 @@
                     </div>
                 </div>
                 <div class="footer-col"><h3>Explore</h3><a href="/">Home</a><a href="/about">About Navthera</a><a href="/services">All Services</a><a href="/blog/">Blog</a><a href="/contact">Contact</a></div>
-                <div class="footer-col"><h3>Practice Areas</h3>${serviceLinks.slice(0, 5).map(([label, href]) => `<a href="${href}">${label}</a>`).join('')}</div>
+                <div class="footer-col"><h3>Practice Areas</h3>${serviceLinks.map(([label, href]) => `<a href="${href}">${label}</a>`).join('')}</div>
                 <div class="footer-col"><h3>Connect</h3><a href="tel:+919784532400">+91 97845 32400</a><a href="mailto:contact@navthera.in">contact@navthera.in</a><a href="https://maps.app.goo.gl/icwewDzpBcDJYhY98" target="_blank" rel="noopener noreferrer">68, Shri Gopal Nagar, Jaipur</a><a class="footer-appointment" href="/contact">Book an Appointment</a><a href="https://wa.me/919116032400" target="_blank" rel="noopener noreferrer">Chat on WhatsApp</a></div>
             </div>
             <div class="footer-bottom"><span>&copy; 2026 Navthera Advanced Physio and Rehab Centre. All rights reserved.</span><span>Care with precision. Recovery with purpose.</span></div>`;

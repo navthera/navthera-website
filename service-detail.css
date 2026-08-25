@@ -1,7 +1,7 @@
 
 /* ===== SERVICE DETAIL SHARED LAYOUT ===== */
 .service-detail-page{background:var(--cream);min-height:100vh;}
-.service-detail-nav{max-width:1200px;margin:0 auto;padding:34px 24px 44px;}
+.service-detail-nav{max-width:1200px;margin:0 auto;padding:124px 24px 44px;}
 .service-detail-tabs{display:grid;grid-template-columns:repeat(5,max-content);justify-content:center;gap:8px 8px;}
 .service-detail-tab{display:inline-flex;align-items:center;gap:8px;min-height:46px;padding:8px 14px;border:1px solid rgba(13,40,68,.10);border-radius:8px;background:#fff;color:var(--navy);text-decoration:none;font-size:.78rem;font-weight:600;box-shadow:0 2px 8px rgba(13,40,68,.03);transition:all .2s ease;}
 .service-detail-tab:hover{border-color:rgba(26,138,125,.35);transform:translateY(-1px);}
@@ -38,4 +38,4 @@
 .service-detail-card .aqua-offer-img{width:100%;border-radius:10px;display:block;}
 @media(max-width:1100px){.service-detail-tabs{grid-template-columns:repeat(4,max-content);}}
 @media(max-width:900px){.service-detail-tabs{grid-template-columns:repeat(3,max-content)}.service-detail-card .conditions-grid{grid-template-columns:1fr 1fr}.service-detail-card .pathway-steps{grid-template-columns:repeat(2,minmax(0,1fr));}}
-@media(max-width:620px){.service-detail-nav{padding:22px 14px 28px}.service-detail-tabs{grid-template-columns:repeat(2,minmax(0,1fr));gap:7px}.service-detail-tab{font-size:.7rem;padding:7px 10px;min-height:42px}.service-detail-tab-icon{width:26px;height:26px;flex-basis:26px}.service-detail-shell{padding:0 10px;margin-bottom:30px}.service-detail-card .hero{padding:25px 20px 22px}.service-detail-card main .section{padding:22px 20px 0}.service-detail-card .conditions-grid{grid-template-columns:1fr}.service-detail-card .pathway-steps{grid-template-columns:1fr 1fr;gap:7px}.service-detail-card .cta{padding:0 20px 24px}.service-detail-card .panel-cta-row{padding:0 20px 24px}.service-detail-card .pathway-step p{font-size:.66rem}}
+@media(max-width:620px){.service-detail-nav{padding:92px 14px 28px}.service-detail-tabs{grid-template-columns:repeat(2,minmax(0,1fr));gap:7px}.service-detail-tab{font-size:.7rem;padding:7px 10px;min-height:42px}.service-detail-tab-icon{width:26px;height:26px;flex-basis:26px}.service-detail-shell{padding:0 10px;margin-bottom:30px}.service-detail-card .hero{padding:25px 20px 22px}.service-detail-card main .section{padding:22px 20px 0}.service-detail-card .conditions-grid{grid-template-columns:1fr}.service-detail-card .pathway-steps{grid-template-columns:1fr 1fr;gap:7px}.service-detail-card .cta{padding:0 20px 24px}.service-detail-card .panel-cta-row{padding:0 20px 24px}.service-detail-card .pathway-step p{font-size:.66rem}}

@@ -41,33 +41,6 @@
         /* ---- MAIN LAYOUT ---- */
         .services-layout { max-width: 960px; margin: 0 auto; padding: 40px 40px 60px; display: grid; grid-template-columns: 1fr; gap: 30px; min-height: auto; }
 
-        /* ---- SIDEBAR TABS ---- */
-        .dept-sidebar { position: relative; top: auto; align-self: auto; width: 100%; margin-bottom: 24px; overflow: hidden; }
-        .dept-tab-list { display: flex; flex-direction: row; flex-wrap: wrap; justify-content: center; gap: 8px; padding: 0; width: 100%; }
-        .dept-tab {
-            display: flex; align-items: center; justify-content: center; gap: 6px;
-            padding: 10px 14px; border-radius: 8px;
-            background: var(--white); border: 1px solid rgba(13,40,68,0.08);
-            cursor: pointer; transition: all 0.25s ease;
-            text-decoration: none;
-            flex-shrink: 0;
-            white-space: nowrap;
-        }
-        .dept-tab:hover { background: var(--white); border-color: rgba(26,138,125,0.25); box-shadow: 0 2px 8px rgba(26,138,125,0.1); transform: none; }
-        .dept-tab.active { background: var(--teal); border-color: var(--teal); color: white; box-shadow: 0 4px 12px rgba(26,138,125,0.3); transform: none; }
-        .dept-tab-icon {
-            width: 30px; height: 30px; border-radius: 7px;
-            display: flex; align-items: center; justify-content: center; flex-shrink: 0;
-            transition: all 0.25s;
-        }
-        .dept-tab.active .dept-tab-icon { background: rgba(255,255,255,0.25); }
-        .dept-tab-icon svg { width: 14px; height: 14px; color: var(--teal); }
-        .dept-tab.active .dept-tab-icon svg { color: white; }
-        .dept-tab-text { display: flex; flex-direction: column; }
-        .dept-tab-name { font-size: 0.8rem; font-weight: 600; color: var(--navy); line-height: 1.3; }
-        .dept-tab.active .dept-tab-name { color: white; }
-        .dept-tab-subtitle { display: none; }
-
         /* ---- CONTENT AREA ---- */
         .dept-content-area { background: var(--white); border-radius: var(--radius); box-shadow: var(--shadow-soft); overflow: visible; }
 
@@ -124,18 +97,6 @@
         .footer-links { display: flex; gap: 24px; }
         .footer-links a { font-size: 0.8rem; color: rgba(255,255,255,0.4); text-decoration: none; transition: color 0.3s; }
         .footer-links a:hover { color: var(--cyan); }
-
-        /* ---- ICON COLORS ---- */
-        .icon-neuro { background: linear-gradient(135deg, #0D2844, #1A8A7D); }
-        .icon-ortho { background: linear-gradient(135deg, #14706A, #3EC6C0); }
-        .icon-aqua { background: linear-gradient(135deg, #1A8A7D, #6EDCD8); }
-        .icon-sports { background: linear-gradient(135deg, #0D2844, #C9A96E); }
-        .icon-pelvic { background: linear-gradient(135deg, #8B5A7D, #C9A96E); }
-        .icon-geriatric { background: linear-gradient(135deg, #5A7D6B, #3EC6C0); }
-        .icon-oncology { background: linear-gradient(135deg, #7D5A5A, #C9A96E); }
-        .icon-vestibular { background: linear-gradient(135deg, #3A5A8D, #6EDCD8); }
-        .icon-cardio { background: linear-gradient(135deg, #8D3A3A, #E08A8A); }
-        .icon-gynaec { background: linear-gradient(135deg, #8A5A8D, #D8A6DC); }
 
         /* Header color bars per department */
         .panel-neuro .panel-header::before { background: linear-gradient(90deg, #0D2844, #1A8A7D); }
@@ -352,19 +313,6 @@
                 padding: 30px 24px 50px;
                 max-width: 100%;
             }
-            .dept-tab-list {
-                flex-direction: row;
-                overflow-x: auto;
-                gap: 6px;
-                padding-bottom: 4px;
-                -webkit-overflow-scrolling: touch;
-                justify-content: flex-start;
-            }
-            .dept-tab {
-                flex-shrink: 0;
-                padding: 8px 12px;
-                border-radius: 8px;
-            }
             .spoke-items {
                 grid-template-columns: 1fr;
                 gap: 16px;
@@ -374,19 +322,6 @@
         @media (max-width: 768px) {
             .services-layout {
                 padding: 20px 16px 40px;
-            }
-            .dept-tab-list {
-                gap: 4px;
-                flex-wrap: nowrap;
-                overflow-x: auto;
-            }
-            .dept-tab {
-                padding: 6px 10px;
-                font-size: 0.75rem;
-            }
-            .dept-tab-icon {
-                width: 28px;
-                height: 28px;
             }
             .spoke-hub {
                 gap: 8px;
@@ -466,45 +401,6 @@
                 padding: 16px 12px 30px;
                 gap: 20px;
             }
-
-            /* Department Tabs */
-            .dept-sidebar { margin-bottom: 16px; }
-            .dept-tab-list {
-                gap: 6px;
-                flex-wrap: nowrap;
-                overflow-x: auto;
-                -webkit-overflow-scrolling: touch;
-                scroll-behavior: smooth;
-                padding: 0 0 8px 0;
-                margin: 0 -12px;
-                padding-left: 12px;
-                padding-right: 12px;
-            }
-            .dept-tab-list::-webkit-scrollbar {
-                height: 3px;
-            }
-            .dept-tab-list::-webkit-scrollbar-track {
-                background: rgba(13, 40, 68, 0.05);
-                border-radius: 10px;
-            }
-            .dept-tab-list::-webkit-scrollbar-thumb {
-                background: rgba(26, 138, 125, 0.3);
-                border-radius: 10px;
-            }
-            .dept-tab {
-                padding: 8px 12px;
-                font-size: 0.7rem;
-                flex-shrink: 0;
-                white-space: nowrap;
-                min-width: fit-content;
-            }
-            .dept-tab-icon {
-                width: 24px;
-                height: 24px;
-                flex-shrink: 0;
-            }
-            .dept-tab-icon svg { width: 12px; height: 12px; }
-            .dept-tab-name { font-size: 0.75rem; }
 
             /* Content Area */
             .dept-content-area {
@@ -685,61 +581,15 @@
 </section>
 
 <!-- ============================================ -->
-<!-- TABBED SERVICES LAYOUT -->
+<!-- SERVICES LAYOUT -->
 <!-- ============================================ -->
 <div class="services-layout">
-
-    <!-- SIDEBAR TABS -->
-    <aside class="dept-sidebar">
-        <div class="dept-tab-list">
-            <div class="dept-tab" data-dept="neuro">
-                <div class="dept-tab-icon icon-neuro"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
-                <div class="dept-tab-text"><span class="dept-tab-name">Neuro Rehab</span><span class="dept-tab-subtitle">Brain & Nerve</span></div>
-            </div>
-            <div class="dept-tab" data-dept="ortho">
-                <div class="dept-tab-icon icon-ortho"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M16 4h2a2 2 0 012 2v14a2 2 0 01-2 2H6a2 2 0 01-2-2V6a2 2 0 012-2h2"/><rect x="8" y="2" width="8" height="4" rx="1"/></svg></div>
-                <div class="dept-tab-text"><span class="dept-tab-name">Orthopaedic</span><span class="dept-tab-subtitle">Bones & Joints</span></div>
-            </div>
-            <div class="dept-tab" data-dept="aqua">
-                <div class="dept-tab-icon icon-aqua"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7z"/></svg></div>
-                <div class="dept-tab-text"><span class="dept-tab-name">Aquatherapy</span><span class="dept-tab-subtitle">Rajasthan's First</span></div>
-            </div>
-            <div class="dept-tab" data-dept="sports">
-                <div class="dept-tab-icon icon-sports"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z"/></svg></div>
-                <div class="dept-tab-text"><span class="dept-tab-name">Sports Rehab</span><span class="dept-tab-subtitle">Athletic Recovery</span></div>
-            </div>
-            <div class="dept-tab" data-dept="pelvic">
-                <div class="dept-tab-icon icon-pelvic"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
-                <div class="dept-tab-text"><span class="dept-tab-name">Pelvic Health</span><span class="dept-tab-subtitle">Incontinence Care</span></div>
-            </div>
-            <div class="dept-tab" data-dept="geriatric">
-                <div class="dept-tab-icon icon-geriatric"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/></svg></div>
-                <div class="dept-tab-text"><span class="dept-tab-name">Geriatric</span><span class="dept-tab-subtitle">Elderly Care</span></div>
-            </div>
-            <div class="dept-tab" data-dept="oncology">
-                <div class="dept-tab-icon icon-oncology"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg></div>
-                <div class="dept-tab-text"><span class="dept-tab-name">Oncology</span><span class="dept-tab-subtitle">Cancer Recovery</span></div>
-            </div>
-            <div class="dept-tab" data-dept="vestibular">
-                <div class="dept-tab-icon icon-vestibular"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
-                <div class="dept-tab-text"><span class="dept-tab-name">Balance & Vestibular</span><span class="dept-tab-subtitle">Dizziness & Falls</span></div>
-            </div>
-            <div class="dept-tab" data-dept="cardio">
-                <div class="dept-tab-icon icon-cardio"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
-                <div class="dept-tab-text"><span class="dept-tab-name">Cardio & Respiratory</span><span class="dept-tab-subtitle">Heart & Lungs</span></div>
-            </div>
-            <div class="dept-tab" data-dept="gynaec">
-                <div class="dept-tab-icon icon-gynaec"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
-                <div class="dept-tab-text"><span class="dept-tab-name">Women's Health</span><span class="dept-tab-subtitle">Gynaec & Postnatal</span></div>
-            </div>
-        </div>
-    </aside>
 
     <!-- CONTENT PANELS -->
     <div class="dept-content-area">
 
         <!-- ===== NEURO REHAB ===== -->
-        <div class="dept-panel panel-neuro" id="panel-neuro">
+        <div class="dept-panel panel-neuro active" id="panel-neuro">
             <div class="panel-header">
                 <span class="panel-tag">Department</span>
                 <h2>Neuro Rehabilitation</h2>
@@ -1477,37 +1327,6 @@
     </div>
 </footer>
 
-<script>
-// Tab switching — NO scrolling, just show/hide panels
-const tabs = document.querySelectorAll('.dept-tab');
-const panels = document.querySelectorAll('.dept-panel');
-
-function activateDepartment(dept) {
-    const tab = document.querySelector(`.dept-tab[data-dept="${dept}"]`);
-    if (!tab) return;
-
-    // Update active tab
-    tabs.forEach(t => t.classList.remove('active'));
-    tab.classList.add('active');
-
-    // Show matching panel, hide others
-    panels.forEach(p => {
-        p.classList.toggle('active', p.id === 'panel-' + dept);
-    });
-}
-
-tabs.forEach(tab => {
-    tab.addEventListener('click', function () {
-        activateDepartment(this.getAttribute('data-dept'));
-    });
-});
-
-// Allow direct links from the Services dropdown to select a department.
-if (window.location.hash === '#aquatherapy') {
-    activateDepartment('aqua');
-}
-
-</script>
 <script src="assets/whatsapp-chat.js" defer></script>
 <script src="navbar.js" defer></script>
 </body>

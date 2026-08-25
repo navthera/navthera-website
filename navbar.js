@@ -12,16 +12,16 @@
     const assetPrefix = /\/blog\//.test(window.location.pathname) ? '../' : '';
 
     const serviceLinks = [
-        ['Neuro Rehabilitation', '/neuro-rehabilitation'],
-        ['Orthopaedic Rehabilitation', '/orthopaedic-rehabilitation'],
-        ['Aquatherapy', '/aquatherapy'],
-        ['Sports Rehabilitation', '/sports-rehabilitation'],
-        ['Pelvic Health Physiotherapy', '/pelvic-health-physiotherapy'],
-        ['Geriatric Physiotherapy', '/geriatric-physiotherapy'],
-        ['Oncology Rehabilitation', '/oncology-rehabilitation'],
-        ['Balance & Vestibular Rehabilitation', '/balance-and-vestibular-rehabilitation'],
-        ['Cardio & Respiratory Rehabilitation', '/cardio-respiratory-rehabilitation'],
-        ["Women's Health Physiotherapy", '/womens-health-physiotherapy']
+        ['Neuro Rehabilitation', '/neuro-rehabilitation/'],
+        ['Orthopaedic Rehabilitation', '/orthopaedic-rehabilitation/'],
+        ['Aquatherapy', '/aquatherapy.html'],
+        ['Sports Rehabilitation', '/sports-rehabilitation/'],
+        ['Pelvic Health Physiotherapy', '/pelvic-health-physiotherapy/'],
+        ['Geriatric Physiotherapy', '/geriatric-physiotherapy/'],
+        ['Oncology Rehabilitation', '/oncology-rehabilitation/'],
+        ['Balance & Vestibular Rehabilitation', '/balance-and-vestibular-rehabilitation/'],
+        ['Cardio & Respiratory Rehabilitation', '/cardio-respiratory-rehabilitation/'],
+        ["Women's Health Physiotherapy", '/womens-health-physiotherapy/']
     ];
 
     const blogLink = ['/blog/', 'Blog'];
@@ -48,16 +48,26 @@
         '/services': 'services.html',
         '/contact': 'contact.html',
         '/aquatherapy': 'aquatherapy.html',
+        '/aquatherapy.html': 'aquatherapy.html',
         '/aquafit': 'aquafit.html',
         '/neuro-rehabilitation': 'neuro-rehab.html',
+        '/neuro-rehabilitation/': 'neuro-rehab.html',
         '/orthopaedic-rehabilitation': 'orthopaedic.html',
+        '/orthopaedic-rehabilitation/': 'orthopaedic.html',
         '/sports-rehabilitation': 'sports-rehab.html',
+        '/sports-rehabilitation/': 'sports-rehab.html',
         '/pelvic-health-physiotherapy': 'pelvic-health.html',
+        '/pelvic-health-physiotherapy/': 'pelvic-health.html',
         '/geriatric-physiotherapy': 'geriatric.html',
+        '/geriatric-physiotherapy/': 'geriatric.html',
         '/oncology-rehabilitation': 'oncology.html',
+        '/oncology-rehabilitation/': 'oncology.html',
         '/balance-and-vestibular-rehabilitation': 'balance-vestibular.html',
+        '/balance-and-vestibular-rehabilitation/': 'balance-vestibular.html',
         '/cardio-respiratory-rehabilitation': 'cardio-respiratory-rehabilitation/index.html',
+        '/cardio-respiratory-rehabilitation/': 'cardio-respiratory-rehabilitation/index.html',
         '/womens-health-physiotherapy': 'womens-health.html',
+        '/womens-health-physiotherapy/': 'womens-health.html',
         '/blog/': 'blog/index.html'
     };
 
@@ -99,10 +109,7 @@
         submenu.setAttribute('aria-label', 'Rehabilitation services');
         serviceLinks.forEach(([label, href]) => {
             const item = document.createElement('li');
-            // Aquatherapy is the tenth department on the Services page; its
-            // standalone page remains available from its own navigation links.
-            const menuHref = label === 'Aquatherapy' ? '/services#aquatherapy' : href;
-            item.innerHTML = `<a href="${menuHref}">${label}</a>`;
+            item.innerHTML = `<a href="${href}">${label}</a>`;
             submenu.appendChild(item);
         });
         parent.appendChild(submenu);
@@ -242,7 +249,7 @@
     // ---- ACTIVE LINK HIGHLIGHTING ----
     if (navLinks) {
         const currentPath = window.location.pathname.replace(/\/$/, '') || '/';
-        const servicePaths = serviceLinks.map(([, href]) => href);
+        const servicePaths = serviceLinks.map(([, href]) => href.replace(/\/$/, ''));
         navLinks.querySelectorAll('a').forEach(link => {
             const href = link.getAttribute('href');
             if (href === currentPath || (href === '/' && currentPath === '/') || (href === '/services' && servicePaths.includes(currentPath))) {

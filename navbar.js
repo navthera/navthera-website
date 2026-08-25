@@ -46,6 +46,7 @@
         '/': 'index.html',
         '/about': 'about.html',
         '/services': 'services.html',
+        '/services.html': 'services.html',
         '/contact': 'contact.html',
         '/aquatherapy': 'aquatherapy.html',
         '/aquatherapy.html': 'aquatherapy.html',

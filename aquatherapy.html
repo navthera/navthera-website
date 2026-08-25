@@ -9,7 +9,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="navbar.css">
-<link rel="stylesheet" href="service-detail.css">
     <style>
         *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
         :root{--navy:#0D2844;--navy-deep:#081B30;--teal:#1A8A7D;--teal-dark:#14706A;--cyan:#3EC6C0;--cyan-light:#6EDCD8;--gold:#C9A96E;--gold-light:#E0C99A;--cream:#F8F6F2;--white:#FFFFFF;--text-dark:#1A1A2E;--text-muted:#5A6B7D;--shadow-soft:0 4px 30px rgba(13,40,68,0.08);--shadow-medium:0 8px 40px rgba(13,40,68,0.12);}
@@ -204,126 +203,371 @@
             .footer{padding:30px 16px;}
             .footer-links{flex-direction:column;gap:12px;}
         }
-    
-.service-detail-card .service-aqua-body{background:#fff;padding:0;}
-.service-detail-card .conditions-section{background:#fff;}
-.service-detail-card .neuro-offer-visual,.service-detail-card .impact-pathway{padding-top:24px;}
-.service-detail-card .neuro-equipment-img{border-radius:10px;overflow:hidden;}
-.service-detail-card .neuro-equipment-img img{display:block;width:100%;height:auto;}
-.service-detail-card .btn-aqua-detail{display:inline-flex;align-items:center;gap:8px;padding:9px 16px;border-radius:50px;border:1px solid #1a8a7d;color:#1a8a7d;background:#fff;font-size:.72rem;font-weight:600;text-decoration:none;}
-</style>
+    </style>
 </head>
-<body class="service-detail-page">
-
+<body>
 
 <nav class="navbar" data-theme="light">
-    <a href="/" class="navbar-logo">
+    <a href="index.html" class="navbar-logo">
         <img src="assets/Navthera_logo_symbol_jpg.png" alt="Navthera Logo">
         <div class="navbar-brand">Navthera<small>Advanced Physio & Rehab Centre</small></div>
     </a>
     <ul class="nav-links" id="navLinks">
-        <li><a href="/">Home</a></li>
-        <li><a href="/services">Services</a></li>
-        <li><a href="/aquatherapy" class="active">Aquatherapy</a></li>
-        <li><a href="/about">About Us</a></li>
-        <li><a href="/contact">Contact Us</a></li>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="aquatherapy.html" class="active">Aquatherapy</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
     </ul>
-    <a href="/contact" class="nav-cta">Book Appointment</a>
+    <a href="contact.html" class="nav-cta">Book Appointment</a>
     <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
 </nav>
-<nav class="service-detail-nav" aria-label="Rehabilitation services">
-  <div class="service-detail-tabs">
-    <a class="service-detail-tab" href="/neuro-rehabilitation" data-service="neuro"><span class="service-detail-tab-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18M3 12h18"/></svg></span><span>Neuro Rehab</span></a><a class="service-detail-tab" href="/orthopaedic-rehabilitation" data-service="ortho"><span class="service-detail-tab-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 4h8v16H8z"/></svg></span><span>Orthopaedic</span></a><a class="service-detail-tab active" href="/aquatherapy" data-service="aqua"><span class="service-detail-tab-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5c3 3 5 5.5 5 8a5 5 0 1 1-10 0c0-2.5 2-5 5-8Z"/></svg></span><span>Aquatherapy</span></a><a class="service-detail-tab" href="/sports-rehabilitation" data-service="sports"><span class="service-detail-tab-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2.2 6.7H21l-5.5 4 2.1 6.6-5.6-4.1-5.6 4.1 2.1-6.6-5.5-4h6.8L12 2Z"/></svg></span><span>Sports Rehab</span></a><a class="service-detail-tab" href="/pelvic-health-physiotherapy" data-service="pelvic"><span class="service-detail-tab-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 5h14v14H5z"/></svg></span><span>Pelvic Health</span></a><a class="service-detail-tab" href="/geriatric-physiotherapy" data-service="geriatric"><span class="service-detail-tab-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a3 3 0 1 1 0 6 3 3 0 0 1 0-6ZM6 21l2-7 4-2 4 2 2 7"/></svg></span><span>Geriatric</span></a><a class="service-detail-tab" href="/oncology-rehabilitation" data-service="oncology"><span class="service-detail-tab-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a3 3 0 1 0 0 6 3 3 0 0 0 0-6Zm-5 18 2-8 3-2 3 2 2 8"/></svg></span><span>Oncology</span></a><a class="service-detail-tab" href="/balance-and-vestibular-rehabilitation" data-service="vestibular"><span class="service-detail-tab-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4a8 8 0 1 0 0 16 8 8 0 0 0 0-16Zm0 4v4l3 2"/></svg></span><span>Balance & Vestibular</span></a><a class="service-detail-tab" href="/cardio-respiratory-rehabilitation" data-service="cardio"><span class="service-detail-tab-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h4l2-5 4 10 2-5h6"/></svg></span><span>Cardio & Respiratory</span></a><a class="service-detail-tab" href="/womens-health-physiotherapy" data-service="gynaec"><span class="service-detail-tab-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5a3 3 0 1 0 0 6 3 3 0 0 0 0-6Zm0 6v8m-4 0h8"/></svg></span><span>Women's Health</span></a>
-  </div>
-</nav>
-<div class="service-detail-shell">
-  <div class="service-detail-card">
-<header class="hero">
-  <div class="hero-inner">
-    <div>
-      <div class="eyebrow">Rajasthan's First</div>
-      <h1>Aquatherapy</h1>
-      <p>Rajasthan's first purpose-built aquatherapy facility — a temperature-controlled therapeutic pool designed for clinical rehabilitation.</p>
+
+<!-- SPLIT HERO -->
+<div class="split-hero">
+
+    <!-- LEFT: REHABILITATION PANEL -->
+    <div class="split-panel split-panel-rehab">
+        <div class="water-ripple"></div>
+        <div class="water-ripple"></div>
+        <div class="split-glow"></div>
+        <div class="split-breadcrumb"><a href="index.html">Home</a> &nbsp;/&nbsp; Aquatherapy</div>
+        <div class="split-content">
+            <span class="split-tag">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22c5.52 0 10-4.48 10-10S17.52 2 12 2 2 6.48 2 12s4.48 10 10 10z"/><path d="M8 12l2.5 2.5L16 9"/></svg>
+                Rehabilitation &amp; Recovery
+            </span>
+            <h1>I'm here to<br><span style="color:var(--cyan-light);">recover.</span></h1>
+            <p>Rajasthan's first purpose-built aquatherapy pool — water-based rehabilitation that lets you move, strengthen and heal faster than land therapy alone.</p>
+            <a href="#what-is-aquatherapy" class="split-cta-rehab">
+                Explore Rehabilitation
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h12M12 5l7 7-7 7"/></svg>
+            </a>
+        </div>
     </div>
-  </div>
-</header>
-<main>
-  <section class="section">
-<div class="panel-body service-aqua-body">
-<div class="conditions-section">
-<div class="section-label">Conditions We Treat</div>
-<div class="conditions-grid">
-<div class="condition-card">
-<div class="condition-card-title">Orthopaedic Conditions</div>
-<ul><li>Slip disc / Herniated disc</li><li>Sciatica</li><li>Chronic back and neck pain</li><li>Osteoarthritis</li><li>Rheumatoid arthritis</li><li>Ankylosing spondylitis</li><li>Avascular necrosis (AVN)</li><li>Fibromyalgia</li><li>Joint stiffness and mobility loss</li><li>Post-fracture stiffness</li><li>Post joint-replacement rehabilitation</li></ul>
-</div>
-<div class="condition-card">
-<div class="condition-card-title">Neurological Conditions</div>
-<ul><li>Stroke and hemiparesis</li><li>Spinal cord injury</li><li>Multiple sclerosis</li><li>Traumatic brain injury</li><li>Parkinson's disease</li><li>Guillain-Barré syndrome (recovery phase)</li><li>Peripheral neuropathy</li><li>Gait ataxia and walking disorders</li><li>Balance disorders</li></ul>
-</div>
-<div class="condition-card">
-<div class="condition-card-title">Sports &amp; Injury Rehabilitation</div>
-<ul><li>ACL rehabilitation</li><li>Knee ligament injuries</li><li>Ankle instability</li><li>Muscle injuries</li><li>Stress injuries</li><li>Post-surgical sports recovery</li></ul>
-</div>
-<div class="condition-card">
-<div class="condition-card-title">Geriatric &amp; Mobility Issues</div>
-<ul><li>Age-related weakness</li><li>Joint pain in elderly</li><li>Difficulty walking</li><li>Fear of falling</li><li>Balance problems</li></ul>
-</div>
-<div class="condition-card">
-<div class="condition-card-title">Weight Loss &amp; Fitness</div>
-<ul><li>Obesity-related joint pain</li><li>Weight loss programs</li><li>Fitness for individuals unable to exercise on land</li></ul>
-</div>
-<div class="condition-card">
-<div class="condition-card-title">Paediatric Conditions</div>
-<ul><li>Cerebral palsy</li><li>Autism spectrum disorder</li><li>ADHD</li></ul>
-</div>
-</div>
-</div>
-<div class="neuro-offer-visual">
-<div class="section-label">What We Offer</div>
-<div class="neuro-equipment-img">
-<img alt="Navthera Aquatherapy — Heated therapeutic pool, underwater treadmill, resistance jets and buoyancy-assisted rehabilitation" src="/assets/Aqua-equipment-pool-clean.png"/>
-</div>
-</div>
-<div class="impact-pathway">
-<div class="section-label">How It Helps You</div>
-<div class="pathway-steps">
-<div class="pathway-step">
-<div class="pathway-step-num">1</div>
-<h4>Move Without Pain</h4>
-<p>Buoyancy reduces joint stress by up to 80%, allowing patients to exercise freely — even those who cannot stand or walk on land</p>
-</div>
-<div class="pathway-step">
-<div class="pathway-step-num">2</div>
-<h4>Warm Water Healing</h4>
-<p>Therapeutic warmth relaxes muscles, boosts circulation, and naturally reduces pain — making each session more effective than land therapy</p>
-</div>
-<div class="pathway-step">
-<div class="pathway-step-num">3</div>
-<h4>Natural Strengthening</h4>
-<p>Water resistance builds muscle safely without overloading joints — patients control their own effort by varying movement speed</p>
-</div>
-<div class="pathway-step">
-<div class="pathway-step-num">4</div>
-<h4>Confidence &amp; Recovery</h4>
-<p>The supportive environment reduces fall risk and fear, helping patients recover mobility, balance, and endurance significantly faster</p>
-</div>
-</div>
-</div>
+
+    <!-- RIGHT: AQUAFIT PANEL -->
+    <div class="split-panel split-panel-fit">
+        <div class="spark"></div>
+        <div class="spark"></div>
+        <div class="spark"></div>
+        <div class="split-glow"></div>
+        <div class="split-content">
+            <span class="split-tag">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+                AquaFit — For Everyone
+            </span>
+            <h1>I want to<br><span style="color:rgba(255,255,255,0.92);">train differently.</span></h1>
+            <p>Underwater treadmill, aqua bike, resistance training — a completely new kind of workout. No joint impact. Maximum intensity. Something you've never tried before.</p>
+            <a href="aquafit.html" class="split-cta-fit">
+                Explore AquaFit
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h12M12 5l7 7-7 7"/></svg>
+            </a>
+        </div>
+    </div>
+
+    <!-- Bottom hint -->
+    <div class="split-hint">
+        <span>Hover to explore</span>
+        <svg width="18" height="10" viewBox="0 0 18 10" fill="none"><path d="M1 1l8 8 8-8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+    </div>
 
 </div>
-  </section>
-</main>
-<div class="panel-cta-row">
-  <a class="btn-aqua-detail" href="/aquatherapy">Explore Aquatherapy in Detail <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7-7"/></svg></a>
-  <a class="btn-dept" href="/contact">Book Aquatherapy Session <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-</div>
-  </div>
-</div>
+
+<!-- Anchor for rehab scroll -->
+<span id="what-is-aquatherapy" style="display:block;height:0;"></span>
+
+<!-- WHAT IS AQUATHERAPY -->
+<section class="section">
+    <div class="what-section">
+        <span class="section-label" style="text-align:center;display:block;">Understanding Aquatherapy</span>
+        <h2 class="section-title" style="text-align:center;">What is Aquatherapy?</h2>
+        <p>Navthera's aquatherapy facility provides rehabilitation in a temperature-controlled therapeutic pool designed for safe, comfortable movement. Water reduces body weight and joint pressure, allowing patients to move more freely with far less pain. Our programs span mobility, strength, balance, walking rehabilitation, post-surgery recovery, neurological rehab, and weight management — each session supervised and personalised by trained therapists to your condition and goals.</p>
+        <p>Water creates a healing environment that cannot be replicated on land. Buoyancy allows earlier movement after injury or surgery; warm water relaxes muscles, improves circulation, and reduces pain; and natural resistance strengthens muscles without overloading joints. The result: patients recover faster, regain mobility and balance sooner, and return to daily life ahead of what conventional therapy alone would allow.</p>
+        <p>At Navthera, our aquatherapy pool represents a significant investment in bringing world-class water-based rehabilitation to Rajasthan — so patients in Jaipur and surrounding regions no longer need to travel to metro cities for this level of care.</p>
+    </div>
+</section>
+
+<!-- PROPERTIES OF WATER -->
+<section class="section" style="background:var(--cream);padding-top:80px;padding-bottom:80px;">
+    <div style="text-align:center;margin-bottom:40px;">
+        <span class="section-label">The Science</span>
+        <h2 class="section-title">How Water Heals</h2>
+    </div>
+    <div class="properties-grid">
+        <div class="property-card">
+            <div class="property-icon"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22c5.52 0 10-4.48 10-10S17.52 2 12 2 2 6.48 2 12s4.48 10 10 10z"/><path d="M12 6v6l4 2"/></svg></div>
+            <h3>Buoyancy</h3>
+            <p>Water supports body weight, reducing joint load by up to 90%. Patients can move freely with significantly less pain and stress on healing tissues.</p>
+        </div>
+        <div class="property-card">
+            <div class="property-icon"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+            <h3>Hydrostatic Pressure</h3>
+            <p>Water pressure uniformly compresses the body, reducing swelling, improving circulation, and providing proprioceptive feedback for balance recovery.</p>
+        </div>
+        <div class="property-card">
+            <div class="property-icon"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4.5 16.5c.7-.7 1.5-1.3 2.4-1.6a5 5 0 016.2 0c.9.3 1.7.9 2.4 1.6"/><path d="M2 12a10 10 0 0120 0"/></svg></div>
+            <h3>Viscosity</h3>
+            <p>Water's natural resistance provides gentle, graded strengthening. Movement speed determines effort — patients control their own intensity naturally.</p>
+        </div>
+        <div class="property-card">
+            <div class="property-icon"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 2a10 10 0 00-6.88 17.23l.71.68A9.95 9.95 0 0012 22a9.95 9.95 0 006.17-2.09l.71-.68A10 10 0 0012 2z"/></svg></div>
+            <h3>Thermal Effects</h3>
+            <p>The pool is heated to a specific therapeutic temperature. This dilates blood vessels, increases tissue oxygenation, relaxes muscles, reduces pain, and improves range of motion — making every exercise more effective.</p>
+        </div>
+    </div>
+
+    <!-- Bridge: 4 properties converge → patient outcomes -->
+    <div class="outcome-bridge">
+        <svg class="bridge-svg" viewBox="0 0 1100 54" preserveAspectRatio="none" height="54" xmlns="http://www.w3.org/2000/svg">
+            <line x1="128" y1="0" x2="550" y2="46" stroke="rgba(62,198,192,0.22)" stroke-width="1"/>
+            <line x1="409" y1="0" x2="550" y2="46" stroke="rgba(62,198,192,0.22)" stroke-width="1"/>
+            <line x1="690" y1="0" x2="550" y2="46" stroke="rgba(62,198,192,0.22)" stroke-width="1"/>
+            <line x1="971" y1="0" x2="550" y2="46" stroke="rgba(62,198,192,0.22)" stroke-width="1"/>
+            <circle cx="550" cy="46" r="3" fill="#3EC6C0" opacity="0.65"/>
+        </svg>
+        <div class="bridge-label">What this means for your recovery</div>
+        <svg class="bridge-chevron" width="18" height="10" viewBox="0 0 18 10" fill="none"><path d="M1 1l8 8 8-8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </div>
+
+    <div class="outcomes-row">
+        <div class="outcome-item">
+            <div class="outcome-icon"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22c5.52 0 10-4.48 10-10S17.52 2 12 2 2 6.48 2 12s4.48 10 10 10z"/><path d="M8 12l2.5 2.5L16 9"/></svg></div>
+            <h4>Rehabilitate without pain</h4>
+            <p>Buoyancy unloads joints by up to 90%, allowing active, meaningful therapy even when bearing weight on land is impossible.</p>
+        </div>
+        <div class="outcome-item">
+            <div class="outcome-icon"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div>
+            <h4>Significantly faster recovery</h4>
+            <p>Beginning active rehabilitation weeks earlier than land allows — which is consistently shown to compress total recovery timelines.</p>
+        </div>
+        <div class="outcome-item">
+            <div class="outcome-icon"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 20V10M12 20V4M6 20v-6"/></svg></div>
+            <h4>More from every session</h4>
+            <p>Water's multidirectional resistance recruits more muscle groups per movement, delivering stronger functional gains in fewer sessions.</p>
+        </div>
+        <div class="outcome-item">
+            <div class="outcome-icon"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></svg></div>
+            <h4>Swelling resolves sooner</h4>
+            <p>Hydrostatic pressure provides constant, even compression across the body — actively reducing oedema and accelerating tissue repair throughout every session.</p>
+        </div>
+        <div class="outcome-item">
+            <div class="outcome-icon"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="5" r="2"/><path d="M12 7v8m-4-4l4 4 4-4"/><path d="M5 20h14"/></svg></div>
+            <h4>Movement restored</h4>
+            <p>Neurological re-education, post-surgical gait and neuromuscular re-training — water enables the movements that gravity simply will not allow on land.</p>
+        </div>
+    </div>
+</section>
+
+<!-- CONDITIONS TREATED -->
+<section class="section conditions-section">
+    <div style="text-align:center;margin-bottom:50px;">
+        <span class="section-label">Who Benefits</span>
+        <h2 class="section-title">Conditions Treated with Aquatherapy</h2>
+    </div>
+    <div class="conditions-grid">
+        <div class="condition-card">
+            <div class="condition-icon"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M16 4h2a2 2 0 012 2v14a2 2 0 01-2 2H6a2 2 0 01-2-2V6a2 2 0 012-2h2"/><rect x="8" y="2" width="8" height="4" rx="1"/></svg></div>
+            <div>
+                <h3>Orthopaedic Conditions</h3>
+                <p>Water reduces body weight and joint stress, enabling pain-free movement and earlier rehabilitation for musculoskeletal conditions.</p>
+                <ul class="condition-list">
+                    <li>Slip disc / Herniated disc</li>
+                    <li>Sciatica</li>
+                    <li>Chronic back and neck pain</li>
+                    <li>Osteoarthritis</li>
+                    <li>Rheumatoid arthritis</li>
+                    <li>Ankylosing spondylitis</li>
+                    <li>Avascular necrosis (AVN)</li>
+                    <li>Fibromyalgia</li>
+                    <li>Joint stiffness and mobility loss</li>
+                    <li>Post-fracture stiffness</li>
+                    <li>Post joint-replacement rehabilitation</li>
+                </ul>
+            </div>
+        </div>
+        <div class="condition-card">
+            <div class="condition-icon"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
+            <div>
+                <h3>Neurological Conditions</h3>
+                <p>Water buoyancy allows neurological patients to attempt movements that are impossible on land, accelerating neuroplastic recovery.</p>
+                <ul class="condition-list">
+                    <li>Stroke and hemiparesis</li>
+                    <li>Spinal cord injury</li>
+                    <li>Multiple sclerosis</li>
+                    <li>Traumatic brain injury</li>
+                    <li>Parkinson's disease</li>
+                    <li>Guillain-Barré syndrome (recovery phase)</li>
+                    <li>Peripheral neuropathy</li>
+                    <li>Gait ataxia and walking disorders</li>
+                    <li>Balance disorders</li>
+                </ul>
+            </div>
+        </div>
+        <div class="condition-card">
+            <div class="condition-icon"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z"/></svg></div>
+            <div>
+                <h3>Sports & Injury Rehabilitation</h3>
+                <p>Athletes use aquatic rehabilitation for early-stage recovery and return-to-sport conditioning with reduced reinjury risk.</p>
+                <ul class="condition-list">
+                    <li>ACL rehabilitation</li>
+                    <li>Knee ligament injuries</li>
+                    <li>Ankle instability</li>
+                    <li>Muscle injuries</li>
+                    <li>Stress injuries</li>
+                    <li>Post-surgical sports recovery</li>
+                </ul>
+            </div>
+        </div>
+        <div class="condition-card">
+            <div class="condition-icon"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2M9 11a4 4 0 100-8 4 4 0 000 8z"/></svg></div>
+            <div>
+                <h3>Geriatric & Mobility Issues</h3>
+                <p>The supportive aquatic environment reduces fall risk, making it ideal for elderly patients to exercise with confidence.</p>
+                <ul class="condition-list">
+                    <li>Age-related weakness</li>
+                    <li>Joint pain in elderly</li>
+                    <li>Difficulty walking</li>
+                    <li>Fear of falling</li>
+                    <li>Balance problems</li>
+                </ul>
+            </div>
+        </div>
+        <div class="condition-card">
+            <div class="condition-icon"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div>
+            <div>
+                <h3>Weight Loss & Fitness</h3>
+                <p>Water provides resistance and buoyancy for highly effective exercise — enabling full rehabilitation for patients who cannot train on land.</p>
+                <ul class="condition-list">
+                    <li>Obesity-related joint pain</li>
+                    <li>Weight loss programs</li>
+                    <li>Fitness for individuals unable to exercise on land</li>
+                </ul>
+            </div>
+        </div>
+        <div class="condition-card">
+            <div class="condition-icon"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 2a5 5 0 100 10A5 5 0 0012 2zM4 20c0-4 3.6-7 8-7s8 3 8 7"/><path d="M8 9.5c0 0 1 1.5 4 1.5s4-1.5 4-1.5"/></svg></div>
+            <div>
+                <h3>Paediatric Conditions</h3>
+                <p>The pool environment makes therapy engaging and manageable for children — reducing resistance to movement, building confidence, and enabling progress that is often difficult to achieve on land.</p>
+                <ul class="condition-list">
+                    <li>Cerebral palsy</li>
+                    <li>Autism spectrum disorder</li>
+                    <li>ADHD</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="section process-section">
+    <span class="section-label">Your Journey</span>
+    <h2 class="section-title">How Aquatherapy Works at Navthera</h2>
+    <p class="section-desc">From assessment to recovery, every step is personalised to your specific condition and recovery goals.</p>
+    <div class="process-steps">
+        <div class="process-step">
+            <div class="process-num">01</div>
+            <h3>Assessment</h3>
+            <p>Comprehensive evaluation of your condition, goals, and suitability for aquatherapy by our specialist team.</p>
+        </div>
+        <div class="process-step">
+            <div class="process-num">02</div>
+            <h3>Custom Program</h3>
+            <p>A tailored aquatic rehabilitation program is designed based on your specific needs, condition stage, and recovery targets.</p>
+        </div>
+        <div class="process-step">
+            <div class="process-num">03</div>
+            <h3>Guided Sessions</h3>
+            <p>Each session is supervised by a certified aquatic therapist who guides you through exercises and adapts in real-time.</p>
+        </div>
+        <div class="process-step">
+            <div class="process-num">04</div>
+            <h3>Progress Tracking</h3>
+            <p>Regular reassessments measure improvement and adjust your program to ensure continued progress toward your goals.</p>
+        </div>
+    </div>
+</section>
+
+<!-- POOL FEATURES -->
+<section class="section pool-section">
+    <div style="text-align:center;margin-bottom:20px;">
+        <span class="section-label">Our Facility</span>
+        <h2 class="section-title">Pool Features & Specifications</h2>
+    </div>
+    <div class="pool-features">
+        <div class="pool-feature">
+            <h4>Temperature Controlled</h4>
+            <p>We heat the pool above ambient room temperature to a precise therapeutic temperature — specifically chosen to relax muscles, reduce pain, and improve blood circulation during therapy.</p>
+        </div>
+        <div class="pool-feature">
+            <h4>Underwater Treadmill & Bike</h4>
+            <p>Built-in aquatic treadmill and underwater exercise bike for buoyancy-assisted gait training, cycling rehab, and cardiovascular conditioning — without the joint load of land-based exercise.</p>
+        </div>
+        <div class="pool-feature">
+            <h4>Resistance Jets</h4>
+            <p>Directional water jets provide adjustable resistance for strengthening exercises and functional movement training.</p>
+        </div>
+        <div class="pool-feature">
+            <h4>Patient Lift</h4>
+            <p>A dedicated patient lift enables safe, comfortable pool entry and exit for patients with mobility limitations — no ramp or physical transfer needed.</p>
+        </div>
+        <div class="pool-feature">
+            <h4>Hygiene & Filtration</h4>
+            <p>Our pool uses UV filtration alongside a particle filtration system that captures matter down to 5 microns — together maintaining clinical-grade water purity. pH is continuously monitored and balanced for patient safety.</p>
+        </div>
+        <div class="pool-feature">
+            <h4>Aquatic Exercise Equipment</h4>
+            <p>A full range of in-pool equipment — including aquatic dumbbells, resistance bands, flotation belts, and kickboards — enables targeted strengthening and rehabilitation for every patient and condition.</p>
+        </div>
+    </div>
+</section>
+
+<!-- FAQ -->
+<section class="section faq-section">
+    <div style="text-align:center;margin-bottom:50px;">
+        <span class="section-label">Questions</span>
+        <h2 class="section-title">Frequently Asked Questions</h2>
+    </div>
+    <div class="faq-list">
+        <div class="faq-item">
+            <button class="faq-question">Do I need to know how to swim? <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></button>
+            <div class="faq-answer"><p>No, swimming ability is not required at all. Aquatherapy takes place in a controlled, shallow pool with a therapist present at all times. Most exercises are performed standing, with support bars and flotation aids available as needed.</p></div>
+        </div>
+        <div class="faq-item">
+            <button class="faq-question">I have mobility issues — can I still access the pool? <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></button>
+            <div class="faq-answer"><p>Absolutely. We have a dedicated patient lift that lowers you safely into the pool and brings you back out with complete ease. All you need to do is be seated comfortably on the lift's chair — our therapists take care of the rest. This facility is available to every patient at Navthera, so mobility limitations are no barrier to beginning aquatherapy.</p></div>
+        </div>
+        <div class="faq-item">
+            <button class="faq-question">How warm is the water? <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></button>
+            <div class="faq-answer"><p>We heat the pool above ambient room temperature to a precise therapeutic temperature. This level of warmth is specifically chosen to relax muscles, reduce pain, and improve blood circulation during therapy — making each session as effective and comfortable as possible.</p></div>
+        </div>
+        <div class="faq-item">
+            <button class="faq-question">How many sessions will I need? <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></button>
+            <div class="faq-answer"><p>Every patient presents differently, which is why our expert physiotherapists conduct a thorough individual assessment before crafting a personalised treatment plan. Your plan is designed specifically for your condition, your goals, and your pace of progress.</p></div>
+        </div>
+        <div class="faq-item">
+            <button class="faq-question">Is aquatherapy safe after surgery? <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></button>
+            <div class="faq-answer"><p>Yes, aquatherapy is often recommended after surgery, typically once wounds have healed sufficiently (usually 2–4 weeks post-surgery). Our therapists coordinate with your surgeon to determine the optimal timing for beginning aquatic rehabilitation.</p></div>
+        </div>
+        <div class="faq-item">
+            <button class="faq-question">What should I bring to my session? <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></button>
+            <div class="faq-answer"><p>Please wear jersey-material or pool-appropriate clothing — cotton clothing is strictly not permitted in the pool. Do bring a towel and a change of clothes. If you happen to forget any of these, they are available to purchase at the centre.</p></div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+    <h2>Ready to Experience Aquatherapy?</h2>
+    <p>Book a consultation with our aquatic therapy specialist to discuss how water-based rehabilitation can accelerate your recovery.</p>
+    <a href="contact.html" class="btn-primary">Book Aquatherapy Consultation <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h12M12 5l7 7-7 7"/></svg></a>
+</section>
+
 <footer class="footer">
     <div class="footer-inner">
         <p>&copy; 2026 Navthera Advanced Physio and Rehab Centre. All rights reserved.</p>
-        <div class="footer-links"><a href="/">Home</a><a href="/about">About</a><a href="/services">Services</a><a href="/aquatherapy">Aquatherapy</a><a href="/contact">Contact</a></div>
+        <div class="footer-links"><a href="index.html">Home</a><a href="about.html">About</a><a href="services.html">Services</a><a href="aquatherapy.html">Aquatherapy</a><a href="contact.html">Contact</a></div>
     </div>
 </footer>
 
@@ -340,6 +584,5 @@ document.querySelectorAll('.faq-question').forEach(btn=>{
 </script>
 <script src="assets/whatsapp-chat.js" defer></script>
 <script src="navbar.js" defer></script>
-
 </body>
 </html>

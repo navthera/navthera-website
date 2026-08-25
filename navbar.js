@@ -14,6 +14,7 @@
     const serviceLinks = [
         ['Neuro Rehabilitation', '/neuro-rehabilitation'],
         ['Orthopaedic Rehabilitation', '/orthopaedic-rehabilitation'],
+        ['Aquatherapy', '/aquatherapy'],
         ['Sports Rehabilitation', '/sports-rehabilitation'],
         ['Pelvic Health Physiotherapy', '/pelvic-health-physiotherapy'],
         ['Geriatric Physiotherapy', '/geriatric-physiotherapy'],

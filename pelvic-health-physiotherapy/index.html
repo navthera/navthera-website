@@ -15,6 +15,27 @@
     <link rel="stylesheet" href="/navbar.css">
     <style>
         :root{--navy:#0D2844;--navy-deep:#081B30;--teal:#1A8A7D;--cyan:#3EC6C0;--gold:#C9A96E;--cream:#F8F6F2;--white:#FFFFFF;--text-dark:#1A1A2E;--text-muted:#5A6B7D;--shadow-soft:0 8px 30px rgba(13,40,68,0.08);}*{box-sizing:border-box;margin:0;padding:0;}body{font-family:'Inter',sans-serif;background:var(--cream);color:var(--text-dark);line-height:1.7;} .hero{padding:140px 60px 70px;background:linear-gradient(135deg,#32213a 0%,#7d4e6d 50%,#a86c67 100%);color:var(--white);} .hero-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1.15fr .85fr;gap:40px;align-items:center;} .eyebrow{display:inline-block;text-transform:uppercase;letter-spacing:2px;font-size:0.72rem;font-weight:700;color:var(--gold);margin-bottom:16px;} h1{font-family:'Playfair Display',serif;font-size:clamp(2rem,4vw,2.9rem);line-height:1.15;margin-bottom:16px;} .hero p{font-size:1rem;color:rgba(255,255,255,0.78);} .hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px;} .btn-primary,.btn-secondary{display:inline-flex;align-items:center;gap:8px;padding:14px 24px;border-radius:999px;text-decoration:none;font-weight:600;font-size:0.9rem;transition:transform .25s;} .btn-primary{background:linear-gradient(135deg,var(--gold),var(--gold-light));color:var(--navy-deep);} .btn-secondary{background:rgba(255,255,255,0.12);color:var(--white);border:1px solid rgba(255,255,255,0.2);} .btn-primary:hover,.btn-secondary:hover{transform:translateY(-2px);} .hero-card{background:rgba(255,255,255,0.13);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,0.16);border-radius:24px;padding:26px;} .hero-card h3{font-size:1rem;font-weight:600;margin-bottom:8px;} .hero-card ul{list-style:none;padding-left:0;} .hero-card li{margin:8px 0;padding-left:16px;position:relative;color:rgba(255,255,255,0.82);} .hero-card li::before{content:'';position:absolute;left:0;top:10px;width:6px;height:6px;border-radius:50%;background:var(--cyan);} .section{padding:70px 60px;max-width:1120px;margin:0 auto;} .section-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;} .card{background:var(--white);padding:28px;border-radius:22px;box-shadow:var(--shadow-soft);} .card h2{font-family:'Playfair Display',serif;color:var(--navy);margin-bottom:10px;} .card p{font-size:0.95rem;color:var(--text-muted);margin-bottom:12px;} .card ul{padding-left:18px;color:var(--text-muted);} .card li{margin:6px 0;} .img-wrap{overflow:hidden;border-radius:20px;margin-top:16px;} .img-wrap img{width:100%;display:block;max-height:320px;object-fit:cover;} .cta{background:var(--white);padding:60px 60px 90px;text-align:center;} .cta h2{font-family:'Playfair Display',serif;font-size:clamp(1.7rem,3vw,2.3rem);color:var(--navy);margin-bottom:12px;} .cta p{max-width:620px;margin:0 auto 24px;color:var(--text-muted);} .footer{background:var(--navy-deep);padding:40px 60px 24px;color:rgba(255,255,255,0.35);font-size:0.8rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;} .footer a{color:rgba(255,255,255,0.55);text-decoration:none;} @media(max-width:900px){.hero-inner,.section-grid{grid-template-columns:1fr;}} @media(max-width:700px){.hero,.section,.cta{padding-left:24px;padding-right:24px;}.hero{padding-top:120px;}} 
+    
+        /* ---- Service detail sections (content matched to services.html reference) ---- */
+        .section-label{font-size:0.72rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--teal);margin-bottom:20px;display:flex;align-items:center;gap:10px;}
+        .section-label::after{content:'';flex:1;height:1px;background:rgba(26,138,125,0.15);}
+        .conditions-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px;}
+        .condition-card{background:var(--cream);border-radius:12px;padding:20px 22px;transition:all .25s;}
+        .condition-card:hover{background:#F0EDEA;}
+        .condition-card-title{font-size:0.82rem;font-weight:700;color:var(--navy);margin-bottom:10px;padding-bottom:8px;border-bottom:1px solid rgba(13,40,68,0.08);}
+        .condition-card ul{list-style:none;padding:0;}
+        .condition-card li{font-size:0.85rem;color:var(--text-muted);padding:4px 0 4px 16px;position:relative;line-height:1.55;}
+        .condition-card li::before{content:'';position:absolute;left:0;top:11px;width:5px;height:5px;border-radius:50%;background:var(--cyan);opacity:0.6;}
+        .offer-img-wrap{position:relative;width:100%;border-radius:20px;overflow:hidden;background:var(--white);box-shadow:var(--shadow-soft);}
+        .offer-img-wrap img{display:block;width:100%;height:auto;}
+        .pathway-steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px;}
+        .pathway-step{position:relative;padding:26px 22px 22px;border-radius:14px;background:linear-gradient(135deg,rgba(26,138,125,0.05),rgba(62,198,192,0.02));border:1px solid rgba(26,138,125,0.1);}
+        .pathway-step-num{position:absolute;top:-14px;left:22px;width:30px;height:30px;border-radius:50%;background:linear-gradient(135deg,#0D2844,#1A8A7D);display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:0.8rem;font-weight:700;color:#fff;}
+        .pathway-step h4{font-family:'Playfair Display',serif;font-size:1rem;font-weight:600;color:var(--navy);margin:6px 0 8px;}
+        .pathway-step p{font-size:0.85rem;color:var(--text-muted);line-height:1.6;}
+        .btn-dept{display:inline-flex;align-items:center;gap:8px;padding:15px 34px;border-radius:50px;background:var(--navy);color:#fff;font-size:0.88rem;font-weight:600;text-decoration:none;transition:all .3s;}
+        .btn-dept:hover{background:#15385C;transform:translateY(-2px);box-shadow:0 8px 24px rgba(13,40,68,0.28);}
+        .btn-dept svg{width:14px;height:14px;}
     </style>
 </head>
 <body>
@@ -34,61 +55,70 @@
     <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
 </nav>
 <header class="hero">
-    <div class="hero-inner">
+    <div class="hero-inner" style="grid-template-columns:1fr;max-width:760px;">
         <div>
-            <div class="eyebrow">Pelvic Health</div>
-            <h1>Support for bladder, bowel, and pelvic floor concerns.</h1>
-            <p>Our pelvic health programmes offer non-invasive, evidence-based care for urinary incontinence, pelvic pain, postpartum recovery, and men’s and women’s pelvic floor dysfunction.</p>
-            <div class="hero-actions">
-                <a href="/contact" class="btn-primary">Book Pelvic Health Consultation</a>
-                <a href="/services" class="btn-secondary">Back to Services</a>
-            </div>
-        </div>
-        <div class="hero-card">
-            <h3>Common concerns we treat</h3>
-            <ul>
-                <li>Urinary leakage and urgency</li>
-                <li>Postpartum pelvic weakness</li>
-                <li>Pelvic pain and prolapse</li>
-                <li>Men’s pelvic health and post-prostate recovery</li>
-            </ul>
+            <div class="eyebrow">Department</div>
+            <h1>Pelvic Health & Incontinence</h1>
+            <p>Non-invasive pelvic rehabilitation with magnetic stimulation technology for men and women.</p>
         </div>
     </div>
 </header>
 <main>
     <section class="section">
-        <div class="section-grid">
-            <article class="card">
-                <h2>How therapy helps</h2>
-                <p>We use magnetic stimulation and guided exercise therapy to retrain the pelvic floor muscles gently and effectively when traditional exercises alone are not enough.</p>
-                <ul>
-                    <li>Improve bladder control and reduce urgency.</li>
-                    <li>Support postnatal and post-surgical recovery.</li>
-                    <li>Reduce discomfort and increase confidence in daily life.</li>
-                </ul>
-            </article>
-            <article class="card">
-                <h2>Why patients choose us</h2>
-                <p>Our approach is private, comfortable, and tailored. Patients receive clear education, measurable goals, and treatment that respects their comfort and personal needs.</p>
-                <div class="img-wrap"><img src="/assets/Pelvic health and incontinence equipment.png" alt="Pelvic health treatment equipment"></div>
-            </article>
+        <div class="section-label">Conditions We Treat</div>
+        <div class="conditions-grid">
+                        <div class="condition-card">
+                            <div class="condition-card-title">Urinary & Bowel Conditions</div>
+                            <ul><li>Urinary incontinence (leakage)</li><li>Urgency and frequent urination</li><li>Neurogenic bladder</li><li>Loss of bladder control after surgery</li><li>Fecal incontinence</li></ul>
+                        </div>
+                        <div class="condition-card">
+                            <div class="condition-card-title">Women's Pelvic Health</div>
+                            <ul><li>Postpartum pelvic weakness</li><li>Pelvic organ prolapse (mild to moderate)</li><li>Pelvic pain</li><li>Pain during intercourse</li><li>Recovery after gynecological surgery</li></ul>
+                        </div>
+                        <div class="condition-card">
+                            <div class="condition-card-title">Men's Pelvic Health</div>
+                            <ul><li>Erectile dysfunction (ED)</li><li>Post-prostate surgery incontinence</li><li>Pelvic pain in men</li></ul>
+                        </div>
+                        <div class="condition-card">
+                            <div class="condition-card-title">Neurological & Functional</div>
+                            <ul><li>Bladder dysfunction after stroke or spinal injury</li><li>Pelvic floor weakness due to aging</li><li>Chronic pelvic muscle tightness</li></ul>
+                        </div>
+        </div>
+    </section>
+    <section class="section" style="padding-top:0;">
+        <div class="section-label">What We Offer</div>
+        <div class="offer-img-wrap">
+            <img src="/assets/Pelvic health and incontinence equipment.png" alt="Pelvic health rehabilitation equipment including magnetic stimulation chair, biofeedback systems, and ultrasound assessment">
+        </div>
+    </section>
+    <section class="section" style="padding-top:0;">
+        <div class="section-label">How It Helps You</div>
+        <div class="pathway-steps">
+                        <div class="pathway-step">
+                            <div class="pathway-step-num">1</div>
+                            <h4>Muscles You Cannot Reach</h4>
+                            <p>Pelvic floor muscles are deep and difficult to activate voluntarily — magnetic stimulation does it automatically, helping where exercises alone often fail</p>
+                        </div>
+                        <div class="pathway-step">
+                            <div class="pathway-step-num">2</div>
+                            <h4>Non-Invasive & Comfortable</h4>
+                            <p>The ISKRA chair works through clothing with no preparation needed — making treatment accessible, dignified, and easy to commit to</p>
+                        </div>
+                        <div class="pathway-step">
+                            <div class="pathway-step-num">3</div>
+                            <h4>Restores Control</h4>
+                            <p>Combined magnetic and electrical stimulation retrains nerve-muscle coordination, significantly improving bladder control and sexual function</p>
+                        </div>
+                        <div class="pathway-step">
+                            <div class="pathway-step-num">4</div>
+                            <h4>Lasting Results</h4>
+                            <p>When combined with guided therapy and lifestyle changes, patients experience faster improvement, greater confidence, and long-term relief without surgery</p>
+                        </div>
         </div>
     </section>
 </main>
-<section class="section"><div class="section-grid">
-    <article class="card"><h2>Urinary, bowel and women's pelvic health</h2><ul><li>Urinary incontinence (leakage)</li><li>Urgency and frequent urination</li><li>Neurogenic bladder</li><li>Loss of bladder control after surgery</li><li>Fecal incontinence</li><li>Postpartum pelvic weakness</li><li>Pelvic organ prolapse (mild to moderate)</li><li>Pelvic pain and pain during intercourse</li><li>Recovery after gynecological surgery</li></ul></article>
-    <article class="card"><h2>Men's, neurological and functional concerns</h2><ul><li>Erectile dysfunction (ED)</li><li>Post-prostate surgery incontinence</li><li>Pelvic pain in men</li><li>Bladder dysfunction after stroke or spinal injury</li><li>Pelvic floor weakness due to aging</li><li>Chronic pelvic muscle tightness</li></ul></article>
-</div></section>
-<section class="section"><div class="section-grid">
-    <article class="card"><h2>Muscles you cannot reach</h2><p>Pelvic floor muscles are deep and difficult to activate voluntarily. Magnetic stimulation helps where exercises alone often fail.</p></article>
-    <article class="card"><h2>Non-invasive and comfortable</h2><p>The ISKRA chair works through clothing with no preparation needed, making treatment accessible, dignified, and easy to commit to.</p></article>
-    <article class="card"><h2>Restores control</h2><p>Combined magnetic and electrical stimulation retrains nerve-muscle coordination, improving bladder control and sexual function.</p></article>
-    <article class="card"><h2>Lasting results</h2><p>Guided therapy and lifestyle changes support faster improvement, greater confidence, and long-term relief without surgery.</p></article>
-</div></section>
-<section class="cta">
-    <h2>Looking for pelvic floor support?</h2>
-    <p>Book a consultation to discuss symptoms, treatment options, and a personal recovery plan.</p>
-    <a href="/contact" class="btn-primary">Request an Assessment</a>
+<section class="cta" style="padding-top:10px;">
+    <a href="/contact" class="btn-dept">Book Pelvic Health Consultation <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
 </section>
 <footer class="footer">
     <span>© 2026 Navthera Advanced Physio and Rehab Centre</span>

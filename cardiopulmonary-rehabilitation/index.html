@@ -15,6 +15,27 @@
     <link rel="stylesheet" href="/navbar.css">
     <style>
         :root{--navy:#0D2844;--navy-deep:#081B30;--teal:#1A8A7D;--cyan:#3EC6C0;--gold:#C9A96E;--cream:#F8F6F2;--white:#FFFFFF;--text-dark:#1A1A2E;--text-muted:#5A6B7D;--shadow-soft:0 8px 30px rgba(13,40,68,0.08);}*{box-sizing:border-box;margin:0;padding:0;}body{font-family:'Inter',sans-serif;background:var(--cream);color:var(--text-dark);line-height:1.7;} .hero{padding:140px 60px 70px;background:linear-gradient(135deg,#3a2320 0%,#734236 45%,#a15b41 100%);color:var(--white);} .hero-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1.15fr .85fr;gap:40px;align-items:center;} .eyebrow{display:inline-block;text-transform:uppercase;letter-spacing:2px;font-size:0.72rem;font-weight:700;color:var(--gold);margin-bottom:16px;} h1{font-family:'Playfair Display',serif;font-size:clamp(2rem,4vw,2.9rem);line-height:1.15;margin-bottom:16px;} .hero p{font-size:1rem;color:rgba(255,255,255,0.78);} .hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px;} .btn-primary,.btn-secondary{display:inline-flex;align-items:center;gap:8px;padding:14px 24px;border-radius:999px;text-decoration:none;font-weight:600;font-size:0.9rem;transition:transform .25s;} .btn-primary{background:linear-gradient(135deg,var(--gold),var(--gold-light));color:var(--navy-deep);} .btn-secondary{background:rgba(255,255,255,0.12);color:var(--white);border:1px solid rgba(255,255,255,0.2);} .btn-primary:hover,.btn-secondary:hover{transform:translateY(-2px);} .hero-card{background:rgba(255,255,255,0.13);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,0.16);border-radius:24px;padding:26px;} .hero-card h3{font-size:1rem;font-weight:600;margin-bottom:8px;} .hero-card ul{list-style:none;padding-left:0;} .hero-card li{margin:8px 0;padding-left:16px;position:relative;color:rgba(255,255,255,0.82);} .hero-card li::before{content:'';position:absolute;left:0;top:10px;width:6px;height:6px;border-radius:50%;background:var(--cyan);} .section{padding:70px 60px;max-width:1120px;margin:0 auto;} .section-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;} .card{background:var(--white);padding:28px;border-radius:22px;box-shadow:var(--shadow-soft);} .card h2{font-family:'Playfair Display',serif;color:var(--navy);margin-bottom:10px;} .card p{font-size:0.95rem;color:var(--text-muted);margin-bottom:12px;} .card ul{padding-left:18px;color:var(--text-muted);} .card li{margin:6px 0;} .img-wrap{overflow:hidden;border-radius:20px;margin-top:16px;} .img-wrap img{width:100%;display:block;max-height:320px;object-fit:cover;} .cta{background:var(--white);padding:60px 60px 90px;text-align:center;} .cta h2{font-family:'Playfair Display',serif;font-size:clamp(1.7rem,3vw,2.3rem);color:var(--navy);margin-bottom:12px;} .cta p{max-width:620px;margin:0 auto 24px;color:var(--text-muted);} .footer{background:var(--navy-deep);padding:40px 60px 24px;color:rgba(255,255,255,0.35);font-size:0.8rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;} .footer a{color:rgba(255,255,255,0.55);text-decoration:none;} @media(max-width:900px){.hero-inner,.section-grid{grid-template-columns:1fr;}} @media(max-width:700px){.hero,.section,.cta{padding-left:24px;padding-right:24px;}.hero{padding-top:120px;}} 
+    
+        /* ---- Service detail sections (content matched to services.html reference) ---- */
+        .section-label{font-size:0.72rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--teal);margin-bottom:20px;display:flex;align-items:center;gap:10px;}
+        .section-label::after{content:'';flex:1;height:1px;background:rgba(26,138,125,0.15);}
+        .conditions-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px;}
+        .condition-card{background:var(--cream);border-radius:12px;padding:20px 22px;transition:all .25s;}
+        .condition-card:hover{background:#F0EDEA;}
+        .condition-card-title{font-size:0.82rem;font-weight:700;color:var(--navy);margin-bottom:10px;padding-bottom:8px;border-bottom:1px solid rgba(13,40,68,0.08);}
+        .condition-card ul{list-style:none;padding:0;}
+        .condition-card li{font-size:0.85rem;color:var(--text-muted);padding:4px 0 4px 16px;position:relative;line-height:1.55;}
+        .condition-card li::before{content:'';position:absolute;left:0;top:11px;width:5px;height:5px;border-radius:50%;background:var(--cyan);opacity:0.6;}
+        .offer-img-wrap{position:relative;width:100%;border-radius:20px;overflow:hidden;background:var(--white);box-shadow:var(--shadow-soft);}
+        .offer-img-wrap img{display:block;width:100%;height:auto;}
+        .pathway-steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px;}
+        .pathway-step{position:relative;padding:26px 22px 22px;border-radius:14px;background:linear-gradient(135deg,rgba(26,138,125,0.05),rgba(62,198,192,0.02));border:1px solid rgba(26,138,125,0.1);}
+        .pathway-step-num{position:absolute;top:-14px;left:22px;width:30px;height:30px;border-radius:50%;background:linear-gradient(135deg,#0D2844,#1A8A7D);display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:0.8rem;font-weight:700;color:#fff;}
+        .pathway-step h4{font-family:'Playfair Display',serif;font-size:1rem;font-weight:600;color:var(--navy);margin:6px 0 8px;}
+        .pathway-step p{font-size:0.85rem;color:var(--text-muted);line-height:1.6;}
+        .btn-dept{display:inline-flex;align-items:center;gap:8px;padding:15px 34px;border-radius:50px;background:var(--navy);color:#fff;font-size:0.88rem;font-weight:600;text-decoration:none;transition:all .3s;}
+        .btn-dept:hover{background:#15385C;transform:translateY(-2px);box-shadow:0 8px 24px rgba(13,40,68,0.28);}
+        .btn-dept svg{width:14px;height:14px;}
     </style>
 </head>
 <body>
@@ -34,61 +55,74 @@
     <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
 </nav>
 <header class="hero">
-    <div class="hero-inner">
+    <div class="hero-inner" style="grid-template-columns:1fr;max-width:760px;">
         <div>
-            <div class="eyebrow">Cardio & Respiratory</div>
-            <h1>Improve breathing, endurance, and quality of life.</h1>
-            <p>Cardio and respiratory rehabilitation helps patients recover after heart or lung disease, surgery, or prolonged illness by improving breath control, stamina, and functional capacity.</p>
-            <div class="hero-actions">
-                <a href="/contact" class="btn-primary">Book Cardio Consultation</a>
-                <a href="/services" class="btn-secondary">Back to Services</a>
-            </div>
-        </div>
-        <div class="hero-card">
-            <h3>Conditions we support</h3>
-            <ul>
-                <li>Chronic breathlessness and COPD</li>
-                <li>Post-heart surgery and cardiac events</li>
-                <li>Reduced stamina and deconditioning</li>
-                <li>Chest clearance and breathing control</li>
-            </ul>
+            <div class="eyebrow">Department</div>
+            <h1>Cardio & Respiratory Rehabilitation</h1>
+            <p>Structured programs to improve breathing efficiency, endurance, and overall physical fitness.</p>
         </div>
     </div>
 </header>
 <main>
     <section class="section">
-        <div class="section-grid">
-            <article class="card">
-                <h2>What therapy focuses on</h2>
-                <p>We build a safe and progressive exercise plan that improves breathing efficiency, endurance, and confidence with daily activities.</p>
-                <ul>
-                    <li>Breathing retraining and airway clearance.</li>
-                    <li>Progressive cardio conditioning.</li>
-                    <li>Energy management for daily living.</li>
-                </ul>
-            </article>
-            <article class="card">
-                <h2>Expected benefits</h2>
-                <p>Many patients notice less breathlessness, better stamina, and improved ability to walk, climb stairs, and carry out daily tasks.</p>
-                <div class="img-wrap"><img src="/assets/Cardiac and respiratory.png" alt="Cardio and respiratory rehabilitation equipment"></div>
-            </article>
+        <div class="section-label">Conditions We Treat</div>
+        <div class="conditions-grid">
+                        <div class="condition-card">
+                            <div class="condition-card-title">Lung & Breathing Conditions</div>
+                            <ul><li>Chronic breathlessness</li><li>COPD and chronic lung disease</li><li>Asthma-related exercise limitation</li><li>Reduced lung capacity</li><li>Difficulty breathing during activity</li></ul>
+                        </div>
+                        <div class="condition-card">
+                            <div class="condition-card-title">Cardiac & Endurance Issues</div>
+                            <ul><li>Recovery after heart surgery or cardiac events</li><li>Reduced stamina and fatigue</li><li>Exercise intolerance</li><li>Low physical endurance</li></ul>
+                        </div>
+                        <div class="condition-card">
+                            <div class="condition-card-title">Post-Illness & Deconditioning</div>
+                            <ul><li>Weakness after prolonged illness</li><li>Reduced mobility after hospitalization</li><li>General physical deconditioning</li></ul>
+                        </div>
+                        <div class="condition-card">
+                            <div class="condition-card-title">Chest & Airway Clearance</div>
+                            <ul><li>Difficulty clearing mucus</li><li>Chest congestion</li><li>Ineffective coughing</li></ul>
+                        </div>
+                        <div class="condition-card">
+                            <div class="condition-card-title">Functional Limitations</div>
+                            <ul><li>Shortness of breath during daily activities</li><li>Difficulty walking long distances</li><li>Reduced ability to perform routine tasks</li></ul>
+                        </div>
+        </div>
+    </section>
+    <section class="section" style="padding-top:0;">
+        <div class="section-label">What We Offer</div>
+        <div class="offer-img-wrap">
+            <img src="/assets/Cardiac and respiratory.png" alt="Cardiac and respiratory rehabilitation equipment including monitored exercise systems, breathing trainers, and endurance machines">
+        </div>
+    </section>
+    <section class="section" style="padding-top:0;">
+        <div class="section-label">How It Helps You</div>
+        <div class="pathway-steps">
+                        <div class="pathway-step">
+                            <div class="pathway-step-num">1</div>
+                            <h4>Breathe Better</h4>
+                            <p>Respiratory retraining and chest physiotherapy improve lung function, airway clearance, and breathing comfort — reducing the sensation of breathlessness</p>
+                        </div>
+                        <div class="pathway-step">
+                            <div class="pathway-step-num">2</div>
+                            <h4>Build Stamina Safely</h4>
+                            <p>Monitored endurance training strengthens the heart and lungs gradually — with medical supervision ensuring every session is safe and effective</p>
+                        </div>
+                        <div class="pathway-step">
+                            <div class="pathway-step-num">3</div>
+                            <h4>Use Oxygen Efficiently</h4>
+                            <p>Structured conditioning helps the body extract and use oxygen more effectively, improving energy levels and reducing fatigue during daily activities</p>
+                        </div>
+                        <div class="pathway-step">
+                            <div class="pathway-step-num">4</div>
+                            <h4>Return to Normal Life</h4>
+                            <p>Walking, climbing stairs, household tasks — the goal is restoring the stamina needed for everyday activities with confidence and independence</p>
+                        </div>
         </div>
     </section>
 </main>
-<section class="section"><div class="section-grid">
-    <article class="card"><h2>Lung, breathing and cardiac concerns</h2><ul><li>Chronic breathlessness</li><li>COPD and chronic lung disease</li><li>Asthma-related exercise limitation</li><li>Reduced lung capacity</li><li>Difficulty breathing during activity</li><li>Recovery after heart surgery or cardiac events</li><li>Reduced stamina and fatigue</li><li>Exercise intolerance and low physical endurance</li></ul></article>
-    <article class="card"><h2>Post-illness, airway and functional support</h2><ul><li>Weakness after prolonged illness</li><li>Reduced mobility after hospitalization</li><li>General physical deconditioning</li><li>Difficulty clearing mucus</li><li>Chest congestion and ineffective coughing</li><li>Shortness of breath during daily activities</li><li>Difficulty walking long distances</li><li>Reduced ability to perform routine tasks</li></ul></article>
-</div></section>
-<section class="section"><div class="section-grid">
-    <article class="card"><h2>Breathe better</h2><p>Respiratory retraining and chest physiotherapy improve lung function, airway clearance, and breathing comfort.</p></article>
-    <article class="card"><h2>Build stamina safely</h2><p>Monitored endurance training strengthens the heart and lungs gradually, with medical supervision supporting safe exercise.</p></article>
-    <article class="card"><h2>Use oxygen efficiently</h2><p>Structured conditioning improves how the body extracts and uses oxygen, supporting energy and reducing fatigue.</p></article>
-    <article class="card"><h2>Return to normal life</h2><p>The goal is restoring the stamina needed for walking, stairs, household tasks, and everyday activities.</p></article>
-</div></section>
-<section class="cta">
-    <h2>Struggling with breathlessness or low stamina?</h2>
-    <p>Book a consultation and let us guide you toward a safer, stronger recovery plan.</p>
-    <a href="/contact" class="btn-primary">Start Your Assessment</a>
+<section class="cta" style="padding-top:10px;">
+    <a href="/contact" class="btn-dept">Book Cardio-Respiratory Consultation <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
 </section>
 <footer class="footer">
     <span>© 2026 Navthera Advanced Physio and Rehab Centre</span>

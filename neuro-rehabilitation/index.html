@@ -27,6 +27,27 @@
         .btn-primary{background:linear-gradient(135deg,var(--gold),var(--gold-light));color:var(--navy-deep);box-shadow:0 10px 25px rgba(201,169,110,0.25);} .btn-primary:hover{transform:translateY(-2px);} .btn-secondary{background:rgba(255,255,255,0.12);color:var(--white);border:1px solid rgba(255,255,255,0.2);} .btn-secondary:hover{transform:translateY(-2px);} 
         .hero-card{background:rgba(255,255,255,0.12);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,0.16);border-radius:24px;padding:26px;box-shadow:var(--shadow-soft);} .hero-card h3{font-size:1rem;font-weight:600;margin-bottom:8px;} .hero-card ul{list-style:none;padding-left:0;} .hero-card li{margin:8px 0;padding-left:16px;position:relative;color:rgba(255,255,255,0.8);} .hero-card li::before{content:'';position:absolute;left:0;top:10px;width:6px;height:6px;border-radius:50%;background:var(--cyan);} 
         .section{padding:70px 60px;max-width:1120px;margin:0 auto;} .section-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;} .card{background:var(--white);padding:28px;border-radius:22px;box-shadow:var(--shadow-soft);} .card h2,.card h3{font-family:'Playfair Display',serif;color:var(--navy);margin-bottom:12px;} .card p{font-size:0.95rem;color:var(--text-muted);margin-bottom:12px;} .card ul{padding-left:18px;color:var(--text-muted);} .card li{margin:6px 0;} .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:20px;} .stat{background:rgba(26,138,125,0.05);border:1px solid rgba(26,138,125,0.12);padding:16px;border-radius:16px;} .stat strong{display:block;font-size:1.2rem;color:var(--teal);} .stat span{font-size:0.8rem;color:var(--text-muted);} .img-wrap{margin-top:20px;overflow:hidden;border-radius:20px;} .img-wrap img{width:100%;display:block;object-fit:cover;max-height:340px;} .cta{background:var(--white);text-align:center;padding:60px 60px 90px;} .cta h2{font-family:'Playfair Display',serif;font-size:clamp(1.7rem,3vw,2.3rem);color:var(--navy);margin-bottom:12px;} .cta p{max-width:640px;margin:0 auto 24px;color:var(--text-muted);} .footer{background:var(--navy-deep);padding:40px 60px 24px;color:rgba(255,255,255,0.35);font-size:0.8rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;} .footer a{color:rgba(255,255,255,0.55);text-decoration:none;} @media(max-width:900px){.hero-inner,.section-grid{grid-template-columns:1fr;}.stats{grid-template-columns:1fr;}} @media(max-width:700px){.hero,.section,.cta{padding-left:24px;padding-right:24px;}.hero{padding-top:120px;padding-bottom:50px;}.footer{padding-left:24px;padding-right:24px;}} 
+    
+        /* ---- Service detail sections (content matched to services.html reference) ---- */
+        .section-label{font-size:0.72rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--teal);margin-bottom:20px;display:flex;align-items:center;gap:10px;}
+        .section-label::after{content:'';flex:1;height:1px;background:rgba(26,138,125,0.15);}
+        .conditions-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px;}
+        .condition-card{background:var(--cream);border-radius:12px;padding:20px 22px;transition:all .25s;}
+        .condition-card:hover{background:#F0EDEA;}
+        .condition-card-title{font-size:0.82rem;font-weight:700;color:var(--navy);margin-bottom:10px;padding-bottom:8px;border-bottom:1px solid rgba(13,40,68,0.08);}
+        .condition-card ul{list-style:none;padding:0;}
+        .condition-card li{font-size:0.85rem;color:var(--text-muted);padding:4px 0 4px 16px;position:relative;line-height:1.55;}
+        .condition-card li::before{content:'';position:absolute;left:0;top:11px;width:5px;height:5px;border-radius:50%;background:var(--cyan);opacity:0.6;}
+        .offer-img-wrap{position:relative;width:100%;border-radius:20px;overflow:hidden;background:var(--white);box-shadow:var(--shadow-soft);}
+        .offer-img-wrap img{display:block;width:100%;height:auto;}
+        .pathway-steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px;}
+        .pathway-step{position:relative;padding:26px 22px 22px;border-radius:14px;background:linear-gradient(135deg,rgba(26,138,125,0.05),rgba(62,198,192,0.02));border:1px solid rgba(26,138,125,0.1);}
+        .pathway-step-num{position:absolute;top:-14px;left:22px;width:30px;height:30px;border-radius:50%;background:linear-gradient(135deg,#0D2844,#1A8A7D);display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:0.8rem;font-weight:700;color:#fff;}
+        .pathway-step h4{font-family:'Playfair Display',serif;font-size:1rem;font-weight:600;color:var(--navy);margin:6px 0 8px;}
+        .pathway-step p{font-size:0.85rem;color:var(--text-muted);line-height:1.6;}
+        .btn-dept{display:inline-flex;align-items:center;gap:8px;padding:15px 34px;border-radius:50px;background:var(--navy);color:#fff;font-size:0.88rem;font-weight:600;text-decoration:none;transition:all .3s;}
+        .btn-dept:hover{background:#15385C;transform:translateY(-2px);box-shadow:0 8px 24px rgba(13,40,68,0.28);}
+        .btn-dept svg{width:14px;height:14px;}
     </style>
 </head>
 <body>
@@ -46,73 +67,78 @@
     <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
 </nav>
 <header class="hero">
-    <div class="hero-inner">
+    <div class="hero-inner" style="grid-template-columns:1fr;max-width:760px;">
         <div>
-            <div class="eyebrow">Neuro Rehab</div>
-            <h1>Rebuild movement, confidence, and independence after neurological injury.</h1>
-            <p>Our neurological rehabilitation programme combines robotic-assisted therapy, virtual reality, balance training, and water-based recovery to help patients regain strength, coordination, and functional independence.</p>
-            <div class="hero-actions">
-                <a href="/contact" class="btn-primary">Book Neuro Consultation</a>
-                <a href="/services" class="btn-secondary">Back to Services</a>
-            </div>
-        </div>
-        <div class="hero-card">
-            <h3>Conditions we support</h3>
-            <ul>
-                <li>Stroke and hemiparesis</li>
-                <li>Spinal cord injury</li>
-                <li>Parkinson's disease</li>
-                <li>Traumatic brain injury</li>
-                <li>Multiple sclerosis and neuropathy</li>
-            </ul>
+            <div class="eyebrow">Department</div>
+            <h1>Neuro Rehabilitation</h1>
+            <p>Advanced neurological rehabilitation combining robotics, virtual reality, and aquatherapy to accelerate recovery.</p>
         </div>
     </div>
 </header>
 <main>
     <section class="section">
-        <div class="section-grid">
-            <article class="card">
-                <h2>What rehabilitation looks like</h2>
-                <p>Neuro Rehab is not just about exercise; it is about retraining the brain and body to move with purpose again. We use progressive, goal-based therapy so every session builds toward daily life.</p>
-                <div class="stats">
-                    <div class="stat"><strong>1:1</strong><span>Focused therapy sessions</span></div>
-                    <div class="stat"><strong>Robotics</strong><span>For gait and arm recovery</span></div>
-                    <div class="stat"><strong>VR</strong><span>For engaging movement practice</span></div>
-                </div>
-            </article>
-            <article class="card">
-                <h2>How we help</h2>
-                <ul>
-                    <li>Improve walking, standing balance, and coordination.</li>
-                    <li>Reduce spasticity, weakness, and fear of movement.</li>
-                    <li>Support hand function, posture, and transfers.</li>
-                    <li>Help patients return to home, work, and daily routines.</li>
-                </ul>
-                <div class="img-wrap"><img src="/assets/neuro-equipment.jpg" alt="Neuro rehabilitation equipment"></div>
-            </article>
+        <div class="section-label">Conditions We Treat</div>
+        <div class="conditions-grid">
+                        <div class="condition-card">
+                            <div class="condition-card-title">Major Neurological Conditions</div>
+                            <ul><li>Stroke (paralysis, weakness, speech & balance issues)</li><li>Spinal cord injury (paralysis, walking difficulty)</li><li>Traumatic brain injury (head injury recovery)</li><li>Parkinson's disease</li><li>Multiple sclerosis</li><li>Cerebral palsy</li><li>Bell's Palsy</li></ul>
+                        </div>
+                        <div class="condition-card">
+                            <div class="condition-card-title">Nerve & Neuromuscular Disorders</div>
+                            <ul><li>Peripheral nerve injuries</li><li>Neuropathies (including diabetic neuropathy)</li><li>Guillain-Barré syndrome</li><li>Motor neuron disease (ALS)</li><li>Muscular dystrophy and myopathies</li><li>Polyneuropathy</li></ul>
+                        </div>
+                        <div class="condition-card">
+                            <div class="condition-card-title">Brain & Spinal Conditions</div>
+                            <ul><li>Brain tumor or neurosurgery recovery</li><li>Spinal surgery recovery</li><li>Transverse myelitis</li><li>Functional neurological disorders</li><li>Ataxia and coordination disorders</li></ul>
+                        </div>
+                        <div class="condition-card">
+                            <div class="condition-card-title">Movement, Balance & Functional</div>
+                            <ul><li>Difficulty walking or standing</li><li>Balance disorders and frequent falls</li><li>Tremors and movement disorders</li><li>Postural instability</li><li>Severe weakness or loss of coordination</li></ul>
+                        </div>
+                        <div class="condition-card">
+                            <div class="condition-card-title">Pediatric Neurological</div>
+                            <ul><li>Developmental delay</li><li>Dyspraxia</li><li>Pediatric movement disorders</li></ul>
+                        </div>
+                        <div class="condition-card">
+                            <div class="condition-card-title">Cognitive & Other</div>
+                            <ul><li>Dementia-related mobility decline</li><li>Age-related neurological weakness</li><li>Neurogenic bladder and bowel dysfunction</li><li>Loss of independence in daily activities</li></ul>
+                        </div>
+        </div>
+    </section>
+    <section class="section" style="padding-top:0;">
+        <div class="section-label">What We Offer</div>
+        <div class="offer-img-wrap">
+            <img src="/assets/neuro-equipment.jpg" alt="Navthera Neuro Rehabilitation — Robotic support, VR therapy, aquatherapy and specialised care equipment">
+        </div>
+    </section>
+    <section class="section" style="padding-top:0;">
+        <div class="section-label">How It Helps You</div>
+        <div class="pathway-steps">
+                        <div class="pathway-step">
+                            <div class="pathway-step-num">1</div>
+                            <h4>Brain Relearning</h4>
+                            <p>Intensive, repetitive training helps the brain rebuild neural pathways through neuroplasticity — the key to neurological recovery</p>
+                        </div>
+                        <div class="pathway-step">
+                            <div class="pathway-step-num">2</div>
+                            <h4>Earlier Mobilisation</h4>
+                            <p>Robotic support enables walking and standing training even for patients who cannot move independently — no more waiting</p>
+                        </div>
+                        <div class="pathway-step">
+                            <div class="pathway-step-num">3</div>
+                            <h4>Pain-Free Practice</h4>
+                            <p>Water therapy and VR create safe, engaging environments where patients move without fear of falling or joint stress</p>
+                        </div>
+                        <div class="pathway-step">
+                            <div class="pathway-step-num">4</div>
+                            <h4>Faster Independence</h4>
+                            <p>Combined technologies increase therapy intensity, improving walking, hand use, balance, and daily activity function significantly faster</p>
+                        </div>
         </div>
     </section>
 </main>
-<section class="section">
-    <div class="section-grid">
-        <article class="card"><h2>Conditions we treat</h2><h3>Major neurological conditions</h3><ul><li>Stroke (paralysis, weakness, speech &amp; balance issues)</li><li>Spinal cord injury (paralysis, walking difficulty)</li><li>Traumatic brain injury (head injury recovery)</li><li>Parkinson's disease</li><li>Multiple sclerosis</li><li>Cerebral palsy</li><li>Bell's Palsy</li></ul></article>
-        <article class="card"><h2>Neuromuscular and nerve conditions</h2><ul><li>Peripheral nerve injuries</li><li>Neuropathies (including diabetic neuropathy)</li><li>Guillain-Barré syndrome</li><li>Motor neuron disease (ALS)</li><li>Muscular dystrophy and myopathies</li><li>Polyneuropathy</li></ul></article>
-        <article class="card"><h2>Brain, spinal and movement concerns</h2><ul><li>Brain tumor or neurosurgery recovery</li><li>Spinal surgery recovery</li><li>Transverse myelitis</li><li>Functional neurological disorders</li><li>Ataxia and coordination disorders</li><li>Difficulty walking or standing</li><li>Balance disorders and frequent falls</li><li>Tremors, postural instability, weakness or loss of coordination</li></ul></article>
-        <article class="card"><h2>Paediatric, cognitive and functional support</h2><ul><li>Developmental delay</li><li>Dyspraxia</li><li>Paediatric movement disorders</li><li>Dementia-related mobility decline</li><li>Age-related neurological weakness</li><li>Neurogenic bladder and bowel dysfunction</li><li>Loss of independence in daily activities</li></ul></article>
-    </div>
-</section>
-<section class="section">
-    <div class="section-grid">
-        <article class="card"><h2>Brain relearning</h2><p>Intensive, repetitive training helps the brain rebuild neural pathways through neuroplasticity — the key to neurological recovery.</p></article>
-        <article class="card"><h2>Earlier mobilisation</h2><p>Robotic support enables walking and standing training even for patients who cannot move independently.</p></article>
-        <article class="card"><h2>Pain-free practice</h2><p>Water therapy and VR create safe, engaging environments where patients move without fear of falling or joint stress.</p></article>
-        <article class="card"><h2>Faster independence</h2><p>Combined technologies increase therapy intensity, improving walking, hand use, balance, and daily activity function.</p></article>
-    </div>
-</section>
-<section class="cta">
-    <h2>Ready for a guided recovery plan?</h2>
-    <p>Book a consultation and let our team assess your goals, challenges, and the best pathway for neuro rehabilitation.</p>
-    <a href="/contact" class="btn-primary">Book Your Assessment</a>
+<section class="cta" style="padding-top:10px;">
+    <a href="/contact" class="btn-dept">Book Neuro Rehab Consultation <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
 </section>
 <footer class="footer">
     <span>© 2026 Navthera Advanced Physio and Rehab Centre</span>

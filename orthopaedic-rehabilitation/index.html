@@ -15,6 +15,27 @@
     <link rel="stylesheet" href="/navbar.css">
     <style>
         :root{--navy:#0D2844;--navy-deep:#081B30;--teal:#1A8A7D;--cyan:#3EC6C0;--gold:#C9A96E;--cream:#F8F6F2;--white:#FFFFFF;--text-dark:#1A1A2E;--text-muted:#5A6B7D;--shadow-soft:0 8px 30px rgba(13,40,68,0.08);}*{box-sizing:border-box;margin:0;padding:0;}body{font-family:'Inter',sans-serif;background:var(--cream);color:var(--text-dark);line-height:1.7;} .hero{padding:140px 60px 70px;background:linear-gradient(135deg,#0b223a 0%,#134e6b 45%,#1c7d74 100%);color:var(--white);} .hero-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1.15fr .85fr;gap:40px;align-items:center;} .eyebrow{display:inline-block;text-transform:uppercase;letter-spacing:2px;font-size:0.72rem;font-weight:700;color:var(--gold);margin-bottom:16px;} h1{font-family:'Playfair Display',serif;font-size:clamp(2rem,4vw,2.9rem);line-height:1.15;margin-bottom:16px;} .hero p{font-size:1rem;color:rgba(255,255,255,0.78);} .hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px;} .btn-primary,.btn-secondary{display:inline-flex;align-items:center;gap:8px;padding:14px 24px;border-radius:999px;text-decoration:none;font-weight:600;font-size:0.9rem;transition:transform .25s;} .btn-primary{background:linear-gradient(135deg,var(--gold),var(--gold-light));color:var(--navy-deep);} .btn-secondary{background:rgba(255,255,255,0.12);color:var(--white);border:1px solid rgba(255,255,255,0.2);} .btn-primary:hover,.btn-secondary:hover{transform:translateY(-2px);} .hero-card{background:rgba(255,255,255,0.13);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,0.16);border-radius:24px;padding:26px;} .hero-card h3{font-size:1rem;font-weight:600;margin-bottom:8px;} .hero-card ul{list-style:none;padding-left:0;} .hero-card li{margin:8px 0;padding-left:16px;position:relative;color:rgba(255,255,255,0.82);} .hero-card li::before{content:'';position:absolute;left:0;top:10px;width:6px;height:6px;border-radius:50%;background:var(--cyan);} .section{padding:70px 60px;max-width:1120px;margin:0 auto;} .section-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;} .card{background:var(--white);padding:28px;border-radius:22px;box-shadow:var(--shadow-soft);} .card h2{font-family:'Playfair Display',serif;color:var(--navy);margin-bottom:10px;} .card p{font-size:0.95rem;color:var(--text-muted);margin-bottom:12px;} .card ul{padding-left:18px;color:var(--text-muted);} .card li{margin:6px 0;} .img-wrap{overflow:hidden;border-radius:20px;margin-top:16px;} .img-wrap img{width:100%;display:block;max-height:320px;object-fit:cover;} .cta{background:var(--white);padding:60px 60px 90px;text-align:center;} .cta h2{font-family:'Playfair Display',serif;font-size:clamp(1.7rem,3vw,2.3rem);color:var(--navy);margin-bottom:12px;} .cta p{max-width:620px;margin:0 auto 24px;color:var(--text-muted);} .footer{background:var(--navy-deep);padding:40px 60px 24px;color:rgba(255,255,255,0.35);font-size:0.8rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;} .footer a{color:rgba(255,255,255,0.55);text-decoration:none;} @media(max-width:900px){.hero-inner,.section-grid{grid-template-columns:1fr;}} @media(max-width:700px){.hero,.section,.cta{padding-left:24px;padding-right:24px;}.hero{padding-top:120px;}} 
+    
+        /* ---- Service detail sections (content matched to services.html reference) ---- */
+        .section-label{font-size:0.72rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--teal);margin-bottom:20px;display:flex;align-items:center;gap:10px;}
+        .section-label::after{content:'';flex:1;height:1px;background:rgba(26,138,125,0.15);}
+        .conditions-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px;}
+        .condition-card{background:var(--cream);border-radius:12px;padding:20px 22px;transition:all .25s;}
+        .condition-card:hover{background:#F0EDEA;}
+        .condition-card-title{font-size:0.82rem;font-weight:700;color:var(--navy);margin-bottom:10px;padding-bottom:8px;border-bottom:1px solid rgba(13,40,68,0.08);}
+        .condition-card ul{list-style:none;padding:0;}
+        .condition-card li{font-size:0.85rem;color:var(--text-muted);padding:4px 0 4px 16px;position:relative;line-height:1.55;}
+        .condition-card li::before{content:'';position:absolute;left:0;top:11px;width:5px;height:5px;border-radius:50%;background:var(--cyan);opacity:0.6;}
+        .offer-img-wrap{position:relative;width:100%;border-radius:20px;overflow:hidden;background:var(--white);box-shadow:var(--shadow-soft);}
+        .offer-img-wrap img{display:block;width:100%;height:auto;}
+        .pathway-steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px;}
+        .pathway-step{position:relative;padding:26px 22px 22px;border-radius:14px;background:linear-gradient(135deg,rgba(26,138,125,0.05),rgba(62,198,192,0.02));border:1px solid rgba(26,138,125,0.1);}
+        .pathway-step-num{position:absolute;top:-14px;left:22px;width:30px;height:30px;border-radius:50%;background:linear-gradient(135deg,#0D2844,#1A8A7D);display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:0.8rem;font-weight:700;color:#fff;}
+        .pathway-step h4{font-family:'Playfair Display',serif;font-size:1rem;font-weight:600;color:var(--navy);margin:6px 0 8px;}
+        .pathway-step p{font-size:0.85rem;color:var(--text-muted);line-height:1.6;}
+        .btn-dept{display:inline-flex;align-items:center;gap:8px;padding:15px 34px;border-radius:50px;background:var(--navy);color:#fff;font-size:0.88rem;font-weight:600;text-decoration:none;transition:all .3s;}
+        .btn-dept:hover{background:#15385C;transform:translateY(-2px);box-shadow:0 8px 24px rgba(13,40,68,0.28);}
+        .btn-dept svg{width:14px;height:14px;}
     </style>
 </head>
 <body>
@@ -34,62 +55,78 @@
     <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
 </nav>
 <header class="hero">
-    <div class="hero-inner">
+    <div class="hero-inner" style="grid-template-columns:1fr;max-width:760px;">
         <div>
-            <div class="eyebrow">Orthopaedic Rehab</div>
-            <h1>Relieve pain, restore movement, and return to daily life.</h1>
-            <p>From back pain and arthritis to post-surgical recovery, our orthopaedic rehabilitation programme uses modern technology and tailored exercise plans to support healing without surgery where possible.</p>
-            <div class="hero-actions">
-                <a href="/contact" class="btn-primary">Book Ortho Consultation</a>
-                <a href="/services" class="btn-secondary">Back to Services</a>
-            </div>
-        </div>
-        <div class="hero-card">
-            <h3>Commonly treated issues</h3>
-            <ul>
-                <li>Slip disc and sciatica</li>
-                <li>Knee and hip arthritis</li>
-                <li>Frozen shoulder and rotator cuff pain</li>
-                <li>Post-fracture stiffness</li>
-                <li>Post-joint replacement rehab</li>
-            </ul>
+            <div class="eyebrow">Department</div>
+            <h1>Orthopaedic Rehabilitation</h1>
+            <p>Non-surgical pain relief and healing using laser, shockwave, cryotherapy, and robotic decompression systems.</p>
         </div>
     </div>
 </header>
 <main>
     <section class="section">
-        <div class="section-grid">
-            <article class="card">
-                <h2>Our approach</h2>
-                <p>We combine manual therapy, targeted strengthening, pain relief technologies, and functional retraining so patients can recover faster and move with more ease.</p>
-                <ul>
-                    <li>Laser therapy and shockwave for deeper tissue healing.</li>
-                    <li>Robotic decompression for spine and nerve-related pain.</li>
-                    <li>Cryotherapy and neuromuscular rehab for recovery and mobility.</li>
-                </ul>
-            </article>
-            <article class="card">
-                <h2>What to expect</h2>
-                <p>Each plan is designed around your diagnosis, pain level, and goals. We focus on reducing pain, rebuilding strength, and improving your ability to walk, climb stairs, lift, and perform daily tasks.</p>
-                <div class="img-wrap"><img src="/assets/Ortho-equipment.png" alt="Orthopaedic rehabilitation equipment"></div>
-            </article>
+        <div class="section-label">Conditions We Treat</div>
+        <div class="conditions-grid">
+                        <div class="condition-card">
+                            <div class="condition-card-title">Spine & Back Conditions</div>
+                            <ul><li>Slip disc / herniated disc</li><li>Sciatica</li><li>Chronic back pain / Lumbar Spondylosis</li><li>Neck pain and cervical spondylosis</li><li>Postural problems</li><li>Spinal degeneration</li><li>Post-spine surgery rehabilitation</li></ul>
+                        </div>
+                        <div class="condition-card">
+                            <div class="condition-card-title">Joint Conditions</div>
+                            <ul><li>Knee pain and osteoarthritis</li><li>Hip pain and arthritis</li><li>Shoulder pain and impingement</li><li>Frozen shoulder</li><li>Elbow pain (tennis elbow, golfer's elbow)</li><li>Wrist and hand pain</li><li>Heel Pain</li></ul>
+                        </div>
+                        <div class="condition-card">
+                            <div class="condition-card-title">Post-Surgical Rehabilitation</div>
+                            <ul><li>Knee replacement rehab</li><li>Hip replacement rehab</li><li>Shoulder surgery rehab</li><li>Ligament reconstruction rehab</li><li>Fracture fixation recovery</li></ul>
+                        </div>
+                        <div class="condition-card">
+                            <div class="condition-card-title">Fractures & Trauma</div>
+                            <ul><li>Post-fracture stiffness and weakness</li><li>Joint stiffness after immobilization</li><li>Loss of movement after injury</li></ul>
+                        </div>
+                        <div class="condition-card">
+                            <div class="condition-card-title">Chronic Pain & Degenerative</div>
+                            <ul><li>Arthritis and joint degeneration</li><li>Age-related joint pain</li><li>Fibromyalgia</li><li>Long-standing musculoskeletal pain</li></ul>
+                        </div>
+                        <div class="condition-card">
+                            <div class="condition-card-title">Functional & Lifestyle Issues</div>
+                            <ul><li>Difficulty walking or climbing stairs</li><li>Reduced strength and mobility</li><li>Workplace or posture-related pain</li><li>Obesity-related joint stress</li></ul>
+                        </div>
+        </div>
+    </section>
+    <section class="section" style="padding-top:0;">
+        <div class="section-label">What We Offer</div>
+        <div class="offer-img-wrap">
+            <img src="/assets/Ortho-equipment.png" alt="Navthera Orthopaedic Rehabilitation — Robotic decompression, laser therapy, shockwave, cryotherapy and aquatherapy equipment">
+        </div>
+    </section>
+    <section class="section" style="padding-top:0;">
+        <div class="section-label">How It Helps You</div>
+        <div class="pathway-steps">
+                        <div class="pathway-step">
+                            <div class="pathway-step-num">1</div>
+                            <h4>Non-Surgical Pain Relief</h4>
+                            <p>Advanced technologies target the root cause of pain — not just the symptoms — reducing reliance on medication and avoiding surgery</p>
+                        </div>
+                        <div class="pathway-step">
+                            <div class="pathway-step-num">2</div>
+                            <h4>Deeper Healing</h4>
+                            <p>Laser, TECAR, and shockwave penetrate deep tissues where basic physiotherapy cannot reach, stimulating repair at the cellular level</p>
+                        </div>
+                        <div class="pathway-step">
+                            <div class="pathway-step-num">3</div>
+                            <h4>Joint Decompression</h4>
+                            <p>Robotic systems precisely reduce pressure on discs and nerves, often improving mobility and reducing radiating pain from the first session</p>
+                        </div>
+                        <div class="pathway-step">
+                            <div class="pathway-step-num">4</div>
+                            <h4>Faster Functional Return</h4>
+                            <p>Combining pain-relief tech with structured strengthening and aquatherapy gets patients back to walking, climbing stairs, and daily life faster</p>
+                        </div>
         </div>
     </section>
 </main>
-<section class="section"><div class="section-grid">
-    <article class="card"><h2>Spine, back and joint conditions</h2><ul><li>Slip disc / herniated disc</li><li>Sciatica</li><li>Chronic back pain / Lumbar Spondylosis</li><li>Neck pain and cervical spondylosis</li><li>Postural problems and spinal degeneration</li><li>Post-spine surgery rehabilitation</li><li>Knee pain and osteoarthritis</li><li>Hip pain and arthritis</li><li>Shoulder pain and impingement</li><li>Frozen shoulder</li><li>Elbow, wrist, hand and heel pain</li></ul></article>
-    <article class="card"><h2>Recovery, trauma and chronic pain</h2><ul><li>Knee, hip, shoulder and ligament reconstruction rehabilitation</li><li>Fracture fixation recovery</li><li>Post-fracture stiffness and weakness</li><li>Joint stiffness after immobilization</li><li>Loss of movement after injury</li><li>Arthritis and joint degeneration</li><li>Age-related joint pain</li><li>Fibromyalgia</li><li>Long-standing musculoskeletal pain</li><li>Difficulty walking, climbing stairs, reduced strength or mobility</li><li>Workplace, posture-related and obesity-related joint stress</li></ul></article>
-</div></section>
-<section class="section"><div class="section-grid">
-    <article class="card"><h2>Non-surgical pain relief</h2><p>Advanced technologies target the root cause of pain — not just the symptoms — reducing reliance on medication and avoiding surgery.</p></article>
-    <article class="card"><h2>Deeper healing</h2><p>Laser, TECAR, and shockwave penetrate deep tissues, stimulating repair at the cellular level.</p></article>
-    <article class="card"><h2>Joint decompression</h2><p>Robotic systems precisely reduce pressure on discs and nerves, improving mobility and reducing radiating pain.</p></article>
-    <article class="card"><h2>Faster functional return</h2><p>Combining pain-relief technology with structured strengthening and aquatherapy supports return to walking, stairs, and daily life.</p></article>
-</div></section>
-<section class="cta">
-    <h2>Need relief from joint or spine pain?</h2>
-    <p>Speak with our rehabilitation team to understand the best treatment path for your orthopaedic condition.</p>
-    <a href="/contact" class="btn-primary">Request an Assessment</a>
+<section class="cta" style="padding-top:10px;">
+    <a href="/contact" class="btn-dept">Book Ortho Consultation <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
 </section>
 <footer class="footer">
     <span>© 2026 Navthera Advanced Physio and Rehab Centre</span>

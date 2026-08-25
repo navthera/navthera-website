@@ -1482,23 +1482,30 @@
 const tabs = document.querySelectorAll('.dept-tab');
 const panels = document.querySelectorAll('.dept-panel');
 
+function activateDepartment(dept) {
+    const tab = document.querySelector(`.dept-tab[data-dept="${dept}"]`);
+    if (!tab) return;
+
+    // Update active tab
+    tabs.forEach(t => t.classList.remove('active'));
+    tab.classList.add('active');
+
+    // Show matching panel, hide others
+    panels.forEach(p => {
+        p.classList.toggle('active', p.id === 'panel-' + dept);
+    });
+}
+
 tabs.forEach(tab => {
     tab.addEventListener('click', function () {
-        const dept = this.getAttribute('data-dept');
-
-        // Update active tab
-        tabs.forEach(t => t.classList.remove('active'));
-        this.classList.add('active');
-
-        // Show matching panel, hide others
-        panels.forEach(p => {
-            p.classList.remove('active');
-            if (p.id === 'panel-' + dept) {
-                p.classList.add('active');
-            }
-        });
+        activateDepartment(this.getAttribute('data-dept'));
     });
 });
+
+// Allow direct links from the Services dropdown to select a department.
+if (window.location.hash === '#aquatherapy') {
+    activateDepartment('aqua');
+}
 
 </script>
 <script src="assets/whatsapp-chat.js" defer></script>

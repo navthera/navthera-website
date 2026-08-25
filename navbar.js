@@ -99,7 +99,10 @@
         submenu.setAttribute('aria-label', 'Rehabilitation services');
         serviceLinks.forEach(([label, href]) => {
             const item = document.createElement('li');
-            item.innerHTML = `<a href="${href}">${label}</a>`;
+            // Aquatherapy is the tenth department on the Services page; its
+            // standalone page remains available from its own navigation links.
+            const menuHref = label === 'Aquatherapy' ? '/services#aquatherapy' : href;
+            item.innerHTML = `<a href="${menuHref}">${label}</a>`;
             submenu.appendChild(item);
         });
         parent.appendChild(submenu);

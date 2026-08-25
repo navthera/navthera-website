@@ -16,7 +16,7 @@ $Routes = @{
     '/geriatric-physiotherapy' = 'geriatric.html'
     '/oncology-rehabilitation' = 'oncology.html'
     '/balance-and-vestibular-rehabilitation' = 'balance-vestibular.html'
-    '/cardiopulmonary-rehabilitation' = 'cardio-respiratory.html'
+    '/cardio-respiratory-rehabilitation' = 'cardio-respiratory-rehabilitation/index.html'
     '/womens-health-physiotherapy' = 'womens-health.html'
     '/blog/' = 'blog/index.html'
 }

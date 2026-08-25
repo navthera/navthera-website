@@ -16,7 +16,7 @@
     { "source": "/geriatric.html", "destination": "/geriatric-physiotherapy", "permanent": true },
     { "source": "/oncology.html", "destination": "/oncology-rehabilitation", "permanent": true },
     { "source": "/balance-vestibular.html", "destination": "/balance-and-vestibular-rehabilitation", "permanent": true },
-    { "source": "/cardio-respiratory.html", "destination": "/cardiopulmonary-rehabilitation", "permanent": true },
+    { "source": "/cardio-respiratory.html", "destination": "/cardio-respiratory-rehabilitation", "permanent": true },
     { "source": "/womens-health.html", "destination": "/womens-health-physiotherapy", "permanent": true }
   ],
   "headers": [

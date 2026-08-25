@@ -19,7 +19,7 @@
         ['Geriatric Physiotherapy', '/geriatric-physiotherapy'],
         ['Oncology Rehabilitation', '/oncology-rehabilitation'],
         ['Balance & Vestibular Rehabilitation', '/balance-and-vestibular-rehabilitation'],
-        ['Cardiopulmonary Rehabilitation', '/cardiopulmonary-rehabilitation'],
+        ['Cardio & Respiratory Rehabilitation', '/cardio-respiratory-rehabilitation'],
         ["Women's Health Physiotherapy", '/womens-health-physiotherapy']
     ];
 
@@ -38,7 +38,7 @@
         'geriatric.html': '/geriatric-physiotherapy',
         'oncology.html': '/oncology-rehabilitation',
         'balance-vestibular.html': '/balance-and-vestibular-rehabilitation',
-        'cardio-respiratory.html': '/cardiopulmonary-rehabilitation',
+        'cardio-respiratory.html': '/cardio-respiratory-rehabilitation',
         'womens-health.html': '/womens-health-physiotherapy'
     };
     const localPageFiles = {
@@ -55,7 +55,7 @@
         '/geriatric-physiotherapy': 'geriatric.html',
         '/oncology-rehabilitation': 'oncology.html',
         '/balance-and-vestibular-rehabilitation': 'balance-vestibular.html',
-        '/cardiopulmonary-rehabilitation': 'cardio-respiratory.html',
+        '/cardio-respiratory-rehabilitation': 'cardio-respiratory-rehabilitation/index.html',
         '/womens-health-physiotherapy': 'womens-health.html',
         '/blog/': 'blog/index.html'
     };

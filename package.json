@@ -4,8 +4,8 @@
   "type": "module",
   "description": "Navthera Physiotherapy & Rehabilitation Centre - Official Website",
   "scripts": {
-    "dev": "powershell -NoProfile -ExecutionPolicy Bypass -File server.ps1",
-    "start": "powershell -NoProfile -ExecutionPolicy Bypass -File server.ps1"
+    "dev": "npx serve .",
+    "start": "npx serve ."
   },
   "keywords": ["physiotherapy", "rehabilitation", "navthera", "jaipur"],
   "license": "UNLICENSED",

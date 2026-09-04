@@ -23,6 +23,3 @@ CLAUDE.md
 serve.mjs
 .env
 .env.local
-
-.vercel
-.env*

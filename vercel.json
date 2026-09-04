@@ -2,22 +2,10 @@
   "redirects": [
     { "source": "/index.php", "destination": "/", "permanent": true },
     { "source": "/home.php", "destination": "/", "permanent": true },
-    { "source": "/home.html", "destination": "/", "permanent": true },
-    { "source": "/index.html", "destination": "/", "permanent": true },
-    { "source": "/about.html", "destination": "/about", "permanent": true },
-    { "source": "/services.html", "destination": "/services", "permanent": true },
-    { "source": "/contact.html", "destination": "/contact", "permanent": true },
-    { "source": "/aquatherapy.html", "destination": "/aquatherapy", "permanent": true },
-    { "source": "/aquafit.html", "destination": "/aquafit", "permanent": true },
-    { "source": "/neuro-rehab.html", "destination": "/neuro-rehabilitation", "permanent": true },
-    { "source": "/orthopaedic.html", "destination": "/orthopaedic-rehabilitation", "permanent": true },
-    { "source": "/sports-rehab.html", "destination": "/sports-rehabilitation", "permanent": true },
-    { "source": "/pelvic-health.html", "destination": "/pelvic-health-physiotherapy", "permanent": true },
-    { "source": "/geriatric.html", "destination": "/geriatric-physiotherapy", "permanent": true },
-    { "source": "/oncology.html", "destination": "/oncology-rehabilitation", "permanent": true },
-    { "source": "/balance-vestibular.html", "destination": "/balance-and-vestibular-rehabilitation", "permanent": true },
-    { "source": "/cardio-respiratory.html", "destination": "/cardio-respiratory-rehabilitation", "permanent": true },
-    { "source": "/womens-health.html", "destination": "/womens-health-physiotherapy", "permanent": true }
+    { "source": "/home.html", "destination": "/", "permanent": true }
+  ],
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/$1" }
   ],
   "headers": [
     {

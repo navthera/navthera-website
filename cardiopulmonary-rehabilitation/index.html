@@ -13,6 +13,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/navbar.css">
+    <link rel="stylesheet" href="/service-detail.css">
     <style>
         :root{--navy:#0D2844;--navy-deep:#081B30;--teal:#1A8A7D;--cyan:#3EC6C0;--gold:#C9A96E;--cream:#F8F6F2;--white:#FFFFFF;--text-dark:#1A1A2E;--text-muted:#5A6B7D;--shadow-soft:0 8px 30px rgba(13,40,68,0.08);}*{box-sizing:border-box;margin:0;padding:0;}body{font-family:'Inter',sans-serif;background:var(--cream);color:var(--text-dark);line-height:1.7;} .hero{padding:140px 60px 70px;background:linear-gradient(135deg,#3a2320 0%,#734236 45%,#a15b41 100%);color:var(--white);} .hero-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1.15fr .85fr;gap:40px;align-items:center;} .eyebrow{display:inline-block;text-transform:uppercase;letter-spacing:2px;font-size:0.72rem;font-weight:700;color:var(--gold);margin-bottom:16px;} h1{font-family:'Playfair Display',serif;font-size:clamp(2rem,4vw,2.9rem);line-height:1.15;margin-bottom:16px;} .hero p{font-size:1rem;color:rgba(255,255,255,0.78);} .hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px;} .btn-primary,.btn-secondary{display:inline-flex;align-items:center;gap:8px;padding:14px 24px;border-radius:999px;text-decoration:none;font-weight:600;font-size:0.9rem;transition:transform .25s;} .btn-primary{background:linear-gradient(135deg,var(--gold),var(--gold-light));color:var(--navy-deep);} .btn-secondary{background:rgba(255,255,255,0.12);color:var(--white);border:1px solid rgba(255,255,255,0.2);} .btn-primary:hover,.btn-secondary:hover{transform:translateY(-2px);} .hero-card{background:rgba(255,255,255,0.13);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,0.16);border-radius:24px;padding:26px;} .hero-card h3{font-size:1rem;font-weight:600;margin-bottom:8px;} .hero-card ul{list-style:none;padding-left:0;} .hero-card li{margin:8px 0;padding-left:16px;position:relative;color:rgba(255,255,255,0.82);} .hero-card li::before{content:'';position:absolute;left:0;top:10px;width:6px;height:6px;border-radius:50%;background:var(--cyan);} .section{padding:70px 60px;max-width:1120px;margin:0 auto;} .section-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;} .card{background:var(--white);padding:28px;border-radius:22px;box-shadow:var(--shadow-soft);} .card h2{font-family:'Playfair Display',serif;color:var(--navy);margin-bottom:10px;} .card p{font-size:0.95rem;color:var(--text-muted);margin-bottom:12px;} .card ul{padding-left:18px;color:var(--text-muted);} .card li{margin:6px 0;} .img-wrap{overflow:hidden;border-radius:20px;margin-top:16px;} .img-wrap img{width:100%;display:block;max-height:320px;object-fit:cover;} .cta{background:var(--white);padding:60px 60px 90px;text-align:center;} .cta h2{font-family:'Playfair Display',serif;font-size:clamp(1.7rem,3vw,2.3rem);color:var(--navy);margin-bottom:12px;} .cta p{max-width:620px;margin:0 auto 24px;color:var(--text-muted);} .footer{background:var(--navy-deep);padding:40px 60px 24px;color:rgba(255,255,255,0.35);font-size:0.8rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;} .footer a{color:rgba(255,255,255,0.55);text-decoration:none;} @media(max-width:900px){.hero-inner,.section-grid{grid-template-columns:1fr;}} @media(max-width:700px){.hero,.section,.cta{padding-left:24px;padding-right:24px;}.hero{padding-top:120px;}} 
     
@@ -54,6 +55,8 @@
     <a href="/contact" class="nav-cta">Book Appointment</a>
     <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
 </nav>
+<div class="service-detail-shell">
+    <div class="service-detail-card">
 <header class="hero">
     <div class="hero-inner" style="grid-template-columns:1fr;max-width:760px;">
         <div>
@@ -120,14 +123,38 @@
                         </div>
         </div>
     </section>
+    <section class="section">
+        <div class="section-label">Questions</div>
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-list">
+            <div class="faq-item"><button class="faq-question">Is exercise safe for heart patients? <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></button><div class="faq-answer"><p>Yes. Cardiac rehabilitation is medically supervised and tailored to your safe exercise level. We monitor your response and adjust intensity precisely as your strength and endurance improve.</p></div></div>
+            <div class="faq-item"><button class="faq-question">How does aquatherapy help lung and cardiac conditions? <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></button><div class="faq-answer"><p>Water pressure can support breathing while buoyancy reduces joint stress. This allows gentle strengthening and conditioning with less discomfort and carefully controlled effort.</p></div></div>
+            <div class="faq-item"><button class="faq-question">Can I exercise after a heart attack or heart surgery? <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></button><div class="faq-answer"><p>Yes, when your cardiologist provides clearance. We coordinate with your medical team and begin with gentle activity, progressing gradually as your recovery allows.</p></div></div>
+            <div class="faq-item"><button class="faq-question">Will my breathing improve with respiratory rehabilitation? <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></button><div class="faq-answer"><p>Breathing retraining, chest physiotherapy, and progressive exercise can improve breathing efficiency, reduce breathlessness, and make daily activity easier.</p></div></div>
+            <div class="faq-item"><button class="faq-question">What is pulmonary rehabilitation? <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></button><div class="faq-answer"><p>Pulmonary rehabilitation combines breathing exercises, airway clearance, education, and graded conditioning to improve lung function and quality of life.</p></div></div>
+            <div class="faq-item"><button class="faq-question">How long will rehabilitation take? <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></button><div class="faq-answer"><p>Your timeline depends on your condition, medical history, and goals. We reassess progress regularly and adjust your plan as your endurance and independence improve.</p></div></div>
+        </div>
+    </section>
 </main>
 <section class="cta" style="padding-top:10px;">
     <a href="/contact" class="btn-dept">Book Cardio-Respiratory Consultation <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
 </section>
+    </div>
+</div>
 <footer class="footer">
     <span>© 2026 Navthera Advanced Physio and Rehab Centre</span>
     <div><a href="/services">Services</a> · <a href="/aquatherapy">Aquatherapy</a> · <a href="/contact">Contact</a></div>
 </footer>
 <script src="/navbar.js"></script>
+<script>
+document.querySelectorAll('.faq-question').forEach(btn=>{
+    btn.addEventListener('click',()=>{
+        const item=btn.parentElement;
+        const wasOpen=item.classList.contains('open');
+        document.querySelectorAll('.faq-item').forEach(i=>i.classList.remove('open'));
+        if(!wasOpen)item.classList.add('open');
+    });
+});
+</script>
 </body>
 </html>

@@ -76,7 +76,8 @@
         .ph-avatar{width:100px;height:100px;border-radius:50%;margin:0 auto 20px;background:rgba(13,40,68,0.04);border:2px dashed rgba(13,40,68,0.15);display:flex;align-items:center;justify-content:center;}
         .ph-avatar svg{width:32px;height:32px;color:rgba(13,40,68,0.18);}
         .ph-avatar-lg{width:72px;height:72px;border-radius:50%;background:rgba(13,40,68,0.04);border:2px dashed rgba(13,40,68,0.15);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
-        .director-photo{width:225px;height:225px;object-fit:cover;object-position:center;border-radius:16px;border:3px solid var(--white);box-shadow:0 6px 18px rgba(13,40,68,0.15);flex-shrink:0;}
+        .director-photo-frame{width:225px;height:225px;border-radius:16px;overflow:hidden;border:3px solid var(--white);box-shadow:0 6px 18px rgba(13,40,68,0.15);flex-shrink:0;}
+        .director-photo{width:100%;height:100%;object-fit:cover;object-position:center;display:block;transform:scale(1.5) translateY(-8%);transform-origin:center;}
         .ph-avatar-lg svg{width:26px;height:26px;color:rgba(13,40,68,0.18);}
         .ph-name{font-family:'Playfair Display',serif;font-size:1.1rem;color:rgba(13,40,68,0.22);margin-bottom:4px;font-style:italic;}
         .ph-name-lg{font-family:'Playfair Display',serif;font-size:1.4rem;color:rgba(13,40,68,0.22);margin-bottom:6px;font-style:italic;}
@@ -159,7 +160,7 @@
             .mission-quote{padding:28px 20px;}
             .team-card{padding:20px;}
             .team-photo{width:192px;height:192px;border-radius:14px;}
-            .director-photo{width:192px;height:192px;border-radius:14px;}
+            .director-photo-frame{width:192px;height:192px;border-radius:14px;}
             .director-card-wrapper{padding:24px;}
             .btn-primary{padding:12px 24px;font-size:0.75rem;}
             .footer{padding:30px 16px;}
@@ -228,7 +229,7 @@
     </div>
     <div style="max-width:620px;margin:0 auto;">
         <div class="team-card director-card-wrapper">
-            <img class="director-photo" src="assets/Website%20Photo%204.jpeg" alt="Director">
+            <div class="director-photo-frame"><img class="director-photo" src="assets/Website%20Photo%204.jpeg" alt="Director"></div>
             <div>
                 <p class="ph-name-lg">Mr. Yashvardhan Somani</p>
                 <span class="ph-role">Founder and Executive Director</span>

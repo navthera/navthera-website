@@ -133,6 +133,31 @@
         });
     }
 
+    // ---- BLOG NAVIGATION ----
+    // The Blog link is shared by every page and is placed directly after
+    // About Us, so page-specific navbar markup stays in sync.
+    if (navLinks) {
+        const links = Array.from(navLinks.querySelectorAll(':scope > li > a'));
+        const hasBlogLink = links.some(link => link.textContent.trim().toLowerCase() === 'blog');
+        const aboutItem = links.find(link => link.textContent.trim().toLowerCase() === 'about us')?.parentElement;
+
+        if (!hasBlogLink && aboutItem) {
+            const blogItem = document.createElement('li');
+            const blogLink = document.createElement('a');
+            blogLink.href = '/blog/';
+            blogLink.textContent = 'Blog';
+            blogItem.appendChild(blogLink);
+            aboutItem.insertAdjacentElement('afterend', blogItem);
+        }
+
+        const blogPath = window.location.pathname.replace(/\/+$/, '');
+        if (blogPath === '/blog' || blogPath.endsWith('/blog/index.html')) {
+            navLinks.querySelectorAll(':scope > li > a').forEach(link => {
+                if (link.textContent.trim().toLowerCase() === 'blog') link.classList.add('active');
+            });
+        }
+    }
+
     // ---- SERVICES DROPDOWN ----
     // This only changes the navbar interaction. Existing service-page and
     // services.html content is intentionally left untouched.

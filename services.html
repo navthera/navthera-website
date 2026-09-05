@@ -1488,6 +1488,12 @@
 // Tab switching — NO scrolling, just show/hide panels
 const tabs = document.querySelectorAll('.dept-tab');
 const panels = document.querySelectorAll('.dept-panel');
+const servicePaths = {
+    neuro: '/services-neuro', ortho: '/services-ortho', aqua: '/services-aqua',
+    sports: '/services-sports', pelvic: '/services-pelvic', geriatric: '/services-geriatric',
+    oncology: '/services-oncology', vestibular: '/services-vestibular', cardio: '/services-cardio',
+    gynaec: '/services-gynaec'
+};
 
 function selectDepartment(dept, { revealTab = false } = {}) {
     const selectedTab = Array.from(tabs).find(tab => tab.getAttribute('data-dept') === dept);
@@ -1498,7 +1504,7 @@ function selectDepartment(dept, { revealTab = false } = {}) {
     tabs.forEach(tab => tab.classList.toggle('active', tab === selectedTab));
     panels.forEach(panel => panel.classList.toggle('active', panel === selectedPanel));
 
-    // Keep a hash-selected tab in view on narrow, horizontally scrolling layouts.
+    // Keep a route-selected tab in view on narrow, horizontally scrolling layouts.
     if (revealTab) {
         selectedTab.scrollIntoView({ block: 'nearest', inline: 'center' });
     }
@@ -1510,23 +1516,27 @@ tabs.forEach(tab => {
     tab.addEventListener('click', function () {
         const dept = this.getAttribute('data-dept');
         selectDepartment(dept);
-        history.replaceState(null, '', '#panel-' + dept);
+        history.pushState(null, '', servicePaths[dept] || '/services');
     });
 });
 
-function selectDepartmentFromHash() {
-    const dept = window.location.hash.replace('#panel-', '');
+const routeDepartment = Object.keys(servicePaths).find(dept => servicePaths[dept] === window.location.pathname);
+const legacyHashDepartment = window.location.hash.startsWith('#panel-')
+    ? window.location.hash.replace('#panel-', '')
+    : null;
+const initialDepartment = routeDepartment || legacyHashDepartment || 'neuro';
+
+selectDepartment(initialDepartment, { revealTab: Boolean(routeDepartment || legacyHashDepartment) });
+
+// Clean up any older bookmarked panel hash after opening the intended panel.
+if (legacyHashDepartment) {
+    history.replaceState(null, '', window.location.pathname + window.location.search);
+}
+
+window.addEventListener('popstate', () => {
+    const dept = Object.keys(servicePaths).find(name => servicePaths[name] === window.location.pathname) || 'neuro';
     selectDepartment(dept, { revealTab: true });
-}
-
-// Support direct links such as services.html#panel-ortho and browser back/forward.
-if (window.location.hash.startsWith('#panel-')) {
-    selectDepartmentFromHash();
-} else {
-    selectDepartment('neuro');
-}
-
-window.addEventListener('hashchange', selectDepartmentFromHash);
+});
 
 </script>
 <script src="assets/whatsapp-chat.js" defer></script>

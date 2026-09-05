@@ -5,6 +5,16 @@
     { "source": "/home.html", "destination": "/", "permanent": true }
   ],
   "rewrites": [
+    { "source": "/services-neuro", "destination": "/services.html" },
+    { "source": "/services-ortho", "destination": "/services.html" },
+    { "source": "/services-aqua", "destination": "/services.html" },
+    { "source": "/services-sports", "destination": "/services.html" },
+    { "source": "/services-pelvic", "destination": "/services.html" },
+    { "source": "/services-geriatric", "destination": "/services.html" },
+    { "source": "/services-oncology", "destination": "/services.html" },
+    { "source": "/services-vestibular", "destination": "/services.html" },
+    { "source": "/services-cardio", "destination": "/services.html" },
+    { "source": "/services-gynaec", "destination": "/services.html" },
     { "source": "/(.*)", "destination": "/$1" }
   ],
   "headers": [

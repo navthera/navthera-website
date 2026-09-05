@@ -181,12 +181,6 @@
                 ['Cardio & Respiratory', 'cardio'],
                 ["Women's Health", 'gynaec']
             ];
-            const servicePaths = {
-                neuro: '/services-neuro', ortho: '/services-ortho', aqua: '/services-aqua',
-                sports: '/services-sports', pelvic: '/services-pelvic', geriatric: '/services-geriatric',
-                oncology: '/services-oncology', vestibular: '/services-vestibular', cardio: '/services-cardio',
-                gynaec: '/services-gynaec'
-            };
 
             servicesItem.classList.add('nav-services-dropdown');
             servicesLink.classList.add('nav-services-trigger');
@@ -201,8 +195,7 @@
             services.forEach(([name, dept]) => {
                 const item = document.createElement('a');
                 item.className = 'services-dropdown-item';
-                item.href = servicePaths[dept];
-                item.dataset.dept = dept;
+                item.href = `services.html#panel-${dept}`;
                 item.setAttribute('role', 'menuitem');
                 item.textContent = name;
                 dropdown.appendChild(item);
@@ -223,11 +216,11 @@
 
             dropdown.querySelectorAll('.services-dropdown-item').forEach(item => {
                 item.addEventListener('click', (e) => {
-                    const dept = item.dataset.dept;
+                    const hash = item.hash;
                     // On services.html, use the site's existing tab/panel system
                     // so the original boxes, diagrams, text and sizing remain intact.
-                    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-                    if (currentPage === 'services.html' || currentPage === 'services') {
+                    if ((window.location.pathname.split('/').pop() || 'index.html') === 'services.html') {
+                        const dept = hash.replace('#panel-', '');
                         const tab = document.querySelector(`.dept-tab[data-dept="${dept}"]`);
                         if (tab) {
                             e.preventDefault();
@@ -237,7 +230,9 @@
                             const layout = document.querySelector('.services-layout');
                             if (layout) layout.scrollIntoView({ behavior: 'smooth', block: 'start' });
                         }
-                    } else setOpen(false);
+                    } else {
+                        setOpen(false);
+                    }
                 });
             });
 

@@ -540,6 +540,79 @@
     transform: translateY(-100%);
 }
 
+/* ---- SITE-WIDE SECTION RHYTHM ----
+   Page-specific styles previously used 100–120px vertical padding for most
+   sections, creating noticeably large blank bands between adjacent sections.
+   Keep one tighter rhythm across every page that includes the shared navbar.
+   The service-detail panel has its own compact layout and is excluded below. */
+.section {
+    padding-top: clamp(32px, 4vw, 48px) !important;
+    padding-bottom: clamp(32px, 4vw, 48px) !important;
+}
+
+.section-header {
+    margin-bottom: clamp(28px, 3vw, 44px) !important;
+}
+
+.cta-section,
+.map-section,
+.timeline-section {
+    padding-top: clamp(32px, 4vw, 48px) !important;
+    padding-bottom: clamp(32px, 4vw, 48px) !important;
+}
+
+@media (max-width: 768px) {
+    .section {
+        padding-top: 28px !important;
+        padding-bottom: 28px !important;
+    }
+
+    .section-header {
+        margin-bottom: 28px !important;
+    }
+
+    .cta-section,
+    .map-section,
+    .timeline-section {
+        padding-top: 28px !important;
+        padding-bottom: 28px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .section {
+        padding-top: 24px !important;
+        padding-bottom: 24px !important;
+    }
+
+    .section-header {
+        margin-bottom: 24px !important;
+    }
+
+    .cta-section,
+    .map-section,
+    .timeline-section {
+        padding-top: 24px !important;
+        padding-bottom: 24px !important;
+    }
+}
+
+/* Restore the intentionally compact spacing inside service detail cards. */
+.service-detail-card main .section {
+    padding-top: 32px !important;
+    padding-bottom: 0 !important;
+}
+
+.service-detail-card main .section:last-child {
+    padding-bottom: 36px !important;
+}
+
+@media (max-width: 620px) {
+    .service-detail-card main .section {
+        padding-top: 24px !important;
+    }
+}
+
 /* ---- MOBILE NAVIGATION CONSISTENCY ---- */
 @media (max-width: 768px) {
     .navbar.menu-open {

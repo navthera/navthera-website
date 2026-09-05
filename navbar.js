@@ -6,7 +6,7 @@
 (function() {
     'use strict';
 
-    const navbar = document.getElementById('navbar');
+    const navbar = document.querySelector('.navbar');
     const menuToggle = document.getElementById('menuToggle');
     const navLinks = document.getElementById('navLinks');
 
@@ -15,32 +15,65 @@
         menuToggle.classList.remove('active');
         navLinks.classList.remove('active');
         navLinks.classList.remove('open');
+        menuToggle.setAttribute('aria-expanded', 'false');
+        if (navbar) {
+            navbar.classList.remove('menu-open');
+            navbar.style.removeProperty('--menu-open-top');
+        }
     }
 
     if (menuToggle && navLinks) {
+        menuToggle.setAttribute('aria-expanded', 'false');
+        menuToggle.setAttribute('aria-controls', 'navLinks');
+
         menuToggle.addEventListener('click', () => {
-            menuToggle.classList.toggle('active');
-            navLinks.classList.toggle('active');
-            navLinks.classList.toggle('open');
+            const isOpen = !navLinks.classList.contains('active');
+            menuToggle.classList.toggle('active', isOpen);
+            navLinks.classList.toggle('active', isOpen);
+            navLinks.classList.toggle('open', isOpen);
+            menuToggle.setAttribute('aria-expanded', String(isOpen));
+            if (navbar) {
+                navbar.classList.toggle('menu-open', isOpen);
+                navbar.classList.remove('nav-hidden');
+                if (isOpen) navbar.style.setProperty('--menu-open-top', `${window.scrollY}px`);
+                else navbar.style.removeProperty('--menu-open-top');
+            }
         });
 
         // Close menu when clicking on a link
         navLinks.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', closeMenu);
+            link.addEventListener('click', () => {
+                // The Services link is a disclosure control, not a navigation link.
+                if (!link.classList.contains('nav-services-trigger')) closeMenu();
+            });
         });
 
-        // Close menu when user starts scrolling
-        let menuScrollStart = 0;
-        window.addEventListener('scroll', () => {
-            if (navLinks.classList.contains('active') || navLinks.classList.contains('open')) {
-                if (menuScrollStart === 0) menuScrollStart = window.scrollY;
-                if (Math.abs(window.scrollY - menuScrollStart) > 40) {
-                    closeMenu();
-                    menuScrollStart = 0;
-                }
-            } else {
-                menuScrollStart = 0;
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 768) closeMenu();
+        });
+
+        document.addEventListener('click', (e) => {
+            if (navLinks.classList.contains('active') && navbar && !navbar.contains(e.target)) {
+                closeMenu();
             }
+        });
+
+    }
+
+    // ---- SMART STICKY HEADER ----
+    if (navbar) {
+        let previousScrollY = window.scrollY;
+        window.addEventListener('scroll', () => {
+            const currentScrollY = window.scrollY;
+            const menuIsOpen = navLinks && navLinks.classList.contains('active');
+
+            if (menuIsOpen || currentScrollY < 80 || currentScrollY < previousScrollY) {
+                navbar.classList.remove('nav-hidden');
+            } else if (currentScrollY > previousScrollY) {
+                navbar.classList.add('nav-hidden');
+            }
+
+            previousScrollY = currentScrollY;
         }, { passive: true });
     }
 
@@ -69,8 +102,7 @@
                 document.querySelector(href).scrollIntoView({ behavior: 'smooth' });
                 // Close mobile menu if open
                 if (menuToggle && navLinks) {
-                    menuToggle.classList.remove('active');
-                    navLinks.classList.remove('active');
+                    closeMenu();
                 }
             }
         });

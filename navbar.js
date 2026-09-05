@@ -246,4 +246,23 @@
         }
     }
 
+    // ---- FOOTER PAGE NAVIGATION ----
+    // Keep brand, contact and social details, but remove page-navigation lists
+    // from every footer so they do not duplicate the primary navigation.
+    document.querySelectorAll('footer').forEach((footer) => {
+        footer.querySelectorAll('.footer-links, .footer-nav').forEach((links) => links.remove());
+
+        footer.querySelectorAll('.footer-col').forEach((column) => {
+            const heading = column.querySelector('h1, h2, h3, h4, h5, h6')?.textContent.trim().toLowerCase();
+            if (heading === 'quick links' || heading === 'services') column.remove();
+        });
+
+        footer.querySelectorAll(':scope > div:not([class])').forEach((links) => {
+            const anchors = Array.from(links.querySelectorAll('a'));
+            if (anchors.length && anchors.every((link) => /\.html(?:#.*)?$/.test(link.getAttribute('href') || ''))) {
+                links.remove();
+            }
+        });
+    });
+
 })();

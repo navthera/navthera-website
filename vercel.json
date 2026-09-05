@@ -5,7 +5,6 @@
     { "source": "/home.html", "destination": "/", "permanent": true }
   ],
   "rewrites": [
-    { "source": "/services/:department", "destination": "/services" },
     { "source": "/(.*)", "destination": "/$1" }
   ],
   "headers": [

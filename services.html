@@ -1489,23 +1489,44 @@
 const tabs = document.querySelectorAll('.dept-tab');
 const panels = document.querySelectorAll('.dept-panel');
 
+function selectDepartment(dept, { revealTab = false } = {}) {
+    const selectedTab = Array.from(tabs).find(tab => tab.getAttribute('data-dept') === dept);
+    const selectedPanel = document.getElementById('panel-' + dept);
+
+    if (!selectedTab || !selectedPanel) return false;
+
+    tabs.forEach(tab => tab.classList.toggle('active', tab === selectedTab));
+    panels.forEach(panel => panel.classList.toggle('active', panel === selectedPanel));
+
+    // Keep a hash-selected tab in view on narrow, horizontally scrolling layouts.
+    if (revealTab) {
+        selectedTab.scrollIntoView({ block: 'nearest', inline: 'center' });
+    }
+
+    return true;
+}
+
 tabs.forEach(tab => {
     tab.addEventListener('click', function () {
         const dept = this.getAttribute('data-dept');
-
-        // Update active tab
-        tabs.forEach(t => t.classList.remove('active'));
-        this.classList.add('active');
-
-        // Show matching panel, hide others
-        panels.forEach(p => {
-            p.classList.remove('active');
-            if (p.id === 'panel-' + dept) {
-                p.classList.add('active');
-            }
-        });
+        selectDepartment(dept);
+        history.replaceState(null, '', '#panel-' + dept);
     });
 });
+
+function selectDepartmentFromHash() {
+    const dept = window.location.hash.replace('#panel-', '');
+    selectDepartment(dept, { revealTab: true });
+}
+
+// Support direct links such as services.html#panel-ortho and browser back/forward.
+if (window.location.hash.startsWith('#panel-')) {
+    selectDepartmentFromHash();
+} else {
+    selectDepartment('neuro');
+}
+
+window.addEventListener('hashchange', selectDepartmentFromHash);
 
 </script>
 <script src="assets/whatsapp-chat.js" defer></script>

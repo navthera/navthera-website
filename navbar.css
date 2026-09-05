@@ -32,6 +32,24 @@
     justify-content: space-between;
     background: var(--navbar-bg);
     transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    isolation: isolate;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .navbar::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        z-index: -1;
+        pointer-events: none;
+        opacity: 0;
+        background: radial-gradient(180px circle at var(--cursor-x, -220px) var(--cursor-y, -220px), rgba(62, 198, 192, 0.2), transparent 72%);
+        transition: opacity 0.25s ease;
+    }
+
+    .navbar.cursor-spotlight::after {
+        opacity: 1;
+    }
 }
 
 .navbar.scrolled {

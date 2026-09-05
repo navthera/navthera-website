@@ -77,6 +77,20 @@
         }, { passive: true });
     }
 
+    // ---- DESKTOP CURSOR SPOTLIGHT ----
+    if (navbar && window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+        navbar.addEventListener('pointermove', (e) => {
+            const bounds = navbar.getBoundingClientRect();
+            navbar.style.setProperty('--cursor-x', `${e.clientX - bounds.left}px`);
+            navbar.style.setProperty('--cursor-y', `${e.clientY - bounds.top}px`);
+            navbar.classList.add('cursor-spotlight');
+        });
+
+        navbar.addEventListener('pointerleave', () => {
+            navbar.classList.remove('cursor-spotlight');
+        });
+    }
+
     // ---- SCROLL DETECTION (for dynamic theme) ----
     if (navbar && !navbar.hasAttribute('data-theme')) {
         // Only apply scroll detection for dark theme navbars (no data-theme attribute)

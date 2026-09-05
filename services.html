@@ -1488,6 +1488,7 @@
 // Tab switching — NO scrolling, just show/hide panels
 const tabs = document.querySelectorAll('.dept-tab');
 const panels = document.querySelectorAll('.dept-panel');
+const servicePathPrefix = '/services/';
 
 function selectDepartment(dept, { revealTab = false } = {}) {
     const selectedTab = Array.from(tabs).find(tab => tab.getAttribute('data-dept') === dept);
@@ -1498,7 +1499,7 @@ function selectDepartment(dept, { revealTab = false } = {}) {
     tabs.forEach(tab => tab.classList.toggle('active', tab === selectedTab));
     panels.forEach(panel => panel.classList.toggle('active', panel === selectedPanel));
 
-    // Keep a hash-selected tab in view on narrow, horizontally scrolling layouts.
+    // Keep a route-selected tab in view on narrow, horizontally scrolling layouts.
     if (revealTab) {
         selectedTab.scrollIntoView({ block: 'nearest', inline: 'center' });
     }
@@ -1510,23 +1511,33 @@ tabs.forEach(tab => {
     tab.addEventListener('click', function () {
         const dept = this.getAttribute('data-dept');
         selectDepartment(dept);
-        history.replaceState(null, '', '#panel-' + dept);
+        history.pushState(null, '', servicePathPrefix + dept);
     });
 });
 
-function selectDepartmentFromHash() {
-    const dept = window.location.hash.replace('#panel-', '');
-    selectDepartment(dept, { revealTab: true });
-}
+const routeDepartment = window.location.pathname.startsWith(servicePathPrefix)
+    ? window.location.pathname.slice(servicePathPrefix.length).split('/')[0]
+    : null;
+const legacyHashDepartment = window.location.hash.startsWith('#panel-')
+    ? window.location.hash.replace('#panel-', '')
+    : null;
+const initialDepartment = routeDepartment || legacyHashDepartment || 'neuro';
 
-// Support direct links such as services.html#panel-ortho and browser back/forward.
-if (window.location.hash.startsWith('#panel-')) {
-    selectDepartmentFromHash();
-} else {
+if (!selectDepartment(initialDepartment, { revealTab: Boolean(routeDepartment || legacyHashDepartment) })) {
     selectDepartment('neuro');
 }
 
-window.addEventListener('hashchange', selectDepartmentFromHash);
+// Retain compatibility with old shared links while removing the panel id.
+if (legacyHashDepartment) {
+    history.replaceState(null, '', servicePathPrefix + legacyHashDepartment);
+}
+
+window.addEventListener('popstate', () => {
+    const dept = window.location.pathname.startsWith(servicePathPrefix)
+        ? window.location.pathname.slice(servicePathPrefix.length).split('/')[0]
+        : 'neuro';
+    if (!selectDepartment(dept, { revealTab: true })) selectDepartment('neuro');
+});
 
 </script>
 <script src="assets/whatsapp-chat.js" defer></script>

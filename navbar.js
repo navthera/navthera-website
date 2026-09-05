@@ -195,7 +195,8 @@
             services.forEach(([name, dept]) => {
                 const item = document.createElement('a');
                 item.className = 'services-dropdown-item';
-                item.href = `services.html#panel-${dept}`;
+                item.href = `/services/${dept}`;
+                item.dataset.dept = dept;
                 item.setAttribute('role', 'menuitem');
                 item.textContent = name;
                 dropdown.appendChild(item);
@@ -216,11 +217,10 @@
 
             dropdown.querySelectorAll('.services-dropdown-item').forEach(item => {
                 item.addEventListener('click', (e) => {
-                    const hash = item.hash;
+                    const dept = item.dataset.dept;
                     // On services.html, use the site's existing tab/panel system
                     // so the original boxes, diagrams, text and sizing remain intact.
                     if ((window.location.pathname.split('/').pop() || 'index.html') === 'services.html') {
-                        const dept = hash.replace('#panel-', '');
                         const tab = document.querySelector(`.dept-tab[data-dept="${dept}"]`);
                         if (tab) {
                             e.preventDefault();

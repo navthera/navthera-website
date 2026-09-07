@@ -122,40 +122,40 @@
         });
     });
 
+    // ---- PUBLISH NAVBAR HEIGHT ----
+    // The navbar is position:fixed, so pages that start content at the top of the
+    // document need to know how tall it actually is. Its height changes when the
+    // links wrap, so measure rather than hard-code. CSS carries a fallback for the
+    // moment before this runs.
+    if (navbar) {
+        const publishNavHeight = () => {
+            const h = Math.ceil(navbar.getBoundingClientRect().height);
+            if (h > 0) document.documentElement.style.setProperty('--nav-h', h + 'px');
+        };
+        publishNavHeight();
+        window.addEventListener('resize', publishNavHeight);
+        window.addEventListener('orientationchange', publishNavHeight);
+        if (document.fonts && document.fonts.ready) document.fonts.ready.then(publishNavHeight);
+    }
+
     // ---- ACTIVE LINK HIGHLIGHTING ----
     if (navLinks) {
-        const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+        // Normalise both sides to a clean path so this works with Vercel's
+        // cleanUrls (/about) as well as legacy hrefs (about.html).
+        const normalise = (p) => {
+            if (!p) return '';
+            p = p.split('#')[0].split('?')[0];
+            if (/^https?:/i.test(p)) return '';
+            p = p.replace(/^\.?\//, '/').replace(/\.html$/, '').replace(/\/index$/, '');
+            if (p && !p.startsWith('/')) p = '/' + p;
+            return p === '/index' || p === '' ? '/' : p.replace(/\/$/, '') || '/';
+        };
+        const currentPage = normalise(window.location.pathname);
         navLinks.querySelectorAll('a').forEach(link => {
-            const href = link.getAttribute('href');
-            if (href === currentPage || (currentPage === '' && href === 'index.html')) {
+            if (normalise(link.getAttribute('href')) === currentPage) {
                 link.classList.add('active');
             }
         });
-    }
-
-    // ---- BLOG NAVIGATION ----
-    // The Blog link is shared by every page and is placed directly after
-    // About Us, so page-specific navbar markup stays in sync.
-    if (navLinks) {
-        const links = Array.from(navLinks.querySelectorAll(':scope > li > a'));
-        const hasBlogLink = links.some(link => link.textContent.trim().toLowerCase() === 'blog');
-        const aboutItem = links.find(link => link.textContent.trim().toLowerCase() === 'about us')?.parentElement;
-
-        if (!hasBlogLink && aboutItem) {
-            const blogItem = document.createElement('li');
-            const blogLink = document.createElement('a');
-            blogLink.href = '/blog/';
-            blogLink.textContent = 'Blog';
-            blogItem.appendChild(blogLink);
-            aboutItem.insertAdjacentElement('afterend', blogItem);
-        }
-
-        const blogPath = window.location.pathname.replace(/\/+$/, '');
-        if (blogPath === '/blog' || blogPath.endsWith('/blog/index.html')) {
-            navLinks.querySelectorAll(':scope > li > a').forEach(link => {
-                if (link.textContent.trim().toLowerCase() === 'blog') link.classList.add('active');
-            });
-        }
     }
 
     // ---- SERVICES DROPDOWN ----
@@ -169,17 +169,19 @@
 
         if (servicesItem) {
             const servicesLink = servicesItem.querySelector(':scope > a');
+            // Each department links to its own dedicated page, not a fragment of
+            // the Services page. The dedicated pages are the ones that can rank.
             const services = [
-                ['Neuro Rehab', 'neuro'],
-                ['Orthopaedic', 'ortho'],
-                ['Aquatherapy', 'aqua'],
-                ['Sports Rehab', 'sports'],
-                ['Pelvic Health', 'pelvic'],
-                ['Geriatric', 'geriatric'],
-                ['Oncology', 'oncology'],
-                ['Balance & Vestibular', 'vestibular'],
-                ['Cardio & Respiratory', 'cardio'],
-                ["Women's Health", 'gynaec']
+                ['Neuro Rehab', '/neuro-rehabilitation'],
+                ['Orthopaedic', '/orthopaedic-rehabilitation'],
+                ['Aquatherapy', '/aquatherapy'],
+                ['Sports Rehab', '/sports-rehabilitation'],
+                ['Pelvic Health', '/pelvic-health-physiotherapy'],
+                ['Geriatric', '/geriatric-physiotherapy'],
+                ['Oncology', '/oncology-rehabilitation'],
+                ['Balance & Vestibular', '/balance-and-vestibular-rehabilitation'],
+                ['Cardio & Respiratory', '/cardio-respiratory-rehabilitation'],
+                ["Women's Health", '/womens-health-physiotherapy']
             ];
 
             servicesItem.classList.add('nav-services-dropdown');
@@ -192,10 +194,10 @@
             dropdown.setAttribute('role', 'menu');
             dropdown.setAttribute('aria-label', 'Services');
 
-            services.forEach(([name, dept]) => {
+            services.forEach(([name, path]) => {
                 const item = document.createElement('a');
                 item.className = 'services-dropdown-item';
-                item.href = `services.html#panel-${dept}`;
+                item.href = path;
                 item.setAttribute('role', 'menuitem');
                 item.textContent = name;
                 dropdown.appendChild(item);
@@ -245,24 +247,5 @@
             });
         }
     }
-
-    // ---- FOOTER PAGE NAVIGATION ----
-    // Keep brand, contact and social details, but remove page-navigation lists
-    // from every footer so they do not duplicate the primary navigation.
-    document.querySelectorAll('footer').forEach((footer) => {
-        footer.querySelectorAll('.footer-links, .footer-nav').forEach((links) => links.remove());
-
-        footer.querySelectorAll('.footer-col').forEach((column) => {
-            const heading = column.querySelector('h1, h2, h3, h4, h5, h6')?.textContent.trim().toLowerCase();
-            if (heading === 'quick links' || heading === 'services') column.remove();
-        });
-
-        footer.querySelectorAll(':scope > div:not([class])').forEach((links) => {
-            const anchors = Array.from(links.querySelectorAll('a'));
-            if (anchors.length && anchors.every((link) => /\.html(?:#.*)?$/.test(link.getAttribute('href') || ''))) {
-                links.remove();
-            }
-        });
-    });
 
 })();
